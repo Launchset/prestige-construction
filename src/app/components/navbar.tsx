@@ -20,8 +20,8 @@ export default function Navbar() {
   return (
     <header className={styles.header}>
       <div className={styles.shell}>
-        {/* LEFT: LOGO */}
-        <Link href="/" className={styles.logo}>
+        {/* LOGO */}
+        <Link href="/" className={styles.logo} aria-label="Prestige home">
           <div className={styles.logoInner}>
             <div className={styles.logoTop}>PRESTIGE</div>
             <div className={styles.logoBottom}>
@@ -30,8 +30,8 @@ export default function Navbar() {
           </div>
         </Link>
 
-        {/* CENTER: NAV BUTTONS */}
-        <nav className={styles.tabs}>
+        {/* NAV BUTTONS (scrollable if needed) */}
+        <nav className={styles.tabs} aria-label="Primary navigation">
           {NAV_ITEMS.map((item) => {
             const isActive = pathname === item.href;
             return (
@@ -39,6 +39,7 @@ export default function Navbar() {
                 key={item.href}
                 href={item.href}
                 className={`${styles.tab} ${isActive ? styles.active : ""}`}
+                aria-current={isActive ? "page" : undefined}
               >
                 {item.label}
               </Link>
@@ -46,15 +47,14 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* RIGHT: SEARCH ABOVE BOOK NOW */}
+        {/* RIGHT SIDE */}
         <div className={styles.right}>
           <input
+            className={styles.searchInput}
             type="text"
             placeholder="Search…"
-            className={styles.searchInput}
           />
-
-          <Link href="/book" className={styles.bookBtn}>
+          <Link className={styles.bookBtn} href="/book">
             Book now
           </Link>
         </div>
