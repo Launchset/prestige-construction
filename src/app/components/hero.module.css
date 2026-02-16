@@ -1,0 +1,179 @@
+.hero {
+    position: relative;
+    background: #ece3da;
+    margin: 0 auto;
+    overflow: hidden;
+    padding-block: clamp(2rem, 3vh, 1rem);
+    padding-inline: 1.5rem;
+    padding-bottom: 1rem;
+    height: calc(100vh - 150px);
+}
+
+
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 64px;
+    background: linear-gradient(to middle,
+            rgba(0, 0, 0, 0.03),
+            rgba(0, 0, 0, 0));
+    pointer-events: none;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+
+    background:
+        /* Dark edge falloff */
+        radial-gradient(circle at center,
+            rgba(0, 0, 0, 0) 45%,
+            rgba(0, 0, 0, 0.18) 100%),
+        /* Bright centre glow */
+        radial-gradient(circle at center 35%,
+            rgba(255, 245, 225, 0.9) 0%,
+            rgba(255, 245, 225, 0.4) 35%,
+            rgba(255, 245, 225, 0.0) 65%);
+}
+
+
+
+
+
+.text {
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+}
+
+
+.eyebrow {
+    display: inline-block;
+    font-size: 0.9rem;
+    letter-spacing: 0.10em;
+    margin-bottom: 0;
+    font-weight: 600;
+    color: #b48f33;
+    z-index: 1;
+}
+
+
+.text h1 {
+    color: #1b1b1b;
+    font-size: 2.8rem;
+    margin-bottom: 0.75rem;
+    margin-top: 0.75rem;
+    text-shadow:
+        0 2px 0 rgba(255, 255, 255, 0.4),
+        0 10px 24px rgba(0, 0, 0, 0.18);
+    z-index: 1;
+}
+
+
+.text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #3a3a3a;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+    z-index: 1;
+}
+
+.cta {
+    background: #f8c45d;
+    /* match your current CTA */
+    color: #000000;
+    padding: 0.9rem 1.6rem;
+    border-radius: 999px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.imagesOuter {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    margin-top: clamp(1.5rem, 4vh, 3rem);
+    z-index: 1;
+}
+
+
+
+
+.images {
+    display: grid;
+    grid-template-columns: repeat(2, 420px);
+    gap: 4rem;
+    justify-content: center;
+    z-index: 1;
+}
+
+
+
+/* This caps the visual dominance */
+.imageWrap {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    max-height: 560px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #eee;
+
+    box-shadow:
+        0 30px 60px rgba(0, 0, 0, 0.18),
+        0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+
+
+
+@media (max-width: 768px) {
+    .images {
+        grid-template-columns: 1fr;
+        width: 100%;
+        justify-items: center;
+    }
+
+    .imageWrap {
+        width: 100%;
+        max-width: 420px;
+        max-height: none;
+    }
+
+    .hero {
+        height: auto;
+    }
+
+    .hero::before {
+        height: 32px;
+        background: linear-gradient(to bottom,
+                rgba(0, 0, 0, 0.015),
+                rgba(0, 0, 0, 0));
+    }
+
+    .hero::after {
+        background:
+            /* much lighter edge falloff */
+            radial-gradient(circle at center,
+                rgba(0, 0, 0, 0) 55%,
+                rgba(0, 0, 0, 0.08) 100%),
+            /* brighter centre glow */
+            radial-gradient(circle at center 30%,
+                rgba(255, 248, 235, 0.95) 0%,
+                rgba(255, 248, 235, 0.5) 40%,
+                rgba(255, 248, 235, 0.0) 70%);
+    }
+}
