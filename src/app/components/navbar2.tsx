@@ -8,8 +8,8 @@ import styles from "./navbar2.module.css";
 const NAV_ITEMS = [
     { label: "Kitchens", href: "/kitchens" },
     { label: "Appliances", href: "/appliances" },
+    { label: "Sinks & Taps", href: "/sinks-taps" },
     { label: "Bedrooms", href: "/bedrooms" },
-    { label: "Boot rooms", href: "/boot-rooms" },
     { label: "TV units", href: "/tv-units" },
     { label: "Flooring", href: "/flooring" },
     { label: "Crittall doors", href: "/crittall-doors" },

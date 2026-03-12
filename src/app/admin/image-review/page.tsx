@@ -72,6 +72,13 @@ export default async function ImageReviewPage() {
   );
 
   const leafCategories = categories.filter((c) => !parentIds.has(c.id));
+  console.info(
+    "[image-review] leafCategories",
+    leafCategories.map((c) => ({
+      id: c.id,
+      parent: c.parent_id,
+    }))
+  );
 
   if (leafCategories.length === 0) {
     return <div style={{ padding: 24 }}>No leaf categories found.</div>;
@@ -97,6 +104,10 @@ export default async function ImageReviewPage() {
   const remainingLeafCategories = leafCategories.filter(
     c => !reviewedCategoryIds.has(c.id)
   );
+  console.info(
+    "[image-review] remainingLeafCategories",
+    remainingLeafCategories.map((c) => c.id)
+  );
 
   const remainingProducts = remainingLeafCategories.length;
 
@@ -107,18 +118,54 @@ export default async function ImageReviewPage() {
 
   // pick the next category to process
   const currentCategory = remainingLeafCategories[0];
+  console.info("[image-review] currentCategory", currentCategory);
 
 
-  // fetch ONE product from that category
-  const { data: product, error: productError } = await supabase
-    .from("products")
-    .select("id, sku, name, category_id")
-    .eq("category_id", currentCategory.id)
-    .limit(1)
-    .single();
+  // fetch ONE product from the first non-empty remaining category
+  let product: { id: string; sku: string; name: string; category_id: string } | null = null;
+  let activeCategory: { id: string; parent_id: string | null } | null = null;
+  let lastProductError: string | null = null;
 
-  if (productError || !product) {
-    return <div style={{ padding: 24 }}>No product found.</div>;
+  for (const category of remainingLeafCategories) {
+    console.info(
+      "[image-review] querying products with category_id =",
+      category.id
+    );
+
+    const { data, error: productError } = await supabase
+      .from("products")
+      .select("id, sku, name, category_id")
+      .eq("category_id", category.id)
+      .limit(1);
+
+    lastProductError = productError?.message ?? null;
+
+    if (data && data.length > 0) {
+      product = data[0];
+      activeCategory = category;
+      break;
+    }
+
+    if (!productError) {
+      console.info("[image-review] skipping empty category", category.id);
+    }
+  }
+
+  console.info("[image-review] product query result", {
+    product,
+    activeCategory,
+    productError: lastProductError,
+  });
+
+  if (!product) {
+    console.info("[image-review] review complete");
+
+    return (
+      <div style={{ padding: 24 }}>
+        <h2>All products reviewed 🎉</h2>
+        <p>The media sorter has finished processing all categories.</p>
+      </div>
+    );
   }
 
 
