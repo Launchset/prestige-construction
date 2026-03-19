@@ -10,6 +10,7 @@ type Product = {
   id: string;
   name: string;
   slug: string;
+  scraped_name?: string | null;
   product_images?: ProductImage[] | null;
 };
 

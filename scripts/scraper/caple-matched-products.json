@@ -1,0 +1,4050 @@
+[
+  {
+    "productId": "b931706c-1c97-4200-ab1a-a4bb94d30692",
+    "sku": "AH600BK",
+    "slug": "ah600bk",
+    "name": "AH600BK",
+    "categoryPath": "Appliances / Extraction / Wall Chimney Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/ah600bk/"
+  },
+  {
+    "productId": "33138c8b-8c66-4bff-9daa-c7ae2699facc",
+    "sku": "ANT4-BN",
+    "slug": "ant4-bn",
+    "name": "ANT4-BN",
+    "categoryPath": "Sinks & Taps / Taps / Dual Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/ant4-bn/"
+  },
+  {
+    "productId": "f63db620-33e9-4bff-8db3-557ac8d5ec13",
+    "sku": "ANT4-CH",
+    "slug": "ant4-ch",
+    "name": "ANT4-CH",
+    "categoryPath": "Sinks & Taps / Taps / Dual Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/ant4-ch/"
+  },
+  {
+    "productId": "65f44f4d-8aa7-4f02-8174-8ff0fbc9aad6",
+    "sku": "ARDPUR-CH",
+    "slug": "ardpur-ch",
+    "name": "ARDPUR-CH",
+    "categoryPath": "Sinks & Taps / Taps / Puriti Taps",
+    "url": "https://www.caple.co.uk/online-shop/taps/puriti/ardpur-ch/"
+  },
+  {
+    "productId": "c85bde53-f552-4ccf-95ff-246d876d5fc6",
+    "sku": "ASP2-AN",
+    "slug": "asp2-an",
+    "name": "ASP2-AN",
+    "categoryPath": "Sinks & Taps / Taps / Single Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/asp2-an/"
+  },
+  {
+    "productId": "2890dbfb-2160-4d6e-a80e-c2798083174f",
+    "sku": "ASP2-CH",
+    "slug": "asp2-ch",
+    "name": "ASP2-CH",
+    "categoryPath": "Sinks & Taps / Taps / Single Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/single-lever/asp2-ch/"
+  },
+  {
+    "productId": "6d6a5afa-9f5b-47f3-a438-9634526d5740",
+    "sku": "ASP2-PG",
+    "slug": "asp2-pg",
+    "name": "ASP2-PG",
+    "categoryPath": "Sinks & Taps / Taps / Single Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/single-lever/asp2-pg/"
+  },
+  {
+    "productId": "56eded77-0a2f-4934-af77-e18cca338f15",
+    "sku": "ASP2-SS",
+    "slug": "asp2-ss",
+    "name": "ASP2-SS",
+    "categoryPath": "Sinks & Taps / Taps / Single Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/single-lever/asp2-ss/"
+  },
+  {
+    "productId": "bd4cd499-b3c1-4210-9e22-73036c44b5c5",
+    "sku": "ASPQ2-CH",
+    "slug": "aspq2-ch",
+    "name": "ASPQ2-CH",
+    "categoryPath": "Sinks & Taps / Taps / Single Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/single-lever/aspq2-ch/"
+  },
+  {
+    "productId": "c1277d1d-cc96-4738-b3c5-0c046fc0e219",
+    "sku": "ASPQ2-SS",
+    "slug": "aspq2-ss",
+    "name": "ASPQ2-SS",
+    "categoryPath": "Sinks & Taps / Taps / Single Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/single-lever/aspq2-ss/"
+  },
+  {
+    "productId": "ab9e335d-0eeb-4553-8414-5cd50dfe4bf2",
+    "sku": "ASPS2-CH",
+    "slug": "asps2-ch",
+    "name": "ASPS2-CH",
+    "categoryPath": "Sinks & Taps / Taps / Pull Out & Spray",
+    "url": "https://www.caple.co.uk/online-shop/taps/pull-out/asps2-ch/"
+  },
+  {
+    "productId": "9f441096-0566-44f3-9070-072c57e20521",
+    "sku": "ASPS3-SS",
+    "slug": "asps3-ss",
+    "name": "ASPS3-SS",
+    "categoryPath": "Sinks & Taps / Taps / Pull Out & Spray",
+    "url": "https://www.caple.co.uk/online-shop/taps/pull-out/asps3-ss/"
+  },
+  {
+    "productId": "84d0c283-1470-4e92-9166-6f63f1874a1a",
+    "sku": "ATA901",
+    "slug": "ata901",
+    "name": "ATA901",
+    "categoryPath": "Appliances / Extraction / Wall Chimney Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/ata901/"
+  },
+  {
+    "productId": "cf29c8d2-e870-4371-abd5-93b3b22761b5",
+    "sku": "ATL-SS",
+    "slug": "atl-ss",
+    "name": "ATL-SS",
+    "categoryPath": "Sinks & Taps / Taps / Single Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/single-lever/atl-ss/"
+  },
+  {
+    "productId": "8b4d954f-1019-42df-95bb-9f7ec9696e88",
+    "sku": "ATL2-CH",
+    "slug": "atl2-ch",
+    "name": "ATL2-CH",
+    "categoryPath": "Sinks & Taps / Taps / Single Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/single-lever/atl2-ch/"
+  },
+  {
+    "productId": "662eca84-56b7-4596-894b-2a3998eafa5a",
+    "sku": "ATLP-SS",
+    "slug": "atlp-ss",
+    "name": "ATLP-SS",
+    "categoryPath": "Sinks & Taps / Taps / Pull Out & Spray",
+    "url": "https://www.caple.co.uk/online-shop/taps/pull-out/atlp-ss/"
+  },
+  {
+    "productId": "89537cfb-2005-4224-951a-192871800106",
+    "sku": "ATMPUR-CH",
+    "slug": "atmpur-ch",
+    "name": "ATMPUR-CH",
+    "categoryPath": "Sinks & Taps / Taps / Puriti Taps",
+    "url": "https://www.caple.co.uk/online-shop/taps/puriti/atmpur-ch/"
+  },
+  {
+    "productId": "8b7c867b-c850-47cb-ba80-0346120ef662",
+    "sku": "AVE2-BK",
+    "slug": "ave2-bk",
+    "name": "AVE2-BK",
+    "categoryPath": "Sinks & Taps / Taps / Dual Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/ave2-bk/"
+  },
+  {
+    "productId": "de3f95e0-0443-45e4-81b6-d4c5b2ae4322",
+    "sku": "AVE2-BS",
+    "slug": "ave2-bs",
+    "name": "AVE2-BS",
+    "categoryPath": "Sinks & Taps / Taps / Dual Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/ave2-bs/"
+  },
+  {
+    "productId": "afc99fd5-d9c0-44ba-9373-5ea0ef0e83e4",
+    "sku": "AVE2-CO",
+    "slug": "ave2-co",
+    "name": "AVE2-CO",
+    "categoryPath": "Sinks & Taps / Taps / Dual Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/ave2-co/"
+  },
+  {
+    "productId": "f810894d-0fde-466e-a201-f48558f9b45e",
+    "sku": "AVE2-GD",
+    "slug": "ave2-gd",
+    "name": "AVE2-GD",
+    "categoryPath": "Sinks & Taps / Taps / Dual Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/ave2-gd/"
+  },
+  {
+    "productId": "4719fe2b-f4e8-44a0-8411-857e66d61855",
+    "sku": "AVE2-GM",
+    "slug": "ave2-gm",
+    "name": "AVE2-GM",
+    "categoryPath": "Sinks & Taps / Taps / Dual Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/ave2-gm/"
+  },
+  {
+    "productId": "9078aef8-284c-4a13-a163-94b9af4d13bb",
+    "sku": "AVE2-SS",
+    "slug": "ave2-ss",
+    "name": "AVE2-SS",
+    "categoryPath": "Sinks & Taps / Taps / Dual Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/ave2-ss/"
+  },
+  {
+    "productId": "46e7c348-bb56-4b2e-b926-02558260b083",
+    "sku": "AVE4-BC",
+    "slug": "ave4-bc",
+    "name": "AVE4-BC",
+    "categoryPath": "Sinks & Taps / Taps / Dual Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/ave4-bc/"
+  },
+  {
+    "productId": "060f9e64-7db4-4e81-9376-1cad278eb1c6",
+    "sku": "AVE4-BN",
+    "slug": "ave4-bn",
+    "name": "AVE4-BN",
+    "categoryPath": "Sinks & Taps / Taps / Dual Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/ave4-bn/"
+  },
+  {
+    "productId": "b85e6f1e-9055-47cc-87d8-ae2aefed9be3",
+    "sku": "AVE4-CH",
+    "slug": "ave4-ch",
+    "name": "AVE4-CH",
+    "categoryPath": "Sinks & Taps / Taps / Dual Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/ave4-ch/"
+  },
+  {
+    "productId": "dc594235-d8c3-4b55-bff8-3b8a217b8fff",
+    "sku": "AXL50",
+    "slug": "axl50",
+    "name": "AXL50",
+    "categoryPath": "uncategorised",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/axl50/"
+  },
+  {
+    "productId": "ad2fe481-1f04-4443-adea-3a0d2f239d0e",
+    "sku": "BAN-AB",
+    "slug": "ban-ab",
+    "name": "BAN-AB",
+    "categoryPath": "Sinks & Taps / Taps / Pot Filler",
+    "url": "https://www.caple.co.uk/online-shop/taps/pot-fillers/ban-ab/"
+  },
+  {
+    "productId": "3f7cb9b7-6147-484c-b1e7-3c8a73623258",
+    "sku": "BAN-SS",
+    "slug": "ban-ss",
+    "name": "BAN-SS",
+    "categoryPath": "Sinks & Taps / Taps / Pot Filler",
+    "url": "https://www.caple.co.uk/online-shop/taps/pot-fillers/ban-ss/"
+  },
+  {
+    "productId": "11c6a788-4519-4b21-ad8f-dcf712654884",
+    "sku": "BEL1SS",
+    "slug": "bel1ss",
+    "name": "BEL1SS",
+    "categoryPath": "Sinks & Taps / Sinks / Stainless Steel",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/bel1ss/"
+  },
+  {
+    "productId": "49154d34-7456-4207-a300-c807ac6358e7",
+    "sku": "BEL21SS",
+    "slug": "bel21ss",
+    "name": "BEL21SS",
+    "categoryPath": "Sinks & Taps / Sinks / Stainless Steel",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/bel21ss/"
+  },
+  {
+    "productId": "01b4cd97-a534-4d3e-8a5e-77af5f63aaf8",
+    "sku": "BELGR",
+    "slug": "belgr",
+    "name": "BELGR",
+    "categoryPath": "Sinks & Taps / Sinks / Granite",
+    "url": "https://www.caple.co.uk/online-shop/sinks/granite/belgr/"
+  },
+  {
+    "productId": "e956e5c2-d62c-4f30-a9f2-d8890cde6756",
+    "sku": "BI45",
+    "slug": "bi45",
+    "name": "BI45",
+    "categoryPath": "Sinks & Taps / Sinks / Stainless Steel",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/bi45/"
+  },
+  {
+    "productId": "99e68bf1-996d-4b0c-9529-9da028c52a2b",
+    "sku": "BLAGDON",
+    "slug": "blagdon",
+    "name": "BLAGDON",
+    "categoryPath": "Sinks & Taps / Sinks / Ceramic",
+    "url": "https://www.caple.co.uk/online-shop/sinks/ceramic/blagdon/"
+  },
+  {
+    "productId": "07691184-73ff-40c0-8ddc-95c1cac29a5f",
+    "sku": "BRO-CH",
+    "slug": "bro-ch",
+    "name": "BRO-CH",
+    "categoryPath": "Sinks & Taps / Taps / Single Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/single-lever/bro-ch/"
+  },
+  {
+    "productId": "c171194e-5155-418a-aac4-414898b762a6",
+    "sku": "BRO-SP-CH",
+    "slug": "bro-sp-ch",
+    "name": "BRO-SP-CH",
+    "categoryPath": "Sinks & Taps / Taps / Pull Out & Spray",
+    "url": "https://www.caple.co.uk/online-shop/taps/pull-out/bro-sp-ch/"
+  },
+  {
+    "productId": "46d3f0bf-f09c-44ac-baa4-378f9c685632",
+    "sku": "BU525SS",
+    "slug": "bu525ss",
+    "name": "BU525SS",
+    "categoryPath": "Appliances / Extraction / Built-Under Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/integrated/bu525ss/"
+  },
+  {
+    "productId": "461a109d-0ffa-488d-b794-c1c4e260f3d5",
+    "sku": "BU526BK",
+    "slug": "bu526bk",
+    "name": "BU526BK",
+    "categoryPath": "Appliances / Extraction / Built-Under Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/integrated/bu526bk/"
+  },
+  {
+    "productId": "2cd57ab4-4935-49b1-9e73-addb49645203",
+    "sku": "BU755SS",
+    "slug": "bu755ss",
+    "name": "BU755SS",
+    "categoryPath": "Appliances / Extraction / Built-Under Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/integrated/bu755ss/"
+  },
+  {
+    "productId": "3658de1e-dbd8-427a-a12a-fd1266b29457",
+    "sku": "BU756BK",
+    "slug": "bu756bk",
+    "name": "BU756BK",
+    "categoryPath": "Appliances / Extraction / Built-Under Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/integrated/bu756bk/"
+  },
+  {
+    "productId": "71507779-ed84-4a06-860c-465a81e213fa",
+    "sku": "BUCH",
+    "slug": "buch",
+    "name": "BUCH",
+    "categoryPath": "Appliances / Extraction / Built-Under Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/integrated/buch/"
+  },
+  {
+    "productId": "4c50a148-3968-44a0-a2f9-d9454eeb2fcb",
+    "sku": "BUCH75",
+    "slug": "buch75",
+    "name": "BUCH75",
+    "categoryPath": "Appliances / Extraction / Built-Under Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/integrated/buch75/"
+  },
+  {
+    "productId": "13bc23dd-25a8-4c7b-aebc-35291128b9dd",
+    "sku": "BXC611",
+    "slug": "bxc611",
+    "name": "BXC611",
+    "categoryPath": "Appliances / Extraction / Wall Chimney Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/bxc611/"
+  },
+  {
+    "productId": "2cc1760b-3d81-4923-9336-ff9b9159fd22",
+    "sku": "BXC911",
+    "slug": "bxc911",
+    "name": "BXC911",
+    "categoryPath": "Appliances / Extraction / Wall Chimney Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/bxc911/"
+  },
+  {
+    "productId": "58f79667-580d-4c39-934e-1b56abc7800b",
+    "sku": "BXI911",
+    "slug": "bxi911",
+    "name": "BXI911",
+    "categoryPath": "Appliances / Extraction / Island Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/island/bxi911/"
+  },
+  {
+    "productId": "b7397bb4-4f92-4304-bf15-15f1836419f2",
+    "sku": "C2101BG",
+    "slug": "c2101bg",
+    "name": "C2101BG",
+    "categoryPath": "Appliances / Ovens / Single Ovens",
+    "url": "https://www.caple.co.uk/online-shop/appliances/ovens/single/c2101bg/"
+  },
+  {
+    "productId": "c41559e8-5440-4060-9540-4a73f8f179fb",
+    "sku": "C2105",
+    "slug": "c2105",
+    "name": "C2105",
+    "categoryPath": "Appliances / Ovens / Single Ovens",
+    "url": "https://www.caple.co.uk/online-shop/sale/appliance-sale/c2105/"
+  },
+  {
+    "productId": "04adf7d2-b460-4f56-bf50-8681624f5294",
+    "sku": "C2105SS",
+    "slug": "c2105ss",
+    "name": "C2105SS",
+    "categoryPath": "Appliances / Ovens / Single Ovens",
+    "url": "https://www.caple.co.uk/online-shop/sale/appliance-sale/c2105ss/"
+  },
+  {
+    "productId": "3c4f9a41-a94e-44f8-a1ec-8cb68cd77df1",
+    "sku": "C2106BG",
+    "slug": "c2106bg",
+    "name": "C2106BG",
+    "categoryPath": "Appliances / Ovens / Single Ovens",
+    "url": "https://www.caple.co.uk/online-shop/appliances/ovens/single/c2106bg/"
+  },
+  {
+    "productId": "40bfceb8-1a4a-4065-81e8-6e8622b9407f",
+    "sku": "C2106GM",
+    "slug": "c2106gm",
+    "name": "C2106GM",
+    "categoryPath": "Appliances / Ovens / Single Ovens",
+    "url": "https://www.caple.co.uk/online-shop/appliances/ovens/single/c2106gm/"
+  },
+  {
+    "productId": "b45bc94b-58a6-402d-af8b-79ec4666b7c3",
+    "sku": "C2220",
+    "slug": "c2220",
+    "name": "C2220",
+    "categoryPath": "Appliances / Ovens / Single Ovens",
+    "url": "https://www.caple.co.uk/online-shop/appliances/ovens/single/c2220/"
+  },
+  {
+    "productId": "9a09f564-c019-4533-9097-24d8bf4a4ec7",
+    "sku": "C2231",
+    "slug": "c2231",
+    "name": "C2231",
+    "categoryPath": "Appliances / Ovens / Single Ovens",
+    "url": "https://www.caple.co.uk/online-shop/appliances/ovens/single/c2231/"
+  },
+  {
+    "productId": "b9c6d377-8af3-46be-9e87-6dcf659b62b7",
+    "sku": "C2234",
+    "slug": "c2234",
+    "name": "C2234",
+    "categoryPath": "Appliances / Ovens / Single Ovens",
+    "url": "https://www.caple.co.uk/online-shop/appliances/ovens/single/c2234/"
+  },
+  {
+    "productId": "20351c5e-7957-4014-9fb6-cf8a0b53cc0f",
+    "sku": "C2234BK",
+    "slug": "c2234bk",
+    "name": "C2234BK",
+    "categoryPath": "Appliances / Ovens / Single Ovens",
+    "url": "https://www.caple.co.uk/online-shop/appliances/ovens/single/c2234bk/"
+  },
+  {
+    "productId": "a6f3e46f-2a9f-4ec7-b3f3-58593be02baa",
+    "sku": "C2237",
+    "slug": "c2237",
+    "name": "C2237",
+    "categoryPath": "Appliances / Ovens / Single Ovens",
+    "url": "https://www.caple.co.uk/online-shop/appliances/ovens/single/c2237/"
+  },
+  {
+    "productId": "aaa16fca-c80c-400e-ad29-78404dcdd78a",
+    "sku": "C2239",
+    "slug": "c2239",
+    "name": "C2239",
+    "categoryPath": "Appliances / Ovens / Single Ovens",
+    "url": "https://www.caple.co.uk/online-shop/appliances/ovens/single/c2239/"
+  },
+  {
+    "productId": "8cfad543-a508-45e7-ad8c-46a1ee60c68b",
+    "sku": "C2362BG",
+    "slug": "c2362bg",
+    "name": "C2362BG",
+    "categoryPath": "Appliances / Ovens / Single Ovens",
+    "url": "https://www.caple.co.uk/online-shop/appliances/ovens/single/c2362bg/"
+  },
+  {
+    "productId": "47419285-5554-4e77-a025-eb4271051379",
+    "sku": "C2402",
+    "slug": "c2402",
+    "name": "C2402",
+    "categoryPath": "Appliances / Ovens / Single Ovens",
+    "url": "https://www.caple.co.uk/online-shop/sale/appliance-sale/c2402/"
+  },
+  {
+    "productId": "84a2093e-2b29-428b-bbc4-54c5953f2243",
+    "sku": "C2402SS",
+    "slug": "c2402ss",
+    "name": "C2402SS",
+    "categoryPath": "Appliances / Ovens / Single Ovens",
+    "url": "https://www.caple.co.uk/online-shop/appliances/ovens/single/c2402ss/"
+  },
+  {
+    "productId": "961eeaf8-b1b1-4c8b-b5c0-77f32e245d41",
+    "sku": "C2403BG",
+    "slug": "c2403bg",
+    "name": "C2403BG",
+    "categoryPath": "Appliances / Ovens / Single Ovens",
+    "url": "https://www.caple.co.uk/online-shop/appliances/ovens/single/c2403bg/"
+  },
+  {
+    "productId": "70ef66b1-e699-4403-90b8-ec3d7931f3d1",
+    "sku": "C2403GM",
+    "slug": "c2403gm",
+    "name": "C2403GM",
+    "categoryPath": "Appliances / Ovens / Single Ovens",
+    "url": "https://www.caple.co.uk/online-shop/appliances/ovens/single/c2403gm/"
+  },
+  {
+    "productId": "e31836dd-382b-424d-9c87-79632264cda9",
+    "sku": "C2601BG",
+    "slug": "c2601bg",
+    "name": "C2601BG",
+    "categoryPath": "Appliances / Ovens / Single Ovens",
+    "url": "https://www.caple.co.uk/online-shop/appliances/ovens/single/c2601bg/"
+  },
+  {
+    "productId": "52756269-0644-437a-b381-41bac347a6b3",
+    "sku": "C2601BS",
+    "slug": "c2601bs",
+    "name": "C2601BS",
+    "categoryPath": "Appliances / Ovens / Single Ovens",
+    "url": "https://www.caple.co.uk/online-shop/appliances/ovens/single/c2601bs/"
+  },
+  {
+    "productId": "b1d62b51-4d5f-4732-b11c-f1f44cc972fe",
+    "sku": "C2601GM",
+    "slug": "c2601gm",
+    "name": "C2601GM",
+    "categoryPath": "Appliances / Ovens / Single Ovens",
+    "url": "https://www.caple.co.uk/online-shop/appliances/ovens/single/c2601gm/"
+  },
+  {
+    "productId": "aa3c7c75-22e6-4874-a06f-431b9241bd35",
+    "sku": "C2601SS",
+    "slug": "c2601ss",
+    "name": "C2601SS",
+    "categoryPath": "Appliances / Ovens / Single Ovens",
+    "url": "https://www.caple.co.uk/online-shop/sale/appliance-sale/c2601ss/"
+  },
+  {
+    "productId": "2717931b-80ba-44ad-ad07-21ebe455d18b",
+    "sku": "C2902BG",
+    "slug": "c2902bg",
+    "name": "C2902BG",
+    "categoryPath": "Appliances / Ovens / Single Ovens",
+    "url": "https://www.caple.co.uk/online-shop/appliances/ovens/single/c2902bg/"
+  },
+  {
+    "productId": "8b847922-166c-4e22-9666-daaa06654262",
+    "sku": "C2902GM",
+    "slug": "c2902gm",
+    "name": "C2902GM",
+    "categoryPath": "Appliances / Ovens / Single Ovens",
+    "url": "https://www.caple.co.uk/online-shop/appliances/ovens/single/c2902gm/"
+  },
+  {
+    "productId": "68aa39b7-038a-48a1-b947-345e8ca5d217",
+    "sku": "C2902SS",
+    "slug": "c2902ss",
+    "name": "C2902SS",
+    "categoryPath": "Appliances / Ovens / Single Ovens",
+    "url": "https://www.caple.co.uk/online-shop/appliances/ovens/single/c2902ss/"
+  },
+  {
+    "productId": "a37f6de8-0858-4452-abef-1de4a96e0257",
+    "sku": "C3246",
+    "slug": "c3246",
+    "name": "C3246",
+    "categoryPath": "Appliances / Ovens / Double Ovens",
+    "url": "https://www.caple.co.uk/online-shop/appliances/ovens/double/c3246/"
+  },
+  {
+    "productId": "423e62e4-01cd-4c20-8d58-8abb945cc831",
+    "sku": "C3249",
+    "slug": "c3249",
+    "name": "C3249",
+    "categoryPath": "Appliances / Ovens / Double Ovens",
+    "url": "https://www.caple.co.uk/online-shop/sale/appliance-sale/c3249/"
+  },
+  {
+    "productId": "b390bc09-04ec-4676-9aa4-c4092bf85dd2",
+    "sku": "C3371BG",
+    "slug": "c3371bg",
+    "name": "C3371BG",
+    "categoryPath": "Appliances / Ovens / Double Ovens",
+    "url": "https://www.caple.co.uk/online-shop/appliances/ovens/double/c3371bg/"
+  },
+  {
+    "productId": "4cad8d58-ba7a-4857-97d7-b941834e7670",
+    "sku": "C4061G",
+    "slug": "c4061g",
+    "name": "C4061G",
+    "categoryPath": "Appliances / Hobs / Gas",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/gas/c4061g/"
+  },
+  {
+    "productId": "b247d99f-4f37-4fc7-80ba-76fc6fe3a0d0",
+    "sku": "C4071G",
+    "slug": "c4071g",
+    "name": "C4071G",
+    "categoryPath": "Appliances / Hobs / Gas",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/gas/c4071g/"
+  },
+  {
+    "productId": "93988885-08b8-4562-bf29-e3b5e9e2a0d2",
+    "sku": "C4091G",
+    "slug": "c4091g",
+    "name": "C4091G",
+    "categoryPath": "Appliances / Hobs / Gas",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/gas/c4091g/"
+  },
+  {
+    "productId": "f1e76830-5c0c-4ebf-99e7-88456390e0a9",
+    "sku": "C4246",
+    "slug": "c4246",
+    "name": "C4246",
+    "categoryPath": "Appliances / Ovens / Built-under Ovens",
+    "url": "https://www.caple.co.uk/online-shop/appliances/ovens/double/c4246/"
+  },
+  {
+    "productId": "efc5b4c7-73f2-4548-9fe6-f1580b14665a",
+    "sku": "C7011G",
+    "slug": "c7011g",
+    "name": "C7011G",
+    "categoryPath": "Appliances / Hobs / Gas",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/gas/c7011g/"
+  },
+  {
+    "productId": "fb3323f1-d369-4b74-998b-798b0bb1f61e",
+    "sku": "C7061G",
+    "slug": "c7061g",
+    "name": "C7061G",
+    "categoryPath": "Appliances / Hobs / Gas",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/gas/c7061g/"
+  },
+  {
+    "productId": "6c0c818d-9cfc-4f81-a297-2210d403ef31",
+    "sku": "C706G",
+    "slug": "c706g",
+    "name": "C706G",
+    "categoryPath": "Appliances / Hobs / Gas",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/gas/c706g/"
+  },
+  {
+    "productId": "448bda0f-d227-4063-acd1-eccb8071d4f3",
+    "sku": "C7071G",
+    "slug": "c7071g",
+    "name": "C7071G",
+    "categoryPath": "Appliances / Hobs / Gas",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/gas/c7071g/"
+  },
+  {
+    "productId": "35fea5a2-c6e3-4924-844a-dde3b215ca86",
+    "sku": "C7091G",
+    "slug": "c7091g",
+    "name": "C7091G",
+    "categoryPath": "Appliances / Hobs / Gas",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/gas/c7091g/"
+  },
+  {
+    "productId": "b1f518c2-1c96-47dd-90cd-4eb160702f0c",
+    "sku": "C744G",
+    "slug": "c744g",
+    "name": "C744G",
+    "categoryPath": "Appliances / Hobs / Gas",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/gas/c744g/"
+  },
+  {
+    "productId": "8add4d2c-1c3b-4a08-80c9-701f3c2a5fe0",
+    "sku": "C7561G",
+    "slug": "c7561g",
+    "name": "C7561G",
+    "categoryPath": "Appliances / Hobs / Gas",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/gas/c7561g/"
+  },
+  {
+    "productId": "2727e06f-bb8c-47a8-9432-3f6fab675a65",
+    "sku": "C7571G",
+    "slug": "c7571g",
+    "name": "C7571G",
+    "categoryPath": "Appliances / Hobs / Gas",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/gas/c7571g/"
+  },
+  {
+    "productId": "b429d05b-ac23-4614-a878-bf09e1403cdc",
+    "sku": "C7591G",
+    "slug": "c7591g",
+    "name": "C7591G",
+    "categoryPath": "Appliances / Hobs / Gas",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/gas/c7591g/"
+  },
+  {
+    "productId": "77135122-1470-401c-b68f-c304237a1b73",
+    "sku": "C768G",
+    "slug": "c768g",
+    "name": "C768G",
+    "categoryPath": "Appliances / Hobs / Gas",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/gas/c768g/"
+  },
+  {
+    "productId": "98df590c-e5e9-4d5d-b904-69ab8c82e440",
+    "sku": "C775G",
+    "slug": "c775g",
+    "name": "C775G",
+    "categoryPath": "Appliances / Hobs / Gas",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/gas/c775g/"
+  },
+  {
+    "productId": "c40062f1-3a17-4794-b441-22a184756351",
+    "sku": "C786G",
+    "slug": "c786g",
+    "name": "C786G",
+    "categoryPath": "Appliances / Hobs / Gas",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/gas/c786g/"
+  },
+  {
+    "productId": "3ec0b158-6494-4b0b-a80f-b43d87225bc0",
+    "sku": "C787G",
+    "slug": "c787g",
+    "name": "C787G",
+    "categoryPath": "Appliances / Hobs / Gas",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/gas/c787g/"
+  },
+  {
+    "productId": "55660629-422e-47c1-81dc-b3a95f6fe62b",
+    "sku": "C789G",
+    "slug": "c789g",
+    "name": "C789G",
+    "categoryPath": "Appliances / Hobs / Gas",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/gas/c789g/"
+  },
+  {
+    "productId": "e6f31c91-9f67-48c8-9ba7-4eeb2c68b5ba",
+    "sku": "C809C",
+    "slug": "c809c",
+    "name": "C809C",
+    "categoryPath": "Appliances / Hobs / Ceramic",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/ceramic-hobs/c809c/"
+  },
+  {
+    "productId": "0f77f878-6d9c-4d16-b20d-3d44faf00f3d",
+    "sku": "C817C",
+    "slug": "c817c",
+    "name": "C817C",
+    "categoryPath": "Appliances / Hobs / Ceramic",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/ceramic-hobs/c817c/"
+  },
+  {
+    "productId": "48622388-616d-4f55-b542-93746eaa215d",
+    "sku": "C8242C",
+    "slug": "c8242c",
+    "name": "C8242C",
+    "categoryPath": "Appliances / Hobs / Ceramic",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/ceramic-hobs/c8242c/"
+  },
+  {
+    "productId": "7cee6444-f690-4cd8-a287-b3714a2b92f8",
+    "sku": "C8301C",
+    "slug": "c8301c",
+    "name": "C8301C",
+    "categoryPath": "Appliances / Hobs / Ceramic",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/ceramic-hobs/c8301c/"
+  },
+  {
+    "productId": "7604219c-7d17-4cb8-8a31-8fe40c03c8b2",
+    "sku": "C8400I",
+    "slug": "c8400i",
+    "name": "C8400I",
+    "categoryPath": "Appliances / Hobs / Induction",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/induction/c8400i/"
+  },
+  {
+    "productId": "afdc4e4a-2edd-4f69-9687-444a2be177b8",
+    "sku": "C8410I",
+    "slug": "c8410i",
+    "name": "C8410I",
+    "categoryPath": "Appliances / Hobs / Induction",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/induction/c8410i/"
+  },
+  {
+    "productId": "1c1e4009-500b-40f6-8390-4589fc498f08",
+    "sku": "C845I",
+    "slug": "c845i",
+    "name": "C845I",
+    "categoryPath": "Appliances / Hobs / Induction",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/induction/c845i/"
+  },
+  {
+    "productId": "0a400263-99aa-48ad-aef2-92d41b5ecbbd",
+    "sku": "C848I",
+    "slug": "c848i",
+    "name": "C848I",
+    "categoryPath": "Appliances / Hobs / Induction",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/induction/c848i/"
+  },
+  {
+    "productId": "8c77d0d5-a8e7-4630-899c-56c8f1b0f328",
+    "sku": "C859I",
+    "slug": "c859i",
+    "name": "C859I",
+    "categoryPath": "Appliances / Hobs / Induction",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/induction/c859i/"
+  },
+  {
+    "productId": "0aaaf547-bbe8-44cc-9d2c-7d9d565ce46f",
+    "sku": "C8641I",
+    "slug": "c8641i",
+    "name": "C8641I",
+    "categoryPath": "Appliances / Hobs / Induction",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/induction/c8641i/"
+  },
+  {
+    "productId": "a22d4b11-e78f-4c51-9c81-dac418cbfb5f",
+    "sku": "C8641IGM",
+    "slug": "c8641igm",
+    "name": "C8641IGM",
+    "categoryPath": "Appliances / Hobs / Induction",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/induction/c8641igm/"
+  },
+  {
+    "productId": "fe58a4a4-db95-4ec2-b434-efa862f1da26",
+    "sku": "C876I",
+    "slug": "c876i",
+    "name": "C876I",
+    "categoryPath": "Appliances / Hobs / Induction",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/induction/c876i/"
+  },
+  {
+    "productId": "2dfe3846-8c4a-43fc-be3c-8939b9ae315e",
+    "sku": "C8800I",
+    "slug": "c8800i",
+    "name": "C8800I",
+    "categoryPath": "Appliances / Hobs / Induction",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/induction/c8800i/"
+  },
+  {
+    "productId": "5cc398ee-f725-4a54-8754-b4ac17af9ae2",
+    "sku": "C886G",
+    "slug": "c886g",
+    "name": "C886G",
+    "categoryPath": "Appliances / Hobs / Gas",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/gas/c886g/"
+  },
+  {
+    "productId": "ee9e3413-e8c2-4f81-b931-aba303fbdfe4",
+    "sku": "C887G",
+    "slug": "c887g",
+    "name": "C887G",
+    "categoryPath": "Appliances / Hobs / Gas",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/gas/c887g/"
+  },
+  {
+    "productId": "2bcb1553-0b76-4ef7-8f4b-292090d30885",
+    "sku": "C889G",
+    "slug": "c889g",
+    "name": "C889G",
+    "categoryPath": "Appliances / Hobs / Gas",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/gas/c889g/"
+  },
+  {
+    "productId": "56257438-d6e3-4f8c-941b-c50ad2d1c071",
+    "sku": "C890G",
+    "slug": "c890g",
+    "name": "C890G",
+    "categoryPath": "Appliances / Hobs / Modular",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/gas/c890g/"
+  },
+  {
+    "productId": "17d33c3b-c0d6-49a1-9c89-eb13d799616b",
+    "sku": "C895C",
+    "slug": "c895c",
+    "name": "C895C",
+    "categoryPath": "Appliances / Hobs / Modular",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/modular/c895c/"
+  },
+  {
+    "productId": "d0f7df4c-85b4-42ee-83a5-407745fb48e8",
+    "sku": "C897I",
+    "slug": "c897i",
+    "name": "C897I",
+    "categoryPath": "Appliances / Hobs / Induction",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/induction/c897i/"
+  },
+  {
+    "productId": "3b8ca8b8-62fa-4d4b-bfd1-f45467b7567d",
+    "sku": "C901I",
+    "slug": "c901i",
+    "name": "C901I",
+    "categoryPath": "Appliances / Hobs / Induction",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/induction/c901i/"
+  },
+  {
+    "productId": "c6d51685-72d2-41e6-a058-2d1299358e55",
+    "sku": "C944G",
+    "slug": "c944g",
+    "name": "C944G",
+    "categoryPath": "Appliances / Hobs / Gas",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/gas/c944g/"
+  },
+  {
+    "productId": "f981f509-5988-4a74-91bd-239e0ba9f61e",
+    "sku": "C990I",
+    "slug": "c990i",
+    "name": "C990I",
+    "categoryPath": "Appliances / Hobs / Induction",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/induction/c990i/"
+  },
+  {
+    "productId": "c4d273a3-c05d-4f99-aa37-074bbeee193d",
+    "sku": "C997I",
+    "slug": "c997i",
+    "name": "C997I",
+    "categoryPath": "Appliances / Hobs / Modular",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/modular/c997i/"
+  },
+  {
+    "productId": "de62d848-c980-4e0a-9561-3a7eee8534c9",
+    "sku": "CCH101",
+    "slug": "cch101",
+    "name": "CCH101",
+    "categoryPath": "Appliances / Extraction / Wall Chimney Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/cch101/"
+  },
+  {
+    "productId": "796f57dd-9e01-45e8-b5e4-ca3d9d910e94",
+    "sku": "CCH601BK",
+    "slug": "cch601bk",
+    "name": "CCH601BK",
+    "categoryPath": "Appliances / Extraction / Wall Chimney Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/cch601bk/"
+  },
+  {
+    "productId": "b5cc6a60-bd41-4132-a205-d52d0db12eea",
+    "sku": "CCH601SS",
+    "slug": "cch601ss",
+    "name": "CCH601SS",
+    "categoryPath": "Appliances / Extraction / Wall Chimney Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/cch601ss/"
+  },
+  {
+    "productId": "6461ce0d-da3b-4a74-a8d7-920b7b3b8b2a",
+    "sku": "CCH701",
+    "slug": "cch701",
+    "name": "CCH701",
+    "categoryPath": "Appliances / Extraction / Wall Chimney Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/cch701/"
+  },
+  {
+    "productId": "254ad855-8e57-47b2-a9ed-6fe6fd9a5258",
+    "sku": "CCH901BK",
+    "slug": "cch901bk",
+    "name": "CCH901BK",
+    "categoryPath": "Appliances / Extraction / Wall Chimney Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/cch901bk/"
+  },
+  {
+    "productId": "d5bd75bf-d22b-499c-afbf-b435c5416b43",
+    "sku": "CCH901SS",
+    "slug": "cch901ss",
+    "name": "CCH901SS",
+    "categoryPath": "Appliances / Extraction / Wall Chimney Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/cch901ss/"
+  },
+  {
+    "productId": "5db46035-3401-4d42-a63a-71d398a216cf",
+    "sku": "CE1122SS",
+    "slug": "ce1122ss",
+    "name": "CE1122SS",
+    "categoryPath": "Appliances / Extraction / Ceiling Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/ceiling/ce1122ss/"
+  },
+  {
+    "productId": "84ee4308-1ec5-4ca8-ad2b-2537c9e40e46",
+    "sku": "CE1122WH",
+    "slug": "ce1122wh",
+    "name": "CE1122WH",
+    "categoryPath": "Appliances / Extraction / Ceiling Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/ceiling/ce1122wh/"
+  },
+  {
+    "productId": "0fac7843-37ee-4076-aa6d-ff56c6aee5c7",
+    "sku": "CE903SS",
+    "slug": "ce903ss",
+    "name": "CE903SS",
+    "categoryPath": "Appliances / Extraction / Ceiling Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/ceiling/ce903ss/"
+  },
+  {
+    "productId": "6cd7cdcd-360a-4b49-b0ee-e61f99d4d6b1",
+    "sku": "CE903WH",
+    "slug": "ce903wh",
+    "name": "CE903WH",
+    "categoryPath": "Appliances / Extraction / Ceiling Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/ceiling/ce903wh/"
+  },
+  {
+    "productId": "4bf294a1-1898-495d-8e30-1a75893c9ffa",
+    "sku": "CE921WH",
+    "slug": "ce921wh",
+    "name": "CE921WH",
+    "categoryPath": "Appliances / Extraction / Ceiling Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/ceiling/ce921wh/"
+  },
+  {
+    "productId": "d29d14d3-7876-4d32-ab9c-5f1392b4009c",
+    "sku": "CGC611BK",
+    "slug": "cgc611bk",
+    "name": "CGC611BK",
+    "categoryPath": "Appliances / Extraction / Wall Chimney Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/cgc611bk/"
+  },
+  {
+    "productId": "57c9416b-236f-407c-a1ec-0017d713fc53",
+    "sku": "CGC611SS",
+    "slug": "cgc611ss",
+    "name": "CGC611SS",
+    "categoryPath": "Appliances / Extraction / Wall Chimney Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/cgc611ss/"
+  },
+  {
+    "productId": "76565301-82d1-4739-92e5-bee9c776d4c5",
+    "sku": "CGC711BK",
+    "slug": "cgc711bk",
+    "name": "CGC711BK",
+    "categoryPath": "Appliances / Extraction / Wall Chimney Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/cgc711bk/"
+  },
+  {
+    "productId": "625d6a25-dfbe-49cd-917c-90a2d9709114",
+    "sku": "CGC711SS",
+    "slug": "cgc711ss",
+    "name": "CGC711SS",
+    "categoryPath": "Appliances / Extraction / Wall Chimney Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/cgc711ss/"
+  },
+  {
+    "productId": "3b8c98aa-7de5-4b88-b6fd-f3a3eeeed9ea",
+    "sku": "CGC911BK",
+    "slug": "cgc911bk",
+    "name": "CGC911BK",
+    "categoryPath": "Appliances / Extraction / Wall Chimney Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/cgc911bk/"
+  },
+  {
+    "productId": "becab947-d46f-42d3-986d-19ce8fcc1049",
+    "sku": "CGC911SS",
+    "slug": "cgc911ss",
+    "name": "CGC911SS",
+    "categoryPath": "Appliances / Extraction / Wall Chimney Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/cgc911ss/"
+  },
+  {
+    "productId": "abe98ef2-48a8-4c48-84a9-b816773977f2",
+    "sku": "CGI920-RED",
+    "slug": "cgi920-red",
+    "name": "CGI920-RED",
+    "categoryPath": "Appliances / Extraction / Island Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/island/cgi920-red/"
+  },
+  {
+    "productId": "9ef80a84-002c-46ae-a9d4-773403829491",
+    "sku": "CGI921",
+    "slug": "cgi921",
+    "name": "CGI921",
+    "categoryPath": "Appliances / Extraction / Island Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/island/cgi921/"
+  },
+  {
+    "productId": "38d7dcab-fb84-48af-9818-d3eb29d687fe",
+    "sku": "CINB600",
+    "slug": "cinb600",
+    "name": "CINB600",
+    "categoryPath": "Sinks & Taps / Sinks / Ceramic",
+    "url": "https://www.caple.co.uk/online-shop/sinks/ceramic/cinb600/"
+  },
+  {
+    "productId": "ab2b4c90-5f71-48ea-9191-bbfe47e99e9c",
+    "sku": "CINB800",
+    "slug": "cinb800",
+    "name": "CINB800",
+    "categoryPath": "Sinks & Taps / Sinks / Ceramic",
+    "url": "https://www.caple.co.uk/online-shop/sinks/ceramic/cinb800/"
+  },
+  {
+    "productId": "a539fd1d-f780-436e-ac8f-5e08c9c65340",
+    "sku": "CM1081BG",
+    "slug": "cm1081bg",
+    "name": "CM1081BG",
+    "categoryPath": "Appliances / Microwaves",
+    "url": "https://www.caple.co.uk/online-shop/appliances/microwaves/built-in/cm1081bg/"
+  },
+  {
+    "productId": "7f8011e7-bf83-4883-b50e-e6085a8cc96e",
+    "sku": "CM108BK",
+    "slug": "cm108bk",
+    "name": "CM108BK",
+    "categoryPath": "Appliances / Microwaves",
+    "url": "https://www.caple.co.uk/online-shop/appliances/microwaves/built-in/cm108bk/"
+  },
+  {
+    "productId": "53d935f8-f2bf-476e-a6ff-d0e287648f84",
+    "sku": "CM108SS",
+    "slug": "cm108ss",
+    "name": "CM108SS",
+    "categoryPath": "Appliances / Microwaves",
+    "url": "https://www.caple.co.uk/online-shop/appliances/microwaves/built-in/cm108ss/"
+  },
+  {
+    "productId": "e8da3b35-84dd-41b0-b2c8-ca93ad973d39",
+    "sku": "CM111BG",
+    "slug": "cm111bg",
+    "name": "CM111BG",
+    "categoryPath": "Appliances / Microwaves",
+    "url": "https://www.caple.co.uk/online-shop/appliances/microwaves/combination/cm111bg/"
+  },
+  {
+    "productId": "018ddf3c-db2d-4aba-831a-feb796d2c566",
+    "sku": "CM111GM",
+    "slug": "cm111gm",
+    "name": "CM111GM",
+    "categoryPath": "Appliances / Microwaves",
+    "url": "https://www.caple.co.uk/online-shop/appliances/microwaves/combination/cm111gm/"
+  },
+  {
+    "productId": "124e71ee-ff59-439c-9f6d-547546660839",
+    "sku": "CM111SS",
+    "slug": "cm111ss",
+    "name": "CM111SS",
+    "categoryPath": "Appliances / Microwaves",
+    "url": "https://www.caple.co.uk/online-shop/appliances/microwaves/combination/cm111ss/"
+  },
+  {
+    "productId": "1492a345-ec3d-40af-a562-3eacfbf9266c",
+    "sku": "CM120",
+    "slug": "cm120",
+    "name": "CM120",
+    "categoryPath": "Appliances / Microwaves",
+    "url": "https://www.caple.co.uk/online-shop/appliances/microwaves/grill/cm120/"
+  },
+  {
+    "productId": "28ebf730-5b8f-41c0-a99d-75fbbf4d2346",
+    "sku": "CM121BK",
+    "slug": "cm121bk",
+    "name": "CM121BK",
+    "categoryPath": "Appliances / Microwaves",
+    "url": "https://www.caple.co.uk/online-shop/appliances/microwaves/grill/cm121bk/"
+  },
+  {
+    "productId": "d717f41d-c3c0-4af6-b072-c7d3393775f0",
+    "sku": "CM123",
+    "slug": "cm123",
+    "name": "CM123",
+    "categoryPath": "Appliances / Microwaves",
+    "url": "https://www.caple.co.uk/online-shop/appliances/microwaves/grill/cm123/"
+  },
+  {
+    "productId": "796a18f5-5e7b-4924-ab23-eaba9bcb0566",
+    "sku": "CM123BK",
+    "slug": "cm123bk",
+    "name": "CM123BK",
+    "categoryPath": "Appliances / Microwaves",
+    "url": "https://www.caple.co.uk/online-shop/appliances/microwaves/grill/cm123bk/"
+  },
+  {
+    "productId": "27b27bb2-76e3-4478-8676-359036568155",
+    "sku": "CM126",
+    "slug": "cm126",
+    "name": "CM126",
+    "categoryPath": "Appliances / Microwaves",
+    "url": "https://www.caple.co.uk/online-shop/appliances/microwaves/combination/cm126/"
+  },
+  {
+    "productId": "f0a2288d-125b-4850-87f2-402b027e7ea8",
+    "sku": "CM130",
+    "slug": "cm130",
+    "name": "CM130",
+    "categoryPath": "Appliances / Microwaves",
+    "url": "https://www.caple.co.uk/online-shop/appliances/microwaves/grill/cm130/"
+  },
+  {
+    "productId": "7dc55cd2-8dc2-48e6-9916-092843285478",
+    "sku": "CM465BG",
+    "slug": "cm465bg",
+    "name": "CM465BG",
+    "categoryPath": "Appliances / Coffee Machines",
+    "url": "https://www.caple.co.uk/online-shop/appliances/coffee-machines/cm465bg/"
+  },
+  {
+    "productId": "a2e34f7f-5fdf-4826-af55-7a44cfebcc7a",
+    "sku": "CM465BS",
+    "slug": "cm465bs",
+    "name": "CM465BS",
+    "categoryPath": "Appliances / Coffee Machines",
+    "url": "https://www.caple.co.uk/online-shop/appliances/coffee-machines/cm465bs/"
+  },
+  {
+    "productId": "994f07ba-0bf6-482e-80fd-8592874ebb2d",
+    "sku": "CM465GM",
+    "slug": "cm465gm",
+    "name": "CM465GM",
+    "categoryPath": "Appliances / Coffee Machines",
+    "url": "https://www.caple.co.uk/online-shop/appliances/coffee-machines/cm465gm/"
+  },
+  {
+    "productId": "a5709a60-0ad1-4bfc-83d8-0859fcf48d49",
+    "sku": "CM465SS",
+    "slug": "cm465ss",
+    "name": "CM465SS",
+    "categoryPath": "Appliances / Coffee Machines",
+    "url": "https://www.caple.co.uk/online-shop/appliances/coffee-machines/cm465ss/"
+  },
+  {
+    "productId": "1d5a4567-ff1e-4757-b1bf-3c40fdfdfab8",
+    "sku": "CMS260BG",
+    "slug": "cms260bg",
+    "name": "CMS260BG",
+    "categoryPath": "Appliances / Microwaves",
+    "url": "https://www.caple.co.uk/online-shop/appliances/microwaves/combination/cms260bg/"
+  },
+  {
+    "productId": "ff8cda56-d063-420c-9763-9826143e7d4b",
+    "sku": "CMS260BS",
+    "slug": "cms260bs",
+    "name": "CMS260BS",
+    "categoryPath": "Appliances / Microwaves",
+    "url": "https://www.caple.co.uk/online-shop/appliances/microwaves/combination/cms260bs/"
+  },
+  {
+    "productId": "2d65b414-80c0-4ebd-b374-797e25ea283a",
+    "sku": "CMS260GM",
+    "slug": "cms260gm",
+    "name": "CMS260GM",
+    "categoryPath": "Appliances / Microwaves",
+    "url": "https://www.caple.co.uk/online-shop/appliances/microwaves/combination/cms260gm/"
+  },
+  {
+    "productId": "f91be8bc-5658-4dd0-909b-08d1f2ee5ffc",
+    "sku": "CMS260SS",
+    "slug": "cms260ss",
+    "name": "CMS260SS",
+    "categoryPath": "Appliances / Microwaves",
+    "url": "https://www.caple.co.uk/online-shop/sale/appliance-sale/cms260ss/"
+  },
+  {
+    "productId": "06600f50-8c59-4481-a973-c9a199382ea9",
+    "sku": "COG-BC",
+    "slug": "cog-bc",
+    "name": "COG-BC",
+    "categoryPath": "Sinks & Taps / Taps / Single Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/single-lever/cog-bc/"
+  },
+  {
+    "productId": "cdeb2128-b947-4621-8d30-f83854dec1a1",
+    "sku": "COL-CH",
+    "slug": "col-ch",
+    "name": "COL-CH",
+    "categoryPath": "Sinks & Taps / Taps / Dual Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/col-ch/"
+  },
+  {
+    "productId": "51085ad9-3b17-4b48-9559-e15c21b73188",
+    "sku": "COR541SL",
+    "slug": "cor541sl",
+    "name": "COR541SL",
+    "categoryPath": "Appliances / Extraction / Ceiling Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/ceiling/cor541sl/"
+  },
+  {
+    "productId": "8c2294de-1b68-48f4-a276-74cd7ad9765d",
+    "sku": "CPBS4",
+    "slug": "cpbs4",
+    "name": "CPBS4",
+    "categoryPath": "Sinks & Taps / Sinks / Ceramic",
+    "url": "https://www.caple.co.uk/online-shop/sinks/ceramic/cpbs4/"
+  },
+  {
+    "productId": "fb02f6be-62cd-4cd5-aafe-71ea4a11f39c",
+    "sku": "CPBS5BK",
+    "slug": "cpbs5bk",
+    "name": "CPBS5BK",
+    "categoryPath": "Sinks & Taps / Sinks / Ceramic",
+    "url": "https://www.caple.co.uk/online-shop/sinks/ceramic/cpbs5bk/"
+  },
+  {
+    "productId": "80e57750-857c-46b7-b3b3-ad483a69f7d9",
+    "sku": "CPBS600",
+    "slug": "cpbs600",
+    "name": "CPBS600",
+    "categoryPath": "Sinks & Taps / Sinks / Ceramic",
+    "url": "https://www.caple.co.uk/online-shop/sinks/ceramic/cpbs600/"
+  },
+  {
+    "productId": "7135d273-566c-4afc-ac6b-a0a1222c2c4f",
+    "sku": "CPBS760",
+    "slug": "cpbs760",
+    "name": "CPBS760",
+    "categoryPath": "Sinks & Taps / Sinks / Ceramic",
+    "url": "https://www.caple.co.uk/online-shop/sinks/ceramic/cpbs760/"
+  },
+  {
+    "productId": "a02ae6b9-1782-49dc-81e7-bf026e76f860",
+    "sku": "CPBS800",
+    "slug": "cpbs800",
+    "name": "CPBS800",
+    "categoryPath": "Sinks & Taps / Sinks / Ceramic",
+    "url": "https://www.caple.co.uk/online-shop/sinks/ceramic/cpbs800/"
+  },
+  {
+    "productId": "4c977a58-997f-4343-b8cc-451d33c2a805",
+    "sku": "CPCIB3",
+    "slug": "cpcib3",
+    "name": "CPCIB3",
+    "categoryPath": "Sinks & Taps / Sinks / Ceramic",
+    "url": "https://www.caple.co.uk/online-shop/sinks/ceramic/cpcib3/"
+  },
+  {
+    "productId": "39aa7809-f3c2-4ce1-84f6-16b5b32acaff",
+    "sku": "CPCIB760",
+    "slug": "cpcib760",
+    "name": "CPCIB760",
+    "categoryPath": "Sinks & Taps / Sinks / Ceramic",
+    "url": "https://www.caple.co.uk/online-shop/sinks/ceramic/cpcib760/"
+  },
+  {
+    "productId": "bb4a62c2-5418-4773-9a4f-11a9958e2acd",
+    "sku": "CPWDS762",
+    "slug": "cpwds762",
+    "name": "CPWDS762",
+    "categoryPath": "Sinks & Taps / Sinks / Ceramic",
+    "url": "https://www.caple.co.uk/online-shop/sinks/ceramic/cpwds762/"
+  },
+  {
+    "productId": "825459f8-57ee-4fc3-a791-b954b94dfc28",
+    "sku": "CPWIB3",
+    "slug": "cpwib3",
+    "name": "CPWIB3",
+    "categoryPath": "Sinks & Taps / Sinks / Ceramic",
+    "url": "https://www.caple.co.uk/online-shop/sinks/ceramic/cpwib3/"
+  },
+  {
+    "productId": "41591d01-2ce8-4bad-8c91-0a9f8fd140ac",
+    "sku": "CR101SS",
+    "slug": "cr101ss",
+    "name": "CR101SS",
+    "categoryPath": "uncategorised",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/cr101ss/"
+  },
+  {
+    "productId": "3a8cee0f-45bf-4b81-9643-43f191e78cdf",
+    "sku": "CR151SS",
+    "slug": "cr151ss",
+    "name": "CR151SS",
+    "categoryPath": "uncategorised",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/cr151ss/"
+  },
+  {
+    "productId": "5e59bc26-9e4c-49e6-ad5d-d036eb67efb0",
+    "sku": "CR700",
+    "slug": "cr700",
+    "name": "CR700",
+    "categoryPath": "Appliances / Extraction / Island Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/island/cr700/"
+  },
+  {
+    "productId": "680e1f16-6cca-4da1-b87b-b460d69ceaa1",
+    "sku": "CR700SL",
+    "slug": "cr700sl",
+    "name": "CR700SL",
+    "categoryPath": "Appliances / Extraction / Island Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/island/cr700sl/"
+  },
+  {
+    "productId": "d57bedb8-9334-46c2-9108-4eb9f055b3fd",
+    "sku": "CR700WH",
+    "slug": "cr700wh",
+    "name": "CR700WH",
+    "categoryPath": "Appliances / Extraction / Island Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/island/cr700wh/"
+  },
+  {
+    "productId": "836b7cdb-9f8c-4942-b936-2c2b5b26f2a3",
+    "sku": "CR91SS",
+    "slug": "cr91ss",
+    "name": "CR91SS",
+    "categoryPath": "uncategorised",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/cr91ss/"
+  },
+  {
+    "productId": "4b610e06-0695-41cc-921b-671fcbc9a1b6",
+    "sku": "CRU4-CH",
+    "slug": "cru4-ch",
+    "name": "CRU4-CH",
+    "categoryPath": "Sinks & Taps / Taps / Dual Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/cru4-ch/"
+  },
+  {
+    "productId": "527b2949-646e-4635-9493-79f42c110504",
+    "sku": "CU100",
+    "slug": "cu100",
+    "name": "CU100",
+    "categoryPath": "uncategorised",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/cu100/"
+  },
+  {
+    "productId": "b37caf8e-2123-4907-8bf8-0e4a2c51f0b8",
+    "sku": "CU150",
+    "slug": "cu150",
+    "name": "CU150",
+    "categoryPath": "uncategorised",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/cu150/"
+  },
+  {
+    "productId": "164dbd61-2659-4eb4-a298-ac6aecbf934b",
+    "sku": "DALPUR2-SS",
+    "slug": "dalpur2-ss",
+    "name": "DALPUR2-SS",
+    "categoryPath": "Sinks & Taps / Taps / Puriti Taps",
+    "url": "https://www.caple.co.uk/online-shop/taps/puriti/dalpur2-ss/"
+  },
+  {
+    "productId": "dc1482c5-ac40-4930-a0b5-624853c92d12",
+    "sku": "DD522BK",
+    "slug": "dd522bk",
+    "name": "DD522BK",
+    "categoryPath": "Appliances / Extraction / Downdrafts",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/downdrafts/dd522bk/"
+  },
+  {
+    "productId": "29bcde67-0638-4d65-885c-72977dca6b31",
+    "sku": "DD523BK",
+    "slug": "dd523bk",
+    "name": "DD523BK",
+    "categoryPath": "Appliances / Extraction / Downdrafts",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/downdrafts/dd523bk/"
+  },
+  {
+    "productId": "f9323135-8eaa-4b6d-bae3-5fccf042c923",
+    "sku": "DD606BK",
+    "slug": "dd606bk",
+    "name": "DD606BK",
+    "categoryPath": "Appliances / Extraction / Downdrafts",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/downdrafts/dd606bk/"
+  },
+  {
+    "productId": "e644ec34-7a84-42b5-a938-c4d81657bc50",
+    "sku": "DD610BK",
+    "slug": "dd610bk",
+    "name": "DD610BK",
+    "categoryPath": "Appliances / Extraction / Downdrafts",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/induction/dd610bk/"
+  },
+  {
+    "productId": "df551e1d-06e9-404f-919a-065c2f98e1ff",
+    "sku": "DD780BK",
+    "slug": "dd780bk",
+    "name": "DD780BK",
+    "categoryPath": "Appliances / Extraction / Downdrafts",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/induction/dd780bk/"
+  },
+  {
+    "productId": "80a85541-7543-4802-aec1-3494d356247b",
+    "sku": "DD782BK",
+    "slug": "dd782bk",
+    "name": "DD782BK",
+    "categoryPath": "Appliances / Extraction / Downdrafts",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/induction/dd782bk/"
+  },
+  {
+    "productId": "76240602-a03f-4e8f-811d-73508ed86c62",
+    "sku": "DD810BK",
+    "slug": "dd810bk",
+    "name": "DD810BK",
+    "categoryPath": "Appliances / Extraction / Downdrafts",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/induction/dd810bk/"
+  },
+  {
+    "productId": "fafeca2d-434e-4be2-ad33-c6db84b500e1",
+    "sku": "DD820BK",
+    "slug": "dd820bk",
+    "name": "DD820BK",
+    "categoryPath": "Appliances / Extraction / Downdrafts",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/induction/dd820bk/"
+  },
+  {
+    "productId": "18789ca9-be10-4bc5-a6eb-c9e668354cea",
+    "sku": "DD901BK",
+    "slug": "dd901bk",
+    "name": "DD901BK",
+    "categoryPath": "Appliances / Extraction / Downdrafts",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/downdrafts/dd901bk/"
+  },
+  {
+    "productId": "018ed068-39a2-4542-9a4a-284d9c6c8ed7",
+    "sku": "DD903BK",
+    "slug": "dd903bk",
+    "name": "DD903BK",
+    "categoryPath": "Appliances / Extraction / Downdrafts",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/downdrafts/dd903bk/"
+  },
+  {
+    "productId": "558a4467-b044-4feb-90b9-38a94f653f48",
+    "sku": "DD912BK",
+    "slug": "dd912bk",
+    "name": "DD912BK",
+    "categoryPath": "Appliances / Extraction / Downdrafts",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/downdrafts/dd912bk/"
+  },
+  {
+    "productId": "db20d483-2197-4ae5-9179-237c7769d03d",
+    "sku": "DD925CO",
+    "slug": "dd925co",
+    "name": "DD925CO",
+    "categoryPath": "Appliances / Extraction / Downdrafts",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/downdrafts/dd925co/"
+  },
+  {
+    "productId": "d7991681-c5b8-4809-bcc2-2c2ac43a27ae",
+    "sku": "DEL-CH",
+    "slug": "del-ch",
+    "name": "DEL-CH",
+    "categoryPath": "Sinks & Taps / Taps / Single Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/single-lever/del-ch/"
+  },
+  {
+    "productId": "fdfe0478-f0a2-4161-bcfe-b5d49c6b35a2",
+    "sku": "DI45",
+    "slug": "di45",
+    "name": "DI45",
+    "categoryPath": "Sinks & Taps / Sinks / Stainless Steel",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/di45/"
+  },
+  {
+    "productId": "c749e813-c8b6-4977-a203-390700b22380",
+    "sku": "DI482",
+    "slug": "di482",
+    "name": "DI482",
+    "categoryPath": "Appliances / Dishwashers",
+    "url": "https://www.caple.co.uk/online-shop/appliances/dishwashers/di482/"
+  },
+  {
+    "productId": "b50d277f-6257-4a4a-af2e-4024043f2250",
+    "sku": "DI633",
+    "slug": "di633",
+    "name": "DI633",
+    "categoryPath": "Appliances / Dishwashers",
+    "url": "https://www.caple.co.uk/online-shop/appliances/dishwashers/di633/"
+  },
+  {
+    "productId": "60afb337-5c39-4ae3-9f25-899ee27da10a",
+    "sku": "DI642",
+    "slug": "di642",
+    "name": "DI642",
+    "categoryPath": "Appliances / Dishwashers",
+    "url": "https://www.caple.co.uk/online-shop/appliances/dishwashers/di642/"
+  },
+  {
+    "productId": "48fd887c-d03e-40eb-a968-b459f9586e9a",
+    "sku": "DI655",
+    "slug": "di655",
+    "name": "DI655",
+    "categoryPath": "Appliances / Dishwashers",
+    "url": "https://www.caple.co.uk/online-shop/appliances/dishwashers/di655/"
+  },
+  {
+    "productId": "e7e4857c-f08d-4e44-b3f2-79263bfed6e3",
+    "sku": "DO100SS",
+    "slug": "do100ss",
+    "name": "DO100SS",
+    "categoryPath": "uncategorised",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/do100ss/"
+  },
+  {
+    "productId": "929f7dd5-8407-45be-b250-5a3be6bf44ef",
+    "sku": "DO150SS",
+    "slug": "do150ss",
+    "name": "DO150SS",
+    "categoryPath": "uncategorised",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/do150ss/"
+  },
+  {
+    "productId": "fdb80082-5f28-45a1-8c20-6dbc077715a3",
+    "sku": "DUM-CH",
+    "slug": "dum-ch",
+    "name": "DUM-CH",
+    "categoryPath": "Sinks & Taps / Taps / Single Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/single-lever/dum-ch/"
+  },
+  {
+    "productId": "cd9804e2-8874-43f5-ba21-599ed31ae379",
+    "sku": "EMB-BRI-BK",
+    "slug": "emb-bri-bk",
+    "name": "EMB-BRI-BK",
+    "categoryPath": "Sinks & Taps / Taps / Bridge Taps",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/emb-bri-bk/"
+  },
+  {
+    "productId": "9710abb8-c448-417d-8765-7f19888ec9e7",
+    "sku": "EMB-BRI-SS",
+    "slug": "emb-bri-ss",
+    "name": "EMB-BRI-SS",
+    "categoryPath": "Sinks & Taps / Taps / Bridge Taps",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/emb-bri-ss/"
+  },
+  {
+    "productId": "738ff54b-2f05-4024-b1f7-1f1383a243a1",
+    "sku": "ETT150U",
+    "slug": "ett150u",
+    "name": "ETT150U",
+    "categoryPath": "Sinks & Taps / Sinks / Ceramic",
+    "url": "https://www.caple.co.uk/online-shop/sinks/ceramic/ett150u/"
+  },
+  {
+    "productId": "50d140a9-d3fa-4eda-a217-801d3e5ffe4d",
+    "sku": "ETT600U",
+    "slug": "ett600u",
+    "name": "ETT600U",
+    "categoryPath": "Sinks & Taps / Sinks / Ceramic",
+    "url": "https://www.caple.co.uk/online-shop/sinks/ceramic/ett600u/"
+  },
+  {
+    "productId": "b717ef26-60e8-477a-9fa4-3e17be187454",
+    "sku": "FGC621",
+    "slug": "fgc621",
+    "name": "FGC621",
+    "categoryPath": "Appliances / Extraction / Wall Chimney Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/fgc621/"
+  },
+  {
+    "productId": "56cc33fc-0415-4ae8-b52c-2a78ebc1aa5d",
+    "sku": "FGC721",
+    "slug": "fgc721",
+    "name": "FGC721",
+    "categoryPath": "Appliances / Extraction / Wall Chimney Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/fgc721/"
+  },
+  {
+    "productId": "1944ff26-23d9-464e-a327-69e3e6e6e3a0",
+    "sku": "FGC920",
+    "slug": "fgc920",
+    "name": "FGC920",
+    "categoryPath": "Appliances / Extraction / Wall Chimney Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/fgc920/"
+  },
+  {
+    "productId": "d4e41438-0a64-4122-bd8e-6c0fbdcf3d54",
+    "sku": "FLT-BK",
+    "slug": "flt-bk",
+    "name": "FLT-BK",
+    "categoryPath": "Sinks & Taps / Taps / Single Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/single-lever/flt-bk/"
+  },
+  {
+    "productId": "941ed82e-717d-4ab3-b251-598edf1b53f9",
+    "sku": "FLT-CH",
+    "slug": "flt-ch",
+    "name": "FLT-CH",
+    "categoryPath": "Sinks & Taps / Taps / Single Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/single-lever/flt-ch/"
+  },
+  {
+    "productId": "a59b9ff3-dc01-401e-91d0-162149010103",
+    "sku": "FORM150L",
+    "slug": "form150l",
+    "name": "FORM150L",
+    "categoryPath": "uncategorised",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/form150l/"
+  },
+  {
+    "productId": "1633f21b-dff7-40ff-a10f-69f7bbf09b00",
+    "sku": "FORM150R",
+    "slug": "form150r",
+    "name": "FORM150R",
+    "categoryPath": "uncategorised",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/form150r/"
+  },
+  {
+    "productId": "b41ba167-e0e2-4f43-b84e-942c9be59fa1",
+    "sku": "FORM150UNI",
+    "slug": "form150uni",
+    "name": "FORM150UNI",
+    "categoryPath": "Sinks & Taps / Sinks / Stainless Steel",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/form150uni/"
+  },
+  {
+    "productId": "7a539652-7223-4b83-8a01-a223c25b021f",
+    "sku": "FORM17",
+    "slug": "form17",
+    "name": "FORM17",
+    "categoryPath": "Sinks & Taps / Sinks / Stainless Steel",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/form17/"
+  },
+  {
+    "productId": "2c77e34d-e163-49ea-8c5a-c43386b74d6e",
+    "sku": "FORM33",
+    "slug": "form33",
+    "name": "FORM33",
+    "categoryPath": "Sinks & Taps / Sinks / Stainless Steel",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/form33/"
+  },
+  {
+    "productId": "cc1dcf19-662b-4c06-97a2-6527de5ad881",
+    "sku": "FORM3636",
+    "slug": "form3636",
+    "name": "FORM3636",
+    "categoryPath": "Sinks & Taps / Sinks / Stainless Steel",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/form3636/"
+  },
+  {
+    "productId": "ab3cedd1-7717-422f-9f6b-f22fb0c26c6c",
+    "sku": "FORM42",
+    "slug": "form42",
+    "name": "FORM42",
+    "categoryPath": "Sinks & Taps / Sinks / Stainless Steel",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/form42/"
+  },
+  {
+    "productId": "c367bd71-a9a1-4ade-aa0d-049e52138326",
+    "sku": "FORM52",
+    "slug": "form52",
+    "name": "FORM52",
+    "categoryPath": "Sinks & Taps / Sinks / Stainless Steel",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/form52/"
+  },
+  {
+    "productId": "7484f045-abd4-4433-aa90-3a3c160908d2",
+    "sku": "FOS4IN1GM",
+    "slug": "fos4in1gm",
+    "name": "FOS4IN1GM",
+    "categoryPath": "Sinks & Taps / Taps / Steaming Water Taps",
+    "url": "https://www.caple.co.uk/online-shop/taps/steaming-hot-water-taps/fos4in1gm/"
+  },
+  {
+    "productId": "8b2b4d50-633e-49c5-b2b2-fee4c9ecb98f",
+    "sku": "FOS4IN1SS",
+    "slug": "fos4in1ss",
+    "name": "FOS4IN1SS",
+    "categoryPath": "Sinks & Taps / Taps / Steaming Water Taps",
+    "url": "https://www.caple.co.uk/online-shop/taps/steaming-hot-water-taps/fos4in1ss/"
+  },
+  {
+    "productId": "c21d2735-fb02-4976-81c7-54f697d69deb",
+    "sku": "FOX100",
+    "slug": "fox100",
+    "name": "FOX100",
+    "categoryPath": "Sinks & Taps / Sinks / Ceramic",
+    "url": "https://www.caple.co.uk/online-shop/sinks/ceramic/fox100/"
+  },
+  {
+    "productId": "849bcf81-8275-4f36-968f-d719ad49718d",
+    "sku": "FOX150",
+    "slug": "fox150",
+    "name": "FOX150",
+    "categoryPath": "Sinks & Taps / Sinks / Ceramic",
+    "url": "https://www.caple.co.uk/online-shop/sinks/ceramic/fox150/"
+  },
+  {
+    "productId": "803e979e-48f1-4ae1-acfc-0868754c5f99",
+    "sku": "FRA-AB",
+    "slug": "fra-ab",
+    "name": "FRA-AB",
+    "categoryPath": "Sinks & Taps / Taps / Single Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/single-lever/fra-ab/"
+  },
+  {
+    "productId": "0d5a5d84-9d91-4471-80a0-0f02c7238f03",
+    "sku": "FRA-SS",
+    "slug": "fra-ss",
+    "name": "FRA-SS",
+    "categoryPath": "Sinks & Taps / Taps / Single Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/single-lever/fra-ss/"
+  },
+  {
+    "productId": "8e1cc6c2-8f54-4141-a5e3-722f57371a1a",
+    "sku": "FRE-CH",
+    "slug": "fre-ch",
+    "name": "FRE-CH",
+    "categoryPath": "Sinks & Taps / Taps / Pull Out & Spray",
+    "url": "https://www.caple.co.uk/online-shop/taps/pull-out/fre-ch/"
+  },
+  {
+    "productId": "7c2612e8-446c-4e6c-a951-8027c3f3b4b5",
+    "sku": "FRI151",
+    "slug": "fri151",
+    "name": "FRI151",
+    "categoryPath": "Sinks & Taps / Sinks / Ceramic",
+    "url": "https://www.caple.co.uk/online-shop/sinks/ceramic/fri151/"
+  },
+  {
+    "productId": "bd95e9cd-eb17-4286-9645-61e64b893f45",
+    "sku": "FRS-CH",
+    "slug": "frs-ch",
+    "name": "FRS-CH",
+    "categoryPath": "Sinks & Taps / Taps / Single Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/single-lever/frs-ch/"
+  },
+  {
+    "productId": "fc5acf75-f131-4d4d-bb85-2042adecbb05",
+    "sku": "FSCHSS9",
+    "slug": "fschss9",
+    "name": "FSCHSS9",
+    "categoryPath": "Appliances / Extraction / Built-Under Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/integrated/fschss9/"
+  },
+  {
+    "productId": "eef5cac8-1029-4407-9a07-4a740fcba5b3",
+    "sku": "GUC1223",
+    "slug": "guc1223",
+    "name": "GUC1223",
+    "categoryPath": "Appliances / Extraction / Plasma Filters",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/extraction-extraction/guc1223/"
+  },
+  {
+    "productId": "854c3d26-e403-47d2-9b63-a77e8dc8d5fd",
+    "sku": "GUC1323",
+    "slug": "guc1323",
+    "name": "GUC1323",
+    "categoryPath": "Appliances / Extraction / Plasma Filters",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/extraction-extraction/guc1323/"
+  },
+  {
+    "productId": "29b09b11-f1ba-4ae3-8646-81c5bb5d5178",
+    "sku": "HAD-AB",
+    "slug": "had-ab",
+    "name": "HAD-AB",
+    "categoryPath": "Sinks & Taps / Taps / Dual Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/had-ab/"
+  },
+  {
+    "productId": "0541c039-4ccb-471a-af4b-2ad6c37e9416",
+    "sku": "HAD-BN",
+    "slug": "had-bn",
+    "name": "HAD-BN",
+    "categoryPath": "Sinks & Taps / Taps / Dual Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/had-bn/"
+  },
+  {
+    "productId": "18e54dbd-e84d-4aff-9eb7-2b86fe782dea",
+    "sku": "HAD-CH",
+    "slug": "had-ch",
+    "name": "HAD-CH",
+    "categoryPath": "Sinks & Taps / Taps / Dual Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/had-ch/"
+  },
+  {
+    "productId": "7d1e6186-f6bb-41ae-a357-484d44d718f0",
+    "sku": "HAMILTON",
+    "slug": "hamilton",
+    "name": "HAMILTON",
+    "categoryPath": "Sinks & Taps / Sinks / Ceramic",
+    "url": "https://www.caple.co.uk/online-shop/sinks/ceramic/hamilton/"
+  },
+  {
+    "productId": "03b18358-368b-4d42-8cbf-a2358ad81143",
+    "sku": "HAMPSHIRE",
+    "slug": "hampshire",
+    "name": "HAMPSHIRE",
+    "categoryPath": "Sinks & Taps / Sinks / Ceramic",
+    "url": "https://www.caple.co.uk/online-shop/sinks/ceramic/hampshire/"
+  },
+  {
+    "productId": "ce40c404-ceea-4d9e-bed8-e88c5f634d07",
+    "sku": "HARPUR-BS",
+    "slug": "harpur-bs",
+    "name": "HARPUR-BS",
+    "categoryPath": "Sinks & Taps / Taps / Puriti Taps",
+    "url": "https://www.caple.co.uk/online-shop/taps/puriti/harpur-bs/"
+  },
+  {
+    "productId": "c6682999-4455-4a73-b49d-8601baae6ed8",
+    "sku": "HARPUR-CO",
+    "slug": "harpur-co",
+    "name": "HARPUR-CO",
+    "categoryPath": "Sinks & Taps / Taps / Puriti Taps",
+    "url": "https://www.caple.co.uk/online-shop/taps/puriti/harpur-co/"
+  },
+  {
+    "productId": "383cf17a-31d1-4db7-bdc7-6ffba46c57a7",
+    "sku": "HARPUR-GD",
+    "slug": "harpur-gd",
+    "name": "HARPUR-GD",
+    "categoryPath": "Sinks & Taps / Taps / Puriti Taps",
+    "url": "https://www.caple.co.uk/online-shop/taps/puriti/harpur-gd/"
+  },
+  {
+    "productId": "e2bc751e-c818-4a3b-a49c-27bcd82a7f81",
+    "sku": "HARPUR-GM",
+    "slug": "harpur-gm",
+    "name": "HARPUR-GM",
+    "categoryPath": "Sinks & Taps / Taps / Puriti Taps",
+    "url": "https://www.caple.co.uk/online-shop/taps/puriti/harpur-gm/"
+  },
+  {
+    "productId": "84fd41c2-0aa8-46c5-bd74-d4b3acbbabaa",
+    "sku": "HARPUR-SS",
+    "slug": "harpur-ss",
+    "name": "HARPUR-SS",
+    "categoryPath": "Sinks & Taps / Taps / Puriti Taps",
+    "url": "https://www.caple.co.uk/online-shop/taps/puriti/harpur-ss/"
+  },
+  {
+    "productId": "c3e76674-facd-4046-9682-9bbc019b2f67",
+    "sku": "HARQPUR-SS",
+    "slug": "harqpur-ss",
+    "name": "HARQPUR-SS",
+    "categoryPath": "Sinks & Taps / Taps / Puriti Taps",
+    "url": "https://www.caple.co.uk/online-shop/taps/puriti/harqpur-ss/"
+  },
+  {
+    "productId": "46dc8ec6-2eec-4f00-a647-e84b41576f4e",
+    "sku": "HAY-SS",
+    "slug": "hay-ss",
+    "name": "HAY-SS",
+    "categoryPath": "Sinks & Taps / Taps / Single Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/single-lever/hay-ss/"
+  },
+  {
+    "productId": "71aa422c-f640-463c-bf45-88e90e21d90e",
+    "sku": "HOW-SS",
+    "slug": "how-ss",
+    "name": "HOW-SS",
+    "categoryPath": "Sinks & Taps / Taps / Pull Out & Spray",
+    "url": "https://www.caple.co.uk/online-shop/taps/pull-out/how-ss/"
+  },
+  {
+    "productId": "598ad243-7b0a-4a77-a974-477459541773",
+    "sku": "INCH",
+    "slug": "inch",
+    "name": "INCH",
+    "categoryPath": "Appliances / Extraction / Integrated Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/integrated/inch/"
+  },
+  {
+    "productId": "ecd69bf2-8bcd-4b24-9561-fd599668188d",
+    "sku": "JOY-BS",
+    "slug": "joy-bs",
+    "name": "JOY-BS",
+    "categoryPath": "Sinks & Taps / Taps / Dual Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/joy-bs/"
+  },
+  {
+    "productId": "41599967-f910-496d-86ef-91224e09a63e",
+    "sku": "JOY-CO",
+    "slug": "joy-co",
+    "name": "JOY-CO",
+    "categoryPath": "Sinks & Taps / Taps / Dual Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/joy-co/"
+  },
+  {
+    "productId": "e0f6dd28-6f6e-4498-aefc-f91d3fe21f7b",
+    "sku": "JOY-GD",
+    "slug": "joy-gd",
+    "name": "JOY-GD",
+    "categoryPath": "Sinks & Taps / Taps / Dual Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/joy-gd/"
+  },
+  {
+    "productId": "d743fe31-ae42-4209-9e44-4efd1c38255e",
+    "sku": "JOY-GM",
+    "slug": "joy-gm",
+    "name": "JOY-GM",
+    "categoryPath": "Sinks & Taps / Taps / Dual Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/joy-gm/"
+  },
+  {
+    "productId": "98305fd3-264f-4e8b-973d-54017f61c90d",
+    "sku": "JOY-SS",
+    "slug": "joy-ss",
+    "name": "JOY-SS",
+    "categoryPath": "Sinks & Taps / Taps / Dual Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/joy-ss/"
+  },
+  {
+    "productId": "edd78c8f-b6b6-4385-9cde-ca8e34705773",
+    "sku": "KAR-BK",
+    "slug": "kar-bk",
+    "name": "KAR-BK",
+    "categoryPath": "Sinks & Taps / Taps / Single Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/single-lever/kar-bk/"
+  },
+  {
+    "productId": "fce68ab8-86cb-4669-aeb6-0ff61de15723",
+    "sku": "KAR-BS",
+    "slug": "kar-bs",
+    "name": "KAR-BS",
+    "categoryPath": "Sinks & Taps / Taps / Single Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/single-lever/kar-bs/"
+  },
+  {
+    "productId": "f186dfec-fdce-42bc-add1-7e27b80a40c9",
+    "sku": "KAR-CO",
+    "slug": "kar-co",
+    "name": "KAR-CO",
+    "categoryPath": "Sinks & Taps / Taps / Single Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/single-lever/kar-co/"
+  },
+  {
+    "productId": "b65fc59e-1feb-49d2-b601-f6b59bd8492d",
+    "sku": "KAR-GD",
+    "slug": "kar-gd",
+    "name": "KAR-GD",
+    "categoryPath": "Sinks & Taps / Taps / Single Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/single-lever/kar-gd/"
+  },
+  {
+    "productId": "84e81cd2-76c9-4104-8b1a-33a6a307dad6",
+    "sku": "KAR-GM",
+    "slug": "kar-gm",
+    "name": "KAR-GM",
+    "categoryPath": "Sinks & Taps / Taps / Single Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/single-lever/kar-gm/"
+  },
+  {
+    "productId": "336cb7e1-af70-440f-8a91-fc85ed74dc7a",
+    "sku": "KAR-SS",
+    "slug": "kar-ss",
+    "name": "KAR-SS",
+    "categoryPath": "Sinks & Taps / Taps / Single Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/single-lever/kar-ss/"
+  },
+  {
+    "productId": "4a619408-fcd2-4e30-94eb-e9fdcb510741",
+    "sku": "KEMPTON",
+    "slug": "kempton",
+    "name": "KEMPTON",
+    "categoryPath": "Sinks & Taps / Sinks / Ceramic",
+    "url": "https://www.caple.co.uk/online-shop/sinks/ceramic/kempton/"
+  },
+  {
+    "productId": "fb7c4b50-56c5-41e4-8b7a-9161d80b43f5",
+    "sku": "KON3-CH",
+    "slug": "kon3-ch",
+    "name": "KON3-CH",
+    "categoryPath": "Sinks & Taps / Taps / Dual Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/kon3-ch/"
+  },
+  {
+    "productId": "870161cb-b4a5-435d-a4ff-9bef4b6fce4f",
+    "sku": "KOR-BRI-SS",
+    "slug": "kor-bri-ss",
+    "name": "KOR-BRI-SS",
+    "categoryPath": "Sinks & Taps / Taps / Bridge Taps",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/kor-bri-ss/"
+  },
+  {
+    "productId": "dc836fd8-9380-4c1e-9119-0927f23469b8",
+    "sku": "LAM-BC",
+    "slug": "lam-bc",
+    "name": "LAM-BC",
+    "categoryPath": "Sinks & Taps / Taps / Dual Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/lam-bc/"
+  },
+  {
+    "productId": "9967cc66-0539-49e0-8210-a24b45e4e3c6",
+    "sku": "LAM-BCH",
+    "slug": "lam-bch",
+    "name": "LAM-BCH",
+    "categoryPath": "Sinks & Taps / Taps / Dual Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/lam-bch/"
+  },
+  {
+    "productId": "76925bdd-9cf1-4fb4-ae2f-b2f2b2a5168f",
+    "sku": "LAM-CH",
+    "slug": "lam-ch",
+    "name": "LAM-CH",
+    "categoryPath": "Sinks & Taps / Taps / Dual Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/lam-ch/"
+  },
+  {
+    "productId": "cd2144c0-5170-429d-8226-a0d3ac889c6a",
+    "sku": "LAM3-SS",
+    "slug": "lam3-ss",
+    "name": "LAM3-SS",
+    "categoryPath": "Sinks & Taps / Taps / Dual Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/lam3-ss/"
+  },
+  {
+    "productId": "0b9a621b-ac1b-423b-a391-8b36b0a881b2",
+    "sku": "LAN-CH",
+    "slug": "lan-ch",
+    "name": "LAN-CH",
+    "categoryPath": "Sinks & Taps / Taps / Single Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/single-lever/lan-ch/"
+  },
+  {
+    "productId": "030de3e7-5e5b-44f3-a3d3-102de33d3096",
+    "sku": "LAN-SP-CH",
+    "slug": "lan-sp-ch",
+    "name": "LAN-SP-CH",
+    "categoryPath": "Sinks & Taps / Taps / Pull Out & Spray",
+    "url": "https://www.caple.co.uk/online-shop/taps/pull-out/lan-sp-ch/"
+  },
+  {
+    "productId": "9d316d70-f225-41d7-b1e0-21ee736f99a6",
+    "sku": "LAYPUR2-SS",
+    "slug": "laypur2-ss",
+    "name": "LAYPUR2-SS",
+    "categoryPath": "Sinks & Taps / Taps / Puriti Taps",
+    "url": "https://www.caple.co.uk/online-shop/taps/puriti/laypur2-ss/"
+  },
+  {
+    "productId": "5934642e-4713-496b-8015-940251270313",
+    "sku": "LEV3-BN",
+    "slug": "lev3-bn",
+    "name": "LEV3-BN",
+    "categoryPath": "Sinks & Taps / Taps / Dual Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/lev3-bn/"
+  },
+  {
+    "productId": "97317ea4-d238-4e96-a863-769d06a3f48f",
+    "sku": "LEV3-CH",
+    "slug": "lev3-ch",
+    "name": "LEV3-CH",
+    "categoryPath": "Sinks & Taps / Taps / Dual Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/lev3-ch/"
+  },
+  {
+    "productId": "e54029d2-2d7e-46f2-9c9d-e3ce93d284ea",
+    "sku": "LINGFIELD",
+    "slug": "lingfield",
+    "name": "LINGFIELD",
+    "categoryPath": "Sinks & Taps / Sinks / Ceramic",
+    "url": "https://www.caple.co.uk/online-shop/sinks/ceramic/lingfield/"
+  },
+  {
+    "productId": "0b7844cb-b4fb-4cea-904f-cebf9915a5d0",
+    "sku": "LY100SS",
+    "slug": "ly100ss",
+    "name": "LY100SS",
+    "categoryPath": "uncategorised",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/ly100ss/"
+  },
+  {
+    "productId": "dd007421-6ac5-42ee-a097-1602f7eda734",
+    "sku": "LY150SS",
+    "slug": "ly150ss",
+    "name": "LY150SS",
+    "categoryPath": "uncategorised",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/ly150ss/"
+  },
+  {
+    "productId": "1834036e-e811-45ec-8580-b4eb8a1c3c36",
+    "sku": "MODE045-BS",
+    "slug": "mode045-bs",
+    "name": "MODE045-BS",
+    "categoryPath": "Sinks & Taps / Sinks / Stainless Steel",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/mode045-bs/"
+  },
+  {
+    "productId": "5f1a27d0-2fd3-4417-9153-8395eff984b3",
+    "sku": "MODE045-CO",
+    "slug": "mode045-co",
+    "name": "MODE045-CO",
+    "categoryPath": "Sinks & Taps / Sinks / Stainless Steel",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/mode045-co/"
+  },
+  {
+    "productId": "70a9b157-9ab2-4b81-a845-7e5fea2e55ff",
+    "sku": "MODE045-GD",
+    "slug": "mode045-gd",
+    "name": "MODE045-GD",
+    "categoryPath": "Sinks & Taps / Sinks / Stainless Steel",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/mode045-gd/"
+  },
+  {
+    "productId": "515b6b62-5ada-4cd3-bba7-1b11ee399aef",
+    "sku": "MODE045-GM",
+    "slug": "mode045-gm",
+    "name": "MODE045-GM",
+    "categoryPath": "Sinks & Taps / Sinks / Stainless Steel",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/mode045-gm/"
+  },
+  {
+    "productId": "cfde53e5-d97d-4a8c-9eaf-acb198cec522",
+    "sku": "MODE151L",
+    "slug": "mode151l",
+    "name": "MODE151L",
+    "categoryPath": "Sinks & Taps / Sinks / Stainless Steel",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/mode151l/"
+  },
+  {
+    "productId": "c9a2703d-0582-4c1d-838d-599542d77e2a",
+    "sku": "MODE151R",
+    "slug": "mode151r",
+    "name": "MODE151R",
+    "categoryPath": "Sinks & Taps / Sinks / Stainless Steel",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/mode151r/"
+  },
+  {
+    "productId": "8c3c50e3-5213-4783-9d5b-c00942e5f475",
+    "sku": "MODE175",
+    "slug": "mode175",
+    "name": "MODE175",
+    "categoryPath": "Sinks & Taps / Sinks / Stainless Steel",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/mode175/"
+  },
+  {
+    "productId": "98b4f412-9475-4078-984a-561ef353b937",
+    "sku": "MODE175-GD",
+    "slug": "mode175-gd",
+    "name": "MODE175-GD",
+    "categoryPath": "Sinks & Taps / Sinks / Stainless Steel",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/mode175-gd/"
+  },
+  {
+    "productId": "d985c35b-ecd6-4888-88e1-d28917ed5ec9",
+    "sku": "MODE201",
+    "slug": "mode201",
+    "name": "MODE201",
+    "categoryPath": "Sinks & Taps / Sinks / Stainless Steel",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/mode201/"
+  },
+  {
+    "productId": "31695752-b3e2-420b-af3d-13a0ce4603db",
+    "sku": "MODE251",
+    "slug": "mode251",
+    "name": "MODE251",
+    "categoryPath": "Sinks & Taps / Sinks / Stainless Steel",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/mode251/"
+  },
+  {
+    "productId": "45da80ab-5410-494b-be1c-7126cae63bcd",
+    "sku": "MODE341",
+    "slug": "mode341",
+    "name": "MODE341",
+    "categoryPath": "Sinks & Taps / Sinks / Stainless Steel",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/mode341/"
+  },
+  {
+    "productId": "fa8b3951-acf4-448b-90ef-0f0d207d2f24",
+    "sku": "MODE3415-R-BS",
+    "slug": "mode3415-r-bs",
+    "name": "MODE3415-R-BS",
+    "categoryPath": "Sinks & Taps / Sinks / Stainless Steel",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/mode3415-r-bs/"
+  },
+  {
+    "productId": "9e7980e4-eebd-4dee-8f84-d7680439a1f4",
+    "sku": "MODE3415-R-CO",
+    "slug": "mode3415-r-co",
+    "name": "MODE3415-R-CO",
+    "categoryPath": "Sinks & Taps / Sinks / Stainless Steel",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/mode3415-r-co/"
+  },
+  {
+    "productId": "6780ea15-6b6f-4b35-a342-b9bd297d9ae0",
+    "sku": "MODE3415-R-GD",
+    "slug": "mode3415-r-gd",
+    "name": "MODE3415-R-GD",
+    "categoryPath": "Sinks & Taps / Sinks / Stainless Steel",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/mode3415-r-gd/"
+  },
+  {
+    "productId": "c16414e1-a62d-45ea-80dd-a2b60a71e856",
+    "sku": "MODE3415-R-GM",
+    "slug": "mode3415-r-gm",
+    "name": "MODE3415-R-GM",
+    "categoryPath": "Sinks & Taps / Sinks / Stainless Steel",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/mode3415-r-gm/"
+  },
+  {
+    "productId": "9cd3f3ba-25e7-408a-9a97-6a768deb5ff2",
+    "sku": "MODE401",
+    "slug": "mode401",
+    "name": "MODE401",
+    "categoryPath": "Sinks & Taps / Sinks / Stainless Steel",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/mode401/"
+  },
+  {
+    "productId": "60b4bf48-b86c-4c0f-8972-6bafecd46c22",
+    "sku": "MODE451",
+    "slug": "mode451",
+    "name": "MODE451",
+    "categoryPath": "Sinks & Taps / Sinks / Stainless Steel",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/mode451/"
+  },
+  {
+    "productId": "8453c7a9-7035-4674-b7ba-5379df14a1f0",
+    "sku": "MODE501",
+    "slug": "mode501",
+    "name": "MODE501",
+    "categoryPath": "Sinks & Taps / Sinks / Stainless Steel",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/mode501/"
+  },
+  {
+    "productId": "ba9e2af1-67f8-4848-82cc-a0be2f3b9fa8",
+    "sku": "MODE740-BS",
+    "slug": "mode740-bs",
+    "name": "MODE740-BS",
+    "categoryPath": "Sinks & Taps / Sinks / Stainless Steel",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/mode740-bs/"
+  },
+  {
+    "productId": "ac0625ce-9907-4195-801b-278e1fb0a8dd",
+    "sku": "MODE740-CO",
+    "slug": "mode740-co",
+    "name": "MODE740-CO",
+    "categoryPath": "Sinks & Taps / Sinks / Stainless Steel",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/mode740-co/"
+  },
+  {
+    "productId": "4f15f5fa-2951-4b61-a86a-d41796b9c220",
+    "sku": "MODE740-GD",
+    "slug": "mode740-gd",
+    "name": "MODE740-GD",
+    "categoryPath": "Sinks & Taps / Sinks / Stainless Steel",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/mode740-gd/"
+  },
+  {
+    "productId": "80baaf0e-44bf-45cb-9ad1-2728a9b5d243",
+    "sku": "MODE740-GM",
+    "slug": "mode740-gm",
+    "name": "MODE740-GM",
+    "categoryPath": "Sinks & Taps / Sinks / Stainless Steel",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/mode740-gm/"
+  },
+  {
+    "productId": "7c0fed89-a074-44d4-b55a-0bf65edb68ae",
+    "sku": "MODE751",
+    "slug": "mode751",
+    "name": "MODE751",
+    "categoryPath": "Sinks & Taps / Sinks / Stainless Steel",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/mode751/"
+  },
+  {
+    "productId": "05b7c9c9-d99c-488a-912b-aecfb8b11988",
+    "sku": "MODED045",
+    "slug": "moded045",
+    "name": "MODED045",
+    "categoryPath": "Sinks & Taps / Sinks / Stainless Steel",
+    "url": "https://www.caple.co.uk/online-shop/sale/sinks-sale/moded045/"
+  },
+  {
+    "productId": "c81125bb-1ab9-45c4-bcbe-190a0f5bd893",
+    "sku": "MODED451",
+    "slug": "moded451",
+    "name": "MODED451",
+    "categoryPath": "Sinks & Taps / Sinks / Stainless Steel",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/moded451/"
+  },
+  {
+    "productId": "e90b984e-c43e-45f0-a73f-1e721787c6c2",
+    "sku": "NA100",
+    "slug": "na100",
+    "name": "NA100",
+    "categoryPath": "uncategorised",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/na100/"
+  },
+  {
+    "productId": "25917c5f-a986-474e-8f0f-89e6be94adf7",
+    "sku": "NA150",
+    "slug": "na150",
+    "name": "NA150",
+    "categoryPath": "uncategorised",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/na150/"
+  },
+  {
+    "productId": "2176b9e0-c5df-4962-ba84-322c7a764cb3",
+    "sku": "NATPUR-CH",
+    "slug": "natpur-ch",
+    "name": "NATPUR-CH",
+    "categoryPath": "Sinks & Taps / Taps / Puriti Taps",
+    "url": "https://www.caple.co.uk/online-shop/taps/puriti/natpur-ch/"
+  },
+  {
+    "productId": "f4af323d-715c-4f36-b8a8-19e8b933c3b9",
+    "sku": "NAV-BCH",
+    "slug": "nav-bch",
+    "name": "NAV-BCH",
+    "categoryPath": "Sinks & Taps / Taps / Pull Out & Spray",
+    "url": "https://www.caple.co.uk/online-shop/taps/pull-out/nav-bch/"
+  },
+  {
+    "productId": "db60ec0e-7570-4b92-b88d-44544268a61c",
+    "sku": "NAV-CH",
+    "slug": "nav-ch",
+    "name": "NAV-CH",
+    "categoryPath": "Sinks & Taps / Taps / Pull Out & Spray",
+    "url": "https://www.caple.co.uk/online-shop/taps/pull-out/nav-ch/"
+  },
+  {
+    "productId": "a8d17533-acb4-4edb-b6c4-af456aa26c16",
+    "sku": "NAV-SS",
+    "slug": "nav-ss",
+    "name": "NAV-SS",
+    "categoryPath": "Sinks & Taps / Taps / Pull Out & Spray",
+    "url": "https://www.caple.co.uk/online-shop/taps/pull-out/nav-ss/"
+  },
+  {
+    "productId": "762a37c2-afd3-473a-a787-d2a8cd17fef3",
+    "sku": "NOL-GD",
+    "slug": "nol-gd",
+    "name": "NOL-GD",
+    "categoryPath": "Sinks & Taps / Taps / Single Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/single-lever/nol-gd/"
+  },
+  {
+    "productId": "371cbc42-ccc8-4b24-a77f-caba6366e7cd",
+    "sku": "NOL-SS",
+    "slug": "nol-ss",
+    "name": "NOL-SS",
+    "categoryPath": "Sinks & Taps / Taps / Single Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/single-lever/nol-ss/"
+  },
+  {
+    "productId": "3b3f2fd6-a2ff-42e0-abed-2fa07ff58e41",
+    "sku": "NOV-SS",
+    "slug": "nov-ss",
+    "name": "NOV-SS",
+    "categoryPath": "Sinks & Taps / Taps / Pull Out & Spray",
+    "url": "https://www.caple.co.uk/online-shop/taps/pull-out/nov-ss/"
+  },
+  {
+    "productId": "af1e822d-9d93-4cec-8ba9-b9bc4ed000da",
+    "sku": "OI363",
+    "slug": "oi363",
+    "name": "OI363",
+    "categoryPath": "Appliances / Extraction / Island Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/island/oi363/"
+  },
+  {
+    "productId": "1ab2baee-3986-49e5-af0b-d68c810169c3",
+    "sku": "OM600",
+    "slug": "om600",
+    "name": "OM600",
+    "categoryPath": "Appliances / Extraction / Wall Chimney Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/om600/"
+  },
+  {
+    "productId": "dbeb4749-b08a-431e-96af-b3aacfdb1571",
+    "sku": "OM900",
+    "slug": "om900",
+    "name": "OM900",
+    "categoryPath": "Appliances / Extraction / Wall Chimney Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/om900/"
+  },
+  {
+    "productId": "8149892b-41cf-43b6-a512-024cc02d623b",
+    "sku": "PAL150",
+    "slug": "pal150",
+    "name": "PAL150",
+    "categoryPath": "Sinks & Taps / Sinks / Ceramic",
+    "url": "https://www.caple.co.uk/online-shop/sinks/ceramic/pal150/"
+  },
+  {
+    "productId": "72ff0a93-9807-43dc-a72d-61e5f0f18e74",
+    "sku": "PAL760",
+    "slug": "pal760",
+    "name": "PAL760",
+    "categoryPath": "Sinks & Taps / Sinks / Ceramic",
+    "url": "https://www.caple.co.uk/online-shop/sinks/ceramic/pal760/"
+  },
+  {
+    "productId": "18f4002e-eff1-480f-bcaf-717e5099e79c",
+    "sku": "PEMBERLEY",
+    "slug": "pemberley",
+    "name": "PEMBERLEY",
+    "categoryPath": "Sinks & Taps / Sinks / Ceramic",
+    "url": "https://www.caple.co.uk/online-shop/sinks/ceramic/pemberley/"
+  },
+  {
+    "productId": "3b059d7f-0aed-406a-8b69-56bd494f449f",
+    "sku": "PEN-GD",
+    "slug": "pen-gd",
+    "name": "PEN-GD",
+    "categoryPath": "Sinks & Taps / Taps / Pot Filler",
+    "url": "https://www.caple.co.uk/online-shop/taps/pot-fillers/pen-gd/"
+  },
+  {
+    "productId": "6c4218d4-d3cc-487b-b8d4-5db48d35238b",
+    "sku": "PEN-SS",
+    "slug": "pen-ss",
+    "name": "PEN-SS",
+    "categoryPath": "Sinks & Taps / Taps / Pot Filler",
+    "url": "https://www.caple.co.uk/online-shop/taps/pot-fillers/pen-ss/"
+  },
+  {
+    "productId": "8f4132d4-e691-4d6a-ab1a-b2a55934c577",
+    "sku": "PH500H",
+    "slug": "ph500h",
+    "name": "PH500H",
+    "categoryPath": "Appliances / Plinth Heaters",
+    "url": "https://www.caple.co.uk/online-shop/appliances/plinth-heaters/ph500h/"
+  },
+  {
+    "productId": "4475d489-f78a-4c02-9afb-4f9b198b5ee9",
+    "sku": "PH501E",
+    "slug": "ph501e",
+    "name": "PH501E",
+    "categoryPath": "Appliances / Plinth Heaters",
+    "url": "https://www.caple.co.uk/online-shop/accessories-spares/plinth-heating/ph501e/"
+  },
+  {
+    "productId": "46491c77-e9f7-4029-ad94-f1bd15b952af",
+    "sku": "PLASAH600BK",
+    "slug": "plasah600bk",
+    "name": "PLASAH600BK",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/plasah600bk/"
+  },
+  {
+    "productId": "bb17c616-aa95-4490-89ee-865e3540f69b",
+    "sku": "PLASATA901",
+    "slug": "plasata901",
+    "name": "PLASATA901",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/plasata901/"
+  },
+  {
+    "productId": "572d7e41-e744-4e94-8693-42a35a2eac2f",
+    "sku": "PLASBU525SS",
+    "slug": "plasbu525ss",
+    "name": "PLASBU525SS",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/integrated/plasbu525ss/"
+  },
+  {
+    "productId": "97e02698-7714-4805-a6ef-31e6ee5df74d",
+    "sku": "PLASBU526BK",
+    "slug": "plasbu526bk",
+    "name": "PLASBU526BK",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/integrated/plasbu526bk/"
+  },
+  {
+    "productId": "c409327e-399b-4179-bb7f-df44fcb731f4",
+    "sku": "PLASBU755SS",
+    "slug": "plasbu755ss",
+    "name": "PLASBU755SS",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/integrated/plasbu755ss/"
+  },
+  {
+    "productId": "831d559a-937e-4ed6-9e17-36f7a44e4d5b",
+    "sku": "PLASBU756BK",
+    "slug": "plasbu756bk",
+    "name": "PLASBU756BK",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/integrated/plasbu756bk/"
+  },
+  {
+    "productId": "a176a084-1aab-4d6b-ac62-9973c89eef8c",
+    "sku": "PLASBUCH",
+    "slug": "plasbuch",
+    "name": "PLASBUCH",
+    "categoryPath": "Appliances / Extraction / Built-Under Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/integrated/plasbuch/"
+  },
+  {
+    "productId": "4ed14443-7b8b-43af-a6c7-ea39eff86510",
+    "sku": "PLASBXC611",
+    "slug": "plasbxc611",
+    "name": "PLASBXC611",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/plasbxc611/"
+  },
+  {
+    "productId": "92155a4e-e631-4b68-9201-d9ec19cfa03a",
+    "sku": "PLASBXC911",
+    "slug": "plasbxc911",
+    "name": "PLASBXC911",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/plasbxc911/"
+  },
+  {
+    "productId": "3900eb47-5eb7-4136-8201-baac91c5c9e8",
+    "sku": "PLASBXI911",
+    "slug": "plasbxi911",
+    "name": "PLASBXI911",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/island/plasbxi911/"
+  },
+  {
+    "productId": "a875e71e-92f3-45cb-a88d-8db134313fce",
+    "sku": "PLASCCH101",
+    "slug": "plascch101",
+    "name": "PLASCCH101",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/plascch101/"
+  },
+  {
+    "productId": "1f36ef0d-c0e1-428e-8e48-ddaf155da529",
+    "sku": "PLASCCH601SS",
+    "slug": "plascch601ss",
+    "name": "PLASCCH601SS",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/plascch601ss/"
+  },
+  {
+    "productId": "849f05b4-5d8e-41cd-8fd3-80c69a39aff6",
+    "sku": "PLASCCH701",
+    "slug": "plascch701",
+    "name": "PLASCCH701",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/plascch701/"
+  },
+  {
+    "productId": "af1d6d77-3adb-49fd-855e-304b6d870520",
+    "sku": "PLASCCH901BK",
+    "slug": "plascch901bk",
+    "name": "PLASCCH901BK",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/plascch901bk/"
+  },
+  {
+    "productId": "940345ad-2317-4b59-9623-b05c07b88ba2",
+    "sku": "PLASCCH901SS",
+    "slug": "plascch901ss",
+    "name": "PLASCCH901SS",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/plascch901ss/"
+  },
+  {
+    "productId": "7b538963-343c-48c8-b0b1-722069ad274a",
+    "sku": "PLASCE1122SS",
+    "slug": "plasce1122ss",
+    "name": "PLASCE1122SS",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/ceiling/plasce1122ss/"
+  },
+  {
+    "productId": "c7ed4a5c-9ae3-4dd7-bc72-9271ac8f2060",
+    "sku": "PLASCE1122WH",
+    "slug": "plasce1122wh",
+    "name": "PLASCE1122WH",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/ceiling/plasce1122wh/"
+  },
+  {
+    "productId": "0475938b-0257-4661-8e6e-c6f17574b3ed",
+    "sku": "PLASCE903SS",
+    "slug": "plasce903ss",
+    "name": "PLASCE903SS",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/ceiling/plasce903ss/"
+  },
+  {
+    "productId": "d995bedc-3dbe-4693-b0a5-56bdafe21daa",
+    "sku": "PLASCE903WH",
+    "slug": "plasce903wh",
+    "name": "PLASCE903WH",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/ceiling/plasce903wh/"
+  },
+  {
+    "productId": "f483863c-4634-494b-b353-d59329322187",
+    "sku": "PLASCE930",
+    "slug": "plasce930",
+    "name": "PLASCE930",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/ceiling/plasce930/"
+  },
+  {
+    "productId": "1e96f3ed-9b27-4312-94b6-687493f3e42c",
+    "sku": "PLASCGC611BK",
+    "slug": "plascgc611bk",
+    "name": "PLASCGC611BK",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/plascgc611bk/"
+  },
+  {
+    "productId": "a508699d-250f-4c4c-b736-119b2db3b4f4",
+    "sku": "PLASCGC611SS",
+    "slug": "plascgc611ss",
+    "name": "PLASCGC611SS",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/plascgc611ss/"
+  },
+  {
+    "productId": "2b69e60c-3efa-4eda-a5bb-9af3c76620ee",
+    "sku": "PLASCGC711BK",
+    "slug": "plascgc711bk",
+    "name": "PLASCGC711BK",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/plascgc711bk/"
+  },
+  {
+    "productId": "63dfdc7c-0295-4041-8a01-ad21c183e6c8",
+    "sku": "PLASCGC711SS",
+    "slug": "plascgc711ss",
+    "name": "PLASCGC711SS",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/plascgc711ss/"
+  },
+  {
+    "productId": "fef011a0-9d0f-45fe-83ce-61895b2951b2",
+    "sku": "PLASCGC911BK",
+    "slug": "plascgc911bk",
+    "name": "PLASCGC911BK",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/plascgc911bk/"
+  },
+  {
+    "productId": "603dfe89-e741-472b-855f-7f003d5575b6",
+    "sku": "PLASCGC911SS",
+    "slug": "plascgc911ss",
+    "name": "PLASCGC911SS",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/plascgc911ss/"
+  },
+  {
+    "productId": "9ca3eac5-10eb-41d4-8b7f-18c03a4d5961",
+    "sku": "PLASCGI921",
+    "slug": "plascgi921",
+    "name": "PLASCGI921",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/island/plascgi921/"
+  },
+  {
+    "productId": "22ea58e1-f463-4d06-81e0-7e30ed8ab5a4",
+    "sku": "PLASDD810BK",
+    "slug": "plasdd810bk",
+    "name": "PLASDD810BK",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/induction/plasdd810bk/"
+  },
+  {
+    "productId": "5e0ebaf5-1bb4-4cf1-82a1-39b60fa59cb4",
+    "sku": "PLASDD820BK",
+    "slug": "plasdd820bk",
+    "name": "PLASDD820BK",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/induction/plasdd820bk/"
+  },
+  {
+    "productId": "e2dfa31d-04ef-4a46-aecf-1247f2be0d55",
+    "sku": "PLASDD912BK",
+    "slug": "plasdd912bk",
+    "name": "PLASDD912BK",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/downdrafts/plasdd912bk/"
+  },
+  {
+    "productId": "2548a67f-f011-4b1b-ba9d-6d35e33181fc",
+    "sku": "PLASFGC621",
+    "slug": "plasfgc621",
+    "name": "PLASFGC621",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/plasfgc621/"
+  },
+  {
+    "productId": "5863325d-808a-44b7-a9e6-5f5a1e3e338f",
+    "sku": "PLASFGC920",
+    "slug": "plasfgc920",
+    "name": "PLASFGC920",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/plasfgc920/"
+  },
+  {
+    "productId": "f647b4d4-2f13-4a01-b79b-e60ca6006ea1",
+    "sku": "PLASINCH",
+    "slug": "plasinch",
+    "name": "PLASINCH",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/integrated/plasinch/"
+  },
+  {
+    "productId": "8579393b-d7c6-4f35-abb0-897d5dc5e1fb",
+    "sku": "PLASOI363",
+    "slug": "plasoi363",
+    "name": "PLASOI363",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/island/plasoi363/"
+  },
+  {
+    "productId": "078645ce-b18f-4ee0-997a-57c6428a2c90",
+    "sku": "PLASOM600",
+    "slug": "plasom600",
+    "name": "PLASOM600",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/plasom600/"
+  },
+  {
+    "productId": "6a515ec9-e20e-4039-a68b-98ffa021d5d2",
+    "sku": "PLASOM900",
+    "slug": "plasom900",
+    "name": "PLASOM900",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/plasom900/"
+  },
+  {
+    "productId": "6c13b5a4-b6c6-4256-900f-3c9d0e556bee",
+    "sku": "PLASSP612BK",
+    "slug": "plassp612bk",
+    "name": "PLASSP612BK",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/plassp612bk/"
+  },
+  {
+    "productId": "3ab5418d-fc3b-4900-a2d8-082b1126e14f",
+    "sku": "PLASSP612SS",
+    "slug": "plassp612ss",
+    "name": "PLASSP612SS",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/plassp612ss/"
+  },
+  {
+    "productId": "62eed06a-c94e-4da8-a941-ffc0aee8af35",
+    "sku": "PLASSP912SS",
+    "slug": "plassp912ss",
+    "name": "PLASSP912SS",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/plassp912ss/"
+  },
+  {
+    "productId": "451998c3-8bf0-4811-a335-e79d4f9b7d59",
+    "sku": "PLASST524",
+    "slug": "plasst524",
+    "name": "PLASST524",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/integrated/plasst524/"
+  },
+  {
+    "productId": "9cf311ff-c84d-4ce2-8494-72fa83424b3d",
+    "sku": "PLASST854",
+    "slug": "plasst854",
+    "name": "PLASST854",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/integrated/plasst854/"
+  },
+  {
+    "productId": "1db2d088-c53e-4fb0-bad5-c0c7c149bfac",
+    "sku": "PLASTBU521",
+    "slug": "plastbu521",
+    "name": "PLASTBU521",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/integrated/plastbu521/"
+  },
+  {
+    "productId": "d6a36982-3df1-4dd3-96eb-c7858b5b2417",
+    "sku": "PLASTBU851",
+    "slug": "plastbu851",
+    "name": "PLASTBU851",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/integrated/plastbu851/"
+  },
+  {
+    "productId": "1cf0766c-2341-49a1-8887-b79340f66a21",
+    "sku": "PLASTSCH601",
+    "slug": "plastsch601",
+    "name": "PLASTSCH601",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/integrated/plastsch601/"
+  },
+  {
+    "productId": "0a124f12-47e5-41df-a61a-a405a8f77c32",
+    "sku": "PLASTSCH901",
+    "slug": "plastsch901",
+    "name": "PLASTSCH901",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/integrated/plastsch901/"
+  },
+  {
+    "productId": "6bb35f1f-4c19-49a6-908d-c919496a2090",
+    "sku": "PLASZC622",
+    "slug": "plaszc622",
+    "name": "PLASZC622",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/plaszc622/"
+  },
+  {
+    "productId": "b52071dd-6ec1-40a3-8106-c23317771411",
+    "sku": "PLASZC922",
+    "slug": "plaszc922",
+    "name": "PLASZC922",
+    "categoryPath": "Appliances / Extraction / Wall Chimney Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/plaszc922/"
+  },
+  {
+    "productId": "ea23f1cf-5a93-4345-8698-184b550c6c4a",
+    "sku": "PLASZEL900",
+    "slug": "plaszel900",
+    "name": "PLASZEL900",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/plaszel900/"
+  },
+  {
+    "productId": "c70e005b-0540-4978-b2e1-c501c95ab9f2",
+    "sku": "PLASZEL900GM",
+    "slug": "plaszel900gm",
+    "name": "PLASZEL900GM",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/plaszel900gm/"
+  },
+  {
+    "productId": "f433d316-6576-4b0e-8542-d40f2f57ed9f",
+    "sku": "PLASZI923",
+    "slug": "plaszi923",
+    "name": "PLASZI923",
+    "categoryPath": "Appliances / Extraction / Plasma hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/island/plaszi923/"
+  },
+  {
+    "productId": "a6d28ec7-6d6c-46d6-9827-e734f05020eb",
+    "sku": "POL-BK",
+    "slug": "pol-bk",
+    "name": "POL-BK",
+    "categoryPath": "Sinks & Taps / Taps / Pull Out & Spray",
+    "url": "https://www.caple.co.uk/online-shop/taps/pull-out/pol-bk/"
+  },
+  {
+    "productId": "d5598ab8-ab8c-43f4-a358-687b523fbd4b",
+    "sku": "PRE-BK",
+    "slug": "pre-bk",
+    "name": "PRE-BK",
+    "categoryPath": "Sinks & Taps / Taps / Pull Out & Spray",
+    "url": "https://www.caple.co.uk/online-shop/taps/pull-out/pre-bk/"
+  },
+  {
+    "productId": "2fd1ebff-69ad-4e43-b049-d898678df21c",
+    "sku": "PUT-BRI-AB",
+    "slug": "put-bri-ab",
+    "name": "PUT-BRI-AB",
+    "categoryPath": "Sinks & Taps / Taps / Bridge Taps",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/put-bri-ab/"
+  },
+  {
+    "productId": "ebdca391-95aa-4acd-8381-4aff5550d7ba",
+    "sku": "PUT-BRI-BC",
+    "slug": "put-bri-bc",
+    "name": "PUT-BRI-BC",
+    "categoryPath": "Sinks & Taps / Taps / Bridge Taps",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/put-bri-bc/"
+  },
+  {
+    "productId": "70408676-4cd7-46ad-b154-15e750f4c041",
+    "sku": "PUT-BRI-PS",
+    "slug": "put-bri-ps",
+    "name": "PUT-BRI-PS",
+    "categoryPath": "Sinks & Taps / Taps / Bridge Taps",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/put-bri-ps/"
+  },
+  {
+    "productId": "0eab5d37-cdad-4a9e-a1e7-c5918d906e89",
+    "sku": "PUT-BRI-SS",
+    "slug": "put-bri-ss",
+    "name": "PUT-BRI-SS",
+    "categoryPath": "Sinks & Taps / Taps / Bridge Taps",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/put-bri-ss/"
+  },
+  {
+    "productId": "a0382373-8381-47a7-80b2-2559c4917a95",
+    "sku": "RAW2-CH",
+    "slug": "raw2-ch",
+    "name": "RAW2-CH",
+    "categoryPath": "Sinks & Taps / Taps / Pull Out & Spray",
+    "url": "https://www.caple.co.uk/online-shop/taps/pull-out/raw2-ch/"
+  },
+  {
+    "productId": "e57c2000-1630-4db9-9ec5-1cfe07663daa",
+    "sku": "RBF7",
+    "slug": "rbf7",
+    "name": "RBF7",
+    "categoryPath": "Appliances / Refrigeration / Built-Under",
+    "url": "https://www.caple.co.uk/online-shop/appliances/refrigeration/integrated-refrigeration/rbf7/"
+  },
+  {
+    "productId": "ce2940f6-f848-4f53-a32f-f6d27819bf0a",
+    "sku": "RBL7",
+    "slug": "rbl7",
+    "name": "RBL7",
+    "categoryPath": "Appliances / Refrigeration / Built-Under",
+    "url": "https://www.caple.co.uk/online-shop/appliances/refrigeration/integrated-refrigeration/rbl7/"
+  },
+  {
+    "productId": "5a201d8f-f4d3-4547-811d-510f5f9e4174",
+    "sku": "RBR9",
+    "slug": "rbr9",
+    "name": "RBR9",
+    "categoryPath": "Appliances / Refrigeration / Built-Under",
+    "url": "https://www.caple.co.uk/online-shop/appliances/refrigeration/integrated-refrigeration/rbr9/"
+  },
+  {
+    "productId": "074e263a-a0a2-462f-a1a6-d71ebba00024",
+    "sku": "REL100",
+    "slug": "rel100",
+    "name": "REL100",
+    "categoryPath": "uncategorised",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/rel100/"
+  },
+  {
+    "productId": "a32d08ec-5edb-4204-9c72-15ccb0f4e786",
+    "sku": "REL150",
+    "slug": "rel150",
+    "name": "REL150",
+    "categoryPath": "uncategorised",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/rel150/"
+  },
+  {
+    "productId": "2117445c-d7a0-4397-8aa6-84e7bbb36130",
+    "sku": "RFF732",
+    "slug": "rff732",
+    "name": "RFF732",
+    "categoryPath": "Appliances / Refrigeration / Freestanding",
+    "url": "https://www.caple.co.uk/online-shop/sale/appliance-sale/rff732/"
+  },
+  {
+    "productId": "6237a270-5cbe-457e-bad9-10a4caea8832",
+    "sku": "RI5502",
+    "slug": "ri5502",
+    "name": "RI5502",
+    "categoryPath": "Appliances / Refrigeration / In-Column",
+    "url": "https://www.caple.co.uk/online-shop/appliances/refrigeration/integrated-refrigeration/ri5502/"
+  },
+  {
+    "productId": "f21e6f11-42c8-4da7-af57-fbc0aa7132d1",
+    "sku": "RI5508",
+    "slug": "ri5508",
+    "name": "RI5508",
+    "categoryPath": "Appliances / Refrigeration / In-Column",
+    "url": "https://www.caple.co.uk/online-shop/appliances/refrigeration/integrated-refrigeration/ri5508/"
+  },
+  {
+    "productId": "49eb6c56-bd09-48b8-afc7-2f74be1bab5f",
+    "sku": "RI5520",
+    "slug": "ri5520",
+    "name": "RI5520",
+    "categoryPath": "Appliances / Refrigeration / In-Column",
+    "url": "https://www.caple.co.uk/online-shop/appliances/refrigeration/integrated-refrigeration/ri5520/"
+  },
+  {
+    "productId": "093536ac-259f-4042-9d03-d79b905a98a6",
+    "sku": "RI7303",
+    "slug": "ri7303",
+    "name": "RI7303",
+    "categoryPath": "Appliances / Refrigeration / In-Column",
+    "url": "https://www.caple.co.uk/online-shop/appliances/refrigeration/integrated-refrigeration/ri7303/"
+  },
+  {
+    "productId": "aec82adb-056a-42ec-8f43-3c141215f559",
+    "sku": "RI7308",
+    "slug": "ri7308",
+    "name": "RI7308",
+    "categoryPath": "Appliances / Refrigeration / In-Column",
+    "url": "https://www.caple.co.uk/online-shop/appliances/refrigeration/integrated-refrigeration/ri7308/"
+  },
+  {
+    "productId": "fe68ed11-c59a-4b56-a80a-1e90b4f3a8f2",
+    "sku": "RI7321",
+    "slug": "ri7321",
+    "name": "RI7321",
+    "categoryPath": "Appliances / Refrigeration / In-Column",
+    "url": "https://www.caple.co.uk/online-shop/appliances/refrigeration/integrated-refrigeration/ri7321/"
+  },
+  {
+    "productId": "50447e9d-d70f-4893-a088-125da5fc1992",
+    "sku": "RID-BS",
+    "slug": "rid-bs",
+    "name": "RID-BS",
+    "categoryPath": "Sinks & Taps / Taps / Single Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/single-lever/rid-bs/"
+  },
+  {
+    "productId": "7c53ca2c-ceac-4a59-925b-4540ba1e7000",
+    "sku": "RID-CO",
+    "slug": "rid-co",
+    "name": "RID-CO",
+    "categoryPath": "Sinks & Taps / Taps / Single Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/single-lever/rid-co/"
+  },
+  {
+    "productId": "707bc862-e9e8-4742-a1d6-c9253c69170a",
+    "sku": "RID-GD",
+    "slug": "rid-gd",
+    "name": "RID-GD",
+    "categoryPath": "Sinks & Taps / Taps / Single Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/single-lever/rid-gd/"
+  },
+  {
+    "productId": "0ac9ba9f-5a33-43a5-97da-a988c4f17f59",
+    "sku": "RID-GM",
+    "slug": "rid-gm",
+    "name": "RID-GM",
+    "categoryPath": "Sinks & Taps / Taps / Single Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/single-lever/rid-gm/"
+  },
+  {
+    "productId": "84f92cdc-9a6c-4d1e-89d8-a4ec1711439c",
+    "sku": "RID-SS",
+    "slug": "rid-ss",
+    "name": "RID-SS",
+    "categoryPath": "Sinks & Taps / Taps / Single Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/single-lever/rid-ss/"
+  },
+  {
+    "productId": "afb35c9e-d84e-4856-8072-bc34bb3841ee",
+    "sku": "RIDQ-GD",
+    "slug": "ridq-gd",
+    "name": "RIDQ-GD",
+    "categoryPath": "Sinks & Taps / Taps / Single Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/single-lever/ridq-gd/"
+  },
+  {
+    "productId": "cb1ff5fc-a6b7-477c-b41e-64e74086b245",
+    "sku": "RIDQ-SS",
+    "slug": "ridq-ss",
+    "name": "RIDQ-SS",
+    "categoryPath": "Sinks & Taps / Taps / Single Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/single-lever/ridq-ss/"
+  },
+  {
+    "productId": "cbc949d3-d350-40ca-adce-552ed1e2611f",
+    "sku": "RIF126",
+    "slug": "rif126",
+    "name": "RIF126",
+    "categoryPath": "Appliances / Refrigeration / In-Column",
+    "url": "https://www.caple.co.uk/online-shop/appliances/refrigeration/integrated-refrigeration/rif126/"
+  },
+  {
+    "productId": "ce072f29-30b2-4cb0-a0d0-1b257fa82fe5",
+    "sku": "RIF1797",
+    "slug": "rif1797",
+    "name": "RIF1797",
+    "categoryPath": "Appliances / Refrigeration / In-Column",
+    "url": "https://www.caple.co.uk/online-shop/appliances/refrigeration/integrated-refrigeration/rif1797/"
+  },
+  {
+    "productId": "c87fa634-3198-4f64-b3ae-89b6f9c0746d",
+    "sku": "RIF1801",
+    "slug": "rif1801",
+    "name": "RIF1801",
+    "categoryPath": "Appliances / Refrigeration / In-Column",
+    "url": "https://www.caple.co.uk/online-shop/appliances/refrigeration/integrated-refrigeration/rif1801/"
+  },
+  {
+    "productId": "aa36dead-d49a-446d-bb78-d37ef19b905d",
+    "sku": "RIF893",
+    "slug": "rif893",
+    "name": "RIF893",
+    "categoryPath": "Appliances / Refrigeration / In-Column",
+    "url": "https://www.caple.co.uk/online-shop/appliances/refrigeration/integrated-refrigeration/rif893/"
+  },
+  {
+    "productId": "53b9b7fe-757f-419d-9b9d-a86786f79498",
+    "sku": "RIL126",
+    "slug": "ril126",
+    "name": "RIL126",
+    "categoryPath": "Appliances / Refrigeration / In-Column",
+    "url": "https://www.caple.co.uk/online-shop/appliances/refrigeration/integrated-refrigeration/ril126/"
+  },
+  {
+    "productId": "ce793cf5-a739-4ac5-80bc-0c220620d36e",
+    "sku": "RIL1796",
+    "slug": "ril1796",
+    "name": "RIL1796",
+    "categoryPath": "Appliances / Refrigeration / In-Column",
+    "url": "https://www.caple.co.uk/online-shop/appliances/refrigeration/integrated-refrigeration/ril1796/"
+  },
+  {
+    "productId": "57e20580-5fc8-494a-bde3-89848b7989bd",
+    "sku": "RIL1800",
+    "slug": "ril1800",
+    "name": "RIL1800",
+    "categoryPath": "Appliances / Refrigeration / In-Column",
+    "url": "https://www.caple.co.uk/online-shop/appliances/refrigeration/integrated-refrigeration/ril1800/"
+  },
+  {
+    "productId": "a7e6af68-d333-476b-b0a9-63476c4eed29",
+    "sku": "RIL893",
+    "slug": "ril893",
+    "name": "RIL893",
+    "categoryPath": "Appliances / Refrigeration / In-Column",
+    "url": "https://www.caple.co.uk/online-shop/appliances/refrigeration/integrated-refrigeration/ril893/"
+  },
+  {
+    "productId": "f31d3995-1eed-4e5b-9fa6-8f9027adcf74",
+    "sku": "RIR125",
+    "slug": "rir125",
+    "name": "RIR125",
+    "categoryPath": "Appliances / Refrigeration / In-Column",
+    "url": "https://www.caple.co.uk/online-shop/appliances/refrigeration/integrated-refrigeration/rir125/"
+  },
+  {
+    "productId": "41726ac0-d6a3-483f-9070-c63692ae1619",
+    "sku": "ROB3-SS",
+    "slug": "rob3-ss",
+    "name": "ROB3-SS",
+    "categoryPath": "Sinks & Taps / Taps / Dual Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/rob3-ss/"
+  },
+  {
+    "productId": "c1c460a2-3e40-4a7d-890d-ce79de44e618",
+    "sku": "S-CRU5-AB",
+    "slug": "s-cru5-ab",
+    "name": "S-CRU5-AB",
+    "categoryPath": "Sinks & Taps / Taps / Dual Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/s-cru5-ab/"
+  },
+  {
+    "productId": "b921798c-1400-46a6-9ba7-b55560d8389a",
+    "sku": "S-CRU5-CH",
+    "slug": "s-cru5-ch",
+    "name": "S-CRU5-CH",
+    "categoryPath": "Sinks & Taps / Taps / Dual Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/s-cru5-ch/"
+  },
+  {
+    "productId": "98d85f4c-225c-48ba-940f-5297c28163ed",
+    "sku": "S-CRU5-PTR",
+    "slug": "s-cru5-ptr",
+    "name": "S-CRU5-PTR",
+    "categoryPath": "Sinks & Taps / Taps / Dual Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/s-cru5-ptr/"
+  },
+  {
+    "productId": "1de293ff-9834-4b3e-a4f6-5abefbad1955",
+    "sku": "SALPUR-CH",
+    "slug": "salpur-ch",
+    "name": "SALPUR-CH",
+    "categoryPath": "Sinks & Taps / Taps / Puriti Taps",
+    "url": "https://www.caple.co.uk/online-shop/taps/puriti/salpur-ch/"
+  },
+  {
+    "productId": "1980a3a8-178d-46f8-988c-eadf87bf9827",
+    "sku": "SD140BG",
+    "slug": "sd140bg",
+    "name": "SD140BG",
+    "categoryPath": "Appliances / Warming & Storage Drawers",
+    "url": "https://www.caple.co.uk/online-shop/appliances/warming-drawers/sd140bg/"
+  },
+  {
+    "productId": "99a68c62-2984-4d0f-968a-788cfc637b5f",
+    "sku": "SD140BK",
+    "slug": "sd140bk",
+    "name": "SD140BK",
+    "categoryPath": "Appliances / Warming & Storage Drawers",
+    "url": "https://www.caple.co.uk/online-shop/sale/appliance-sale/sd140bk/"
+  },
+  {
+    "productId": "b832e330-5d1f-4d21-999f-dd62ec96b4e2",
+    "sku": "SHAPWICK",
+    "slug": "shapwick",
+    "name": "SHAPWICK",
+    "categoryPath": "Sinks & Taps / Sinks / Ceramic",
+    "url": "https://www.caple.co.uk/online-shop/sinks/ceramic/shapwick/"
+  },
+  {
+    "productId": "e16251d1-ab6e-4f84-a0d9-3ab48892b270",
+    "sku": "SL7-CH",
+    "slug": "sl7-ch",
+    "name": "SL7-CH",
+    "categoryPath": "Sinks & Taps / Taps / Single Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/single-lever/sl7-ch/"
+  },
+  {
+    "productId": "583e448c-387f-4af8-8cc1-97400795f2ba",
+    "sku": "SLD2-CH",
+    "slug": "sld2-ch",
+    "name": "SLD2-CH",
+    "categoryPath": "Sinks & Taps / Taps / Single Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/single-lever/sld2-ch/"
+  },
+  {
+    "productId": "a6956809-0b6a-4a6b-b290-760531d13ea0",
+    "sku": "SO111SS",
+    "slug": "so111ss",
+    "name": "SO111SS",
+    "categoryPath": "Appliances / Ovens / Steam Ovens",
+    "url": "https://www.caple.co.uk/online-shop/sale/appliance-sale/so111ss/"
+  },
+  {
+    "productId": "a88785fe-c006-4be2-9ec7-11f19752c08f",
+    "sku": "SOT100",
+    "slug": "sot100",
+    "name": "SOT100",
+    "categoryPath": "Sinks & Taps / Sinks / Granite",
+    "url": "https://www.caple.co.uk/online-shop/sinks/granite/sot100/"
+  },
+  {
+    "productId": "ff98e9cc-1202-4f62-8841-3188bdf44d81",
+    "sku": "SP612BK",
+    "slug": "sp612bk",
+    "name": "SP612BK",
+    "categoryPath": "Appliances / Extraction / Wall Chimney Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/sp612bk/"
+  },
+  {
+    "productId": "44bb6826-2a70-4d43-84b2-900581cf5808",
+    "sku": "SP612SS",
+    "slug": "sp612ss",
+    "name": "SP612SS",
+    "categoryPath": "Appliances / Extraction / Wall Chimney Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/sp612ss/"
+  },
+  {
+    "productId": "04799678-c8b3-4d3c-a5f2-793f95f88bae",
+    "sku": "SP912SS",
+    "slug": "sp912ss",
+    "name": "SP912SS",
+    "categoryPath": "Appliances / Extraction / Wall Chimney Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/sp912ss/"
+  },
+  {
+    "productId": "adf1d6a6-1de6-4447-bf1d-8dc7196e828c",
+    "sku": "SP913BK",
+    "slug": "sp913bk",
+    "name": "SP913BK",
+    "categoryPath": "Appliances / Extraction / Wall Chimney Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/sp913bk/"
+  },
+  {
+    "productId": "6f7a352c-2a34-42c5-aa0f-8c20cec37b53",
+    "sku": "SPI2-CH",
+    "slug": "spi2-ch",
+    "name": "SPI2-CH",
+    "categoryPath": "Sinks & Taps / Taps / Pull Out & Spray",
+    "url": "https://www.caple.co.uk/online-shop/taps/pull-out/spi2-ch/"
+  },
+  {
+    "productId": "bb52f98c-a3b1-4bcd-8817-93e638c699b8",
+    "sku": "SPI2-SS",
+    "slug": "spi2-ss",
+    "name": "SPI2-SS",
+    "categoryPath": "Sinks & Taps / Taps / Pull Out & Spray",
+    "url": "https://www.caple.co.uk/online-shop/taps/pull-out/spi2-ss/"
+  },
+  {
+    "productId": "ff072bef-15bb-4bbb-a33a-151665bd6760",
+    "sku": "ST524",
+    "slug": "st524",
+    "name": "ST524",
+    "categoryPath": "Appliances / Extraction / Built-Under Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/integrated/st524/"
+  },
+  {
+    "productId": "9f301c01-324a-42a5-99d3-1fbf8a98e72b",
+    "sku": "ST854",
+    "slug": "st854",
+    "name": "ST854",
+    "categoryPath": "Appliances / Extraction / Built-Under Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/integrated/st854/"
+  },
+  {
+    "productId": "7710a3cb-cc94-437a-9079-fffd7364af58",
+    "sku": "SWA-CH",
+    "slug": "swa-ch",
+    "name": "SWA-CH",
+    "categoryPath": "Sinks & Taps / Taps / Single Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/single-lever/swa-ch/"
+  },
+  {
+    "productId": "b17d8ba4-e9ad-4d1c-804e-488c0d7d80e7",
+    "sku": "TAY-SS",
+    "slug": "tay-ss",
+    "name": "TAY-SS",
+    "categoryPath": "Sinks & Taps / Taps / Single Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/single-lever/tay-ss/"
+  },
+  {
+    "productId": "dca3dc04-f266-4392-8925-dfd2aba8bd7e",
+    "sku": "TAYQ-SS",
+    "slug": "tayq-ss",
+    "name": "TAYQ-SS",
+    "categoryPath": "Sinks & Taps / Taps / Single Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/single-lever/tayq-ss/"
+  },
+  {
+    "productId": "38404816-03a4-4260-b3a5-a23789013ca0",
+    "sku": "TBU521",
+    "slug": "tbu521",
+    "name": "TBU521",
+    "categoryPath": "Appliances / Extraction / Built-Under Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/integrated/tbu521/"
+  },
+  {
+    "productId": "29dc7120-8f2b-4fcc-a286-42548acf61c2",
+    "sku": "TBU851",
+    "slug": "tbu851",
+    "name": "TBU851",
+    "categoryPath": "Appliances / Extraction / Built-Under Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/integrated/tbu851/"
+  },
+  {
+    "productId": "17f4a381-5c3d-4940-b1d1-8cbcb202cb70",
+    "sku": "TDF1100",
+    "slug": "tdf1100",
+    "name": "TDF1100",
+    "categoryPath": "Appliances / Laundry / Tumble Dryer",
+    "url": "https://www.caple.co.uk/online-shop/appliances/laundry/tumble-dryers/tdf1100/"
+  },
+  {
+    "productId": "a4230ad9-5bbb-4f7b-878c-20f2f6456fe9",
+    "sku": "TDI4001",
+    "slug": "tdi4001",
+    "name": "TDI4001",
+    "categoryPath": "Appliances / Laundry / Tumble Dryer",
+    "url": "https://www.caple.co.uk/online-shop/appliances/laundry/tumble-dryers/tdi4001/"
+  },
+  {
+    "productId": "5fc9658d-1fa9-4b3d-84a1-6096a90431cb",
+    "sku": "TEL900",
+    "slug": "tel900",
+    "name": "TEL900",
+    "categoryPath": "Appliances / Extraction / Island Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/island/tel900/"
+  },
+  {
+    "productId": "cad9b947-6cba-44af-873d-f6c6475edd52",
+    "sku": "TOR2-CH",
+    "slug": "tor2-ch",
+    "name": "TOR2-CH",
+    "categoryPath": "Sinks & Taps / Taps / Pull Out & Spray",
+    "url": "https://www.caple.co.uk/online-shop/taps/pull-out/tor2-ch/"
+  },
+  {
+    "productId": "a990aa41-6313-49a6-9a9f-f70be4e575f1",
+    "sku": "TSCH601",
+    "slug": "tsch601",
+    "name": "TSCH601",
+    "categoryPath": "Appliances / Extraction / Telescopic Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/integrated/tsch601/"
+  },
+  {
+    "productId": "32be705b-19fc-4193-ab8a-f2ffeb71a678",
+    "sku": "TSCH901",
+    "slug": "tsch901",
+    "name": "TSCH901",
+    "categoryPath": "Appliances / Extraction / Telescopic Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/integrated/tsch901/"
+  },
+  {
+    "productId": "ee003bf4-213d-4d85-8af0-98152094b504",
+    "sku": "VA100",
+    "slug": "va100",
+    "name": "VA100",
+    "categoryPath": "uncategorised",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/va100/"
+  },
+  {
+    "productId": "bfa18ae5-d18d-496f-8347-3aa051fe18c2",
+    "sku": "VA150",
+    "slug": "va150",
+    "name": "VA150",
+    "categoryPath": "uncategorised",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/va150/"
+  },
+  {
+    "productId": "ff410db5-2175-4ba5-96e8-8bc361c3f6fe",
+    "sku": "VA90",
+    "slug": "va90",
+    "name": "VA90",
+    "categoryPath": "uncategorised",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/va90/"
+  },
+  {
+    "productId": "aca07109-9eac-488d-af73-b2e1b86635af",
+    "sku": "VAP2-3IN1-BS",
+    "slug": "vap2-3in1-bs",
+    "name": "VAP2-3IN1-BS",
+    "categoryPath": "Sinks & Taps / Taps / Steaming Water Taps",
+    "url": "https://www.caple.co.uk/online-shop/taps/steaming-hot-water-taps/vap2-3in1-bs/"
+  },
+  {
+    "productId": "2c2ab8a2-b2b2-43b9-a266-327e31c48251",
+    "sku": "VAP2-3IN1-CO",
+    "slug": "vap2-3in1-co",
+    "name": "VAP2-3IN1-CO",
+    "categoryPath": "Sinks & Taps / Taps / Steaming Water Taps",
+    "url": "https://www.caple.co.uk/online-shop/taps/steaming-hot-water-taps/vap2-3in1-co/"
+  },
+  {
+    "productId": "03e7d230-1a65-4e30-9ee5-1f3189ac64f4",
+    "sku": "VAP2-3IN1-GD",
+    "slug": "vap2-3in1-gd",
+    "name": "VAP2-3IN1-GD",
+    "categoryPath": "Sinks & Taps / Taps / Steaming Water Taps",
+    "url": "https://www.caple.co.uk/online-shop/taps/steaming-hot-water-taps/vap2-3in1-gd/"
+  },
+  {
+    "productId": "32671e0d-65eb-43a5-9013-ca57124b1e18",
+    "sku": "VAP2-3IN1-GM",
+    "slug": "vap2-3in1-gm",
+    "name": "VAP2-3IN1-GM",
+    "categoryPath": "Sinks & Taps / Taps / Steaming Water Taps",
+    "url": "https://www.caple.co.uk/online-shop/taps/steaming-hot-water-taps/vap2-3in1-gm/"
+  },
+  {
+    "productId": "243a0f1d-ab46-4fff-9321-f0330ca06b64",
+    "sku": "VAP2-3IN1-SS",
+    "slug": "vap2-3in1-ss",
+    "name": "VAP2-3IN1-SS",
+    "categoryPath": "Sinks & Taps / Taps / Steaming Water Taps",
+    "url": "https://www.caple.co.uk/online-shop/taps/steaming-hot-water-taps/vap2-3in1-ss/"
+  },
+  {
+    "productId": "95af58bb-56d5-40d4-b9a7-b1b92a150084",
+    "sku": "VAPQ2-3IN1-SS",
+    "slug": "vapq2-3in1-ss",
+    "name": "VAPQ2-3IN1-SS",
+    "categoryPath": "Sinks & Taps / Taps / Steaming Water Taps",
+    "url": "https://www.caple.co.uk/online-shop/taps/steaming-hot-water-taps/vapq2-3in1-ss/"
+  },
+  {
+    "productId": "bb9c0b25-7b93-4030-bd93-5e98d5bf5676",
+    "sku": "VEL410BK",
+    "slug": "vel410bk",
+    "name": "VEL410BK",
+    "categoryPath": "Appliances / Extraction / Island Hoods",
+    "url": "https://www.caple.co.uk/online-shop/sale/appliance-sale/vel410bk/"
+  },
+  {
+    "productId": "d27b0959-719f-4500-8d26-cc7f193af34c",
+    "sku": "VEL410CO",
+    "slug": "vel410co",
+    "name": "VEL410CO",
+    "categoryPath": "Appliances / Extraction / Island Hoods",
+    "url": "https://www.caple.co.uk/online-shop/sale/appliance-sale/vel410co/"
+  },
+  {
+    "productId": "586a489e-7b2d-4a3c-b955-587728b9b044",
+    "sku": "VEL410GD",
+    "slug": "vel410gd",
+    "name": "VEL410GD",
+    "categoryPath": "Appliances / Extraction / Island Hoods",
+    "url": "https://www.caple.co.uk/online-shop/sale/appliance-sale/vel410gd/"
+  },
+  {
+    "productId": "88924cc0-c8ed-4746-a472-9c7437869177",
+    "sku": "VER100",
+    "slug": "ver100",
+    "name": "VER100",
+    "categoryPath": "uncategorised",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/ver100/"
+  },
+  {
+    "productId": "c4db04da-154b-472b-964e-93178f484689",
+    "sku": "VER150",
+    "slug": "ver150",
+    "name": "VER150",
+    "categoryPath": "uncategorised",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/ver150/"
+  },
+  {
+    "productId": "dc3cf56e-4159-4c85-9734-9b96e659e098",
+    "sku": "WAS4-BN",
+    "slug": "was4-bn",
+    "name": "WAS4-BN",
+    "categoryPath": "Sinks & Taps / Taps / Dual Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/was4-bn/"
+  },
+  {
+    "productId": "5f71fab5-7156-4c02-a76e-c565ad5932f3",
+    "sku": "WAS4-CH",
+    "slug": "was4-ch",
+    "name": "WAS4-CH",
+    "categoryPath": "Sinks & Taps / Taps / Dual Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/was4-ch/"
+  },
+  {
+    "productId": "3d3c4645-186b-4d26-a23d-22e9025fe1c9",
+    "sku": "WC1792",
+    "slug": "wc1792",
+    "name": "WC1792",
+    "categoryPath": "Appliances / Wine Cabinets",
+    "url": "https://www.caple.co.uk/online-shop/appliances/wine-coolers/wc1792/"
+  },
+  {
+    "productId": "06255668-bfd3-43ce-bba2-da60541385f7",
+    "sku": "WC1796BG",
+    "slug": "wc1796bg",
+    "name": "WC1796BG",
+    "categoryPath": "Appliances / Wine Cabinets",
+    "url": "https://www.caple.co.uk/online-shop/appliances/wine-coolers/wc1796bg/"
+  },
+  {
+    "productId": "c5f38cad-8856-47ba-9481-c1d681267d0b",
+    "sku": "WC1801",
+    "slug": "wc1801",
+    "name": "WC1801",
+    "categoryPath": "Appliances / Wine Cabinets",
+    "url": "https://www.caple.co.uk/online-shop/appliances/wine-coolers/wc1801/"
+  },
+  {
+    "productId": "5de0df2b-93f4-4313-94e5-785d78e4bfa4",
+    "sku": "WC6100",
+    "slug": "wc6100",
+    "name": "WC6100",
+    "categoryPath": "Appliances / Wine Cabinets",
+    "url": "https://www.caple.co.uk/online-shop/sale/appliance-sale/wc6100/"
+  },
+  {
+    "productId": "2cb3dedd-ca79-4cef-b95d-42c7feaceb35",
+    "sku": "WC6100BG",
+    "slug": "wc6100bg",
+    "name": "WC6100BG",
+    "categoryPath": "Appliances / Wine Cabinets",
+    "url": "https://www.caple.co.uk/online-shop/appliances/wine-coolers/wc6100bg/"
+  },
+  {
+    "productId": "05cba5dc-e321-405e-9353-d4c875d7a2f0",
+    "sku": "WC6100BS",
+    "slug": "wc6100bs",
+    "name": "WC6100BS",
+    "categoryPath": "Appliances / Wine Cabinets",
+    "url": "https://www.caple.co.uk/online-shop/appliances/wine-coolers/wc6100bs/"
+  },
+  {
+    "productId": "3ce57f0e-131d-4e3c-8655-36dca61c368e",
+    "sku": "WC6100GM",
+    "slug": "wc6100gm",
+    "name": "WC6100GM",
+    "categoryPath": "Appliances / Wine Cabinets",
+    "url": "https://www.caple.co.uk/online-shop/appliances/wine-coolers/wc6100gm/"
+  },
+  {
+    "productId": "f6ee8c0f-20d4-48b4-8bc2-36360a53a338",
+    "sku": "WC6100SS",
+    "slug": "wc6100ss",
+    "name": "WC6100SS",
+    "categoryPath": "Appliances / Wine Cabinets",
+    "url": "https://www.caple.co.uk/online-shop/appliances/wine-coolers/wc6100ss/"
+  },
+  {
+    "productId": "c8db18b3-8ed0-4480-821d-7998550500e1",
+    "sku": "WC6130",
+    "slug": "wc6130",
+    "name": "WC6130",
+    "categoryPath": "Appliances / Wine Cabinets",
+    "url": "https://www.caple.co.uk/online-shop/appliances/wine-coolers/wc6130/"
+  },
+  {
+    "productId": "f9f3615c-d395-4417-862c-11fae5ae9d78",
+    "sku": "WC6401",
+    "slug": "wc6401",
+    "name": "WC6401",
+    "categoryPath": "Appliances / Wine Cabinets",
+    "url": "https://www.caple.co.uk/online-shop/sale/appliance-sale/wc6401/"
+  },
+  {
+    "productId": "496416d5-07f2-443b-a606-2574a3ed7e30",
+    "sku": "WC6411BG",
+    "slug": "wc6411bg",
+    "name": "WC6411BG",
+    "categoryPath": "Appliances / Wine Cabinets",
+    "url": "https://www.caple.co.uk/online-shop/appliances/wine-coolers/wc6411bg/"
+  },
+  {
+    "productId": "82afe0ca-f12b-4358-b1e1-b89310349dd3",
+    "sku": "WC6511",
+    "slug": "wc6511",
+    "name": "WC6511",
+    "categoryPath": "Appliances / Wine Cabinets",
+    "url": "https://www.caple.co.uk/online-shop/sale/appliance-sale/wc6511/"
+  },
+  {
+    "productId": "ffa6cf87-e324-4859-9933-6ac0725fd441",
+    "sku": "WC6521BG",
+    "slug": "wc6521bg",
+    "name": "WC6521BG",
+    "categoryPath": "Appliances / Wine Cabinets",
+    "url": "https://www.caple.co.uk/online-shop/appliances/wine-coolers/wc6521bg/"
+  },
+  {
+    "productId": "10fe44f4-a469-431e-b89b-b27a4f837f5d",
+    "sku": "WC6530",
+    "slug": "wc6530",
+    "name": "WC6530",
+    "categoryPath": "Appliances / Wine Cabinets",
+    "url": "https://www.caple.co.uk/online-shop/appliances/wine-coolers/wc6530/"
+  },
+  {
+    "productId": "0cd1e2d3-11cc-451c-9109-510ed71f0e3e",
+    "sku": "WD140BG",
+    "slug": "wd140bg",
+    "name": "WD140BG",
+    "categoryPath": "Appliances / Warming & Storage Drawers",
+    "url": "https://www.caple.co.uk/online-shop/appliances/warming-drawers/wd140bg/"
+  },
+  {
+    "productId": "c4f440a8-2776-41f0-8906-c18eb0fab00f",
+    "sku": "WD140BS",
+    "slug": "wd140bs",
+    "name": "WD140BS",
+    "categoryPath": "Appliances / Warming & Storage Drawers",
+    "url": "https://www.caple.co.uk/online-shop/appliances/warming-drawers/wd140bs/"
+  },
+  {
+    "productId": "2c9ef43b-f142-4e0e-b2b5-d3147bf335f5",
+    "sku": "WD140CLBK",
+    "slug": "wd140clbk",
+    "name": "WD140CLBK",
+    "categoryPath": "Appliances / Warming & Storage Drawers",
+    "url": "https://www.caple.co.uk/online-shop/appliances/warming-drawers/wd140clbk/"
+  },
+  {
+    "productId": "28c3fd13-d806-42d9-97bd-7c50968415c3",
+    "sku": "WD140CLSS",
+    "slug": "wd140clss",
+    "name": "WD140CLSS",
+    "categoryPath": "Appliances / Warming & Storage Drawers",
+    "url": "https://www.caple.co.uk/online-shop/appliances/warming-drawers/wd140clss/"
+  },
+  {
+    "productId": "93250a08-d7ee-4759-b76e-a885faabe1bb",
+    "sku": "WD140GM",
+    "slug": "wd140gm",
+    "name": "WD140GM",
+    "categoryPath": "Appliances / Warming & Storage Drawers",
+    "url": "https://www.caple.co.uk/online-shop/appliances/warming-drawers/wd140gm/"
+  },
+  {
+    "productId": "19940dd5-c8b5-4ee2-baaa-7dd6fa83cf39",
+    "sku": "WD140SS",
+    "slug": "wd140ss",
+    "name": "WD140SS",
+    "categoryPath": "Appliances / Warming & Storage Drawers",
+    "url": "https://www.caple.co.uk/online-shop/sale/appliance-sale/wd140ss/"
+  },
+  {
+    "productId": "39b7ea12-5833-455f-a115-d4a0ec9071b8",
+    "sku": "WD290BG",
+    "slug": "wd290bg",
+    "name": "WD290BG",
+    "categoryPath": "Appliances / Warming & Storage Drawers",
+    "url": "https://www.caple.co.uk/online-shop/appliances/warming-drawers/wd290bg/"
+  },
+  {
+    "productId": "0743b056-7261-40a4-822f-af3c5141cb0a",
+    "sku": "WD290GM",
+    "slug": "wd290gm",
+    "name": "WD290GM",
+    "categoryPath": "Appliances / Warming & Storage Drawers",
+    "url": "https://www.caple.co.uk/online-shop/appliances/warming-drawers/wd290gm/"
+  },
+  {
+    "productId": "fb55a0a0-c0bd-43cc-8b5b-d954d8b6aec7",
+    "sku": "WD290SS",
+    "slug": "wd290ss",
+    "name": "WD290SS",
+    "categoryPath": "Appliances / Warming & Storage Drawers",
+    "url": "https://www.caple.co.uk/online-shop/sale/appliance-sale/wd290ss/"
+  },
+  {
+    "productId": "7230f264-8383-481f-83b1-eb1e89601508",
+    "sku": "WDI3310",
+    "slug": "wdi3310",
+    "name": "WDI3310",
+    "categoryPath": "Appliances / Laundry / Washer Dryer",
+    "url": "https://www.caple.co.uk/online-shop/appliances/laundry/washing-machines/wdi3310/"
+  },
+  {
+    "productId": "2e4e4e61-d0e7-4879-8a0f-26e517cffcdb",
+    "sku": "WESTBURY",
+    "slug": "westbury",
+    "name": "WESTBURY",
+    "categoryPath": "Sinks & Taps / Sinks / Ceramic",
+    "url": "https://www.caple.co.uk/online-shop/sinks/ceramic/westbury/"
+  },
+  {
+    "productId": "87e5382c-e354-4af2-ac9d-c3379feff6c0",
+    "sku": "WF1552",
+    "slug": "wf1552",
+    "name": "WF1552",
+    "categoryPath": "Appliances / Wine Cabinets",
+    "url": "https://www.caple.co.uk/online-shop/appliances/wine-coolers/wf1552/"
+  },
+  {
+    "productId": "bd59476d-5a22-4046-a480-472223531fc1",
+    "sku": "WF1553BG",
+    "slug": "wf1553bg",
+    "name": "WF1553BG",
+    "categoryPath": "Appliances / Wine Cabinets",
+    "url": "https://www.caple.co.uk/online-shop/appliances/wine-coolers/wf1553bg/"
+  },
+  {
+    "productId": "bfaf4f07-0630-4fb3-8e10-0c689c3a8e10",
+    "sku": "WI158BG",
+    "slug": "wi158bg",
+    "name": "WI158BG",
+    "categoryPath": "Appliances / Wine Cabinets",
+    "url": "https://www.caple.co.uk/online-shop/appliances/wine-coolers/wi158bg/"
+  },
+  {
+    "productId": "65b4cd8e-25e1-4a08-af7e-590496f1fe22",
+    "sku": "WI159",
+    "slug": "wi159",
+    "name": "WI159",
+    "categoryPath": "Appliances / Wine Cabinets",
+    "url": "https://www.caple.co.uk/online-shop/appliances/wine-coolers/wi159/"
+  },
+  {
+    "productId": "dafd992d-e081-42b9-aa9c-925d0292f467",
+    "sku": "WI3125",
+    "slug": "wi3125",
+    "name": "WI3125",
+    "categoryPath": "Appliances / Wine Cabinets",
+    "url": "https://www.caple.co.uk/online-shop/appliances/wine-coolers/wi3125/"
+  },
+  {
+    "productId": "2bfdc834-4d3b-4bea-b450-97305e258161",
+    "sku": "WI3125BS",
+    "slug": "wi3125bs",
+    "name": "WI3125BS",
+    "categoryPath": "Appliances / Wine Cabinets",
+    "url": "https://www.caple.co.uk/online-shop/appliances/wine-coolers/wi3125bs/"
+  },
+  {
+    "productId": "6c47e31f-f423-47c5-aee3-ee2bdcfe42ce",
+    "sku": "WI3125GM",
+    "slug": "wi3125gm",
+    "name": "WI3125GM",
+    "categoryPath": "Appliances / Wine Cabinets",
+    "url": "https://www.caple.co.uk/online-shop/sale/appliance-sale/wi3125gm/"
+  },
+  {
+    "productId": "28b5a875-b0d1-4d6a-893a-186d7f1e6b81",
+    "sku": "WI3126BG",
+    "slug": "wi3126bg",
+    "name": "WI3126BG",
+    "categoryPath": "Appliances / Wine Cabinets",
+    "url": "https://www.caple.co.uk/online-shop/appliances/wine-coolers/wi3126bg/"
+  },
+  {
+    "productId": "3ef9205b-16a8-493c-9dbc-d997dc7cfe3d",
+    "sku": "WI3150",
+    "slug": "wi3150",
+    "name": "WI3150",
+    "categoryPath": "Appliances / Wine Cabinets",
+    "url": "https://www.caple.co.uk/online-shop/appliances/wine-coolers/wi3150/"
+  },
+  {
+    "productId": "e5cdf6e5-56b5-40ec-88e8-2a5a67c96d5c",
+    "sku": "WI3155BG",
+    "slug": "wi3155bg",
+    "name": "WI3155BG",
+    "categoryPath": "Appliances / Wine Cabinets",
+    "url": "https://www.caple.co.uk/online-shop/appliances/wine-coolers/wi3155bg/"
+  },
+  {
+    "productId": "084ae5bc-f1df-4158-a5c6-94b78031d754",
+    "sku": "WI6135",
+    "slug": "wi6135",
+    "name": "WI6135",
+    "categoryPath": "Appliances / Wine Cabinets",
+    "url": "https://www.caple.co.uk/online-shop/sale/appliance-sale/wi6135/"
+  },
+  {
+    "productId": "3d4214b1-af12-4bf8-8631-d46e4975d831",
+    "sku": "WI6135BS",
+    "slug": "wi6135bs",
+    "name": "WI6135BS",
+    "categoryPath": "Appliances / Wine Cabinets",
+    "url": "https://www.caple.co.uk/online-shop/appliances/wine-coolers/wi6135bs/"
+  },
+  {
+    "productId": "a95d1249-a3f6-44ef-8a1c-0ec52b63da2e",
+    "sku": "WI6135GM",
+    "slug": "wi6135gm",
+    "name": "WI6135GM",
+    "categoryPath": "Appliances / Wine Cabinets",
+    "url": "https://www.caple.co.uk/online-shop/sale/appliance-sale/wi6135gm/"
+  },
+  {
+    "productId": "226010eb-729a-461f-832c-e6cc06ac3631",
+    "sku": "WI6136BG",
+    "slug": "wi6136bg",
+    "name": "WI6136BG",
+    "categoryPath": "Appliances / Wine Cabinets",
+    "url": "https://www.caple.co.uk/online-shop/appliances/wine-coolers/wi6136bg/"
+  },
+  {
+    "productId": "1cd05249-4ba2-40d4-9454-5e7072700251",
+    "sku": "WI6142",
+    "slug": "wi6142",
+    "name": "WI6142",
+    "categoryPath": "Appliances / Wine Cabinets",
+    "url": "https://www.caple.co.uk/online-shop/appliances/wine-coolers/wi6142/"
+  },
+  {
+    "productId": "f5668878-3b97-43e3-8b37-5f965c834ea6",
+    "sku": "WI6143BG",
+    "slug": "wi6143bg",
+    "name": "WI6143BG",
+    "categoryPath": "Appliances / Wine Cabinets",
+    "url": "https://www.caple.co.uk/online-shop/appliances/wine-coolers/wi6143bg/"
+  },
+  {
+    "productId": "b983da7b-13e9-4980-8618-55d42e04e7f1",
+    "sku": "WI6150",
+    "slug": "wi6150",
+    "name": "WI6150",
+    "categoryPath": "Appliances / Wine Cabinets",
+    "url": "https://www.caple.co.uk/online-shop/sale/appliance-sale/wi6150/"
+  },
+  {
+    "productId": "f1c03688-413d-4bca-bbf5-33fcf4286ad7",
+    "sku": "WI6155BG",
+    "slug": "wi6155bg",
+    "name": "WI6155BG",
+    "categoryPath": "Appliances / Wine Cabinets",
+    "url": "https://www.caple.co.uk/online-shop/appliances/wine-coolers/wi6155bg/"
+  },
+  {
+    "productId": "178c870d-6091-46c6-b467-7f886121d373",
+    "sku": "WI6161",
+    "slug": "wi6161",
+    "name": "WI6161",
+    "categoryPath": "Appliances / Wine Cabinets",
+    "url": "https://www.caple.co.uk/online-shop/appliances/wine-coolers/wi6161/"
+  },
+  {
+    "productId": "a84b05ed-cc23-4657-a110-e987c84e3633",
+    "sku": "WI6234",
+    "slug": "wi6234",
+    "name": "WI6234",
+    "categoryPath": "Appliances / Wine Cabinets",
+    "url": "https://www.caple.co.uk/online-shop/appliances/wine-coolers/wi6234/"
+  },
+  {
+    "productId": "ae3dfb55-7ad4-47e1-8a09-242b53fe7bd2",
+    "sku": "WI6235BG",
+    "slug": "wi6235bg",
+    "name": "WI6235BG",
+    "categoryPath": "Appliances / Wine Cabinets",
+    "url": "https://www.caple.co.uk/online-shop/appliances/wine-coolers/wi6235bg/"
+  },
+  {
+    "productId": "978ece8f-f184-45d4-ae92-1b42750d5d3f",
+    "sku": "WIL100",
+    "slug": "wil100",
+    "name": "WIL100",
+    "categoryPath": "Sinks & Taps / Sinks / Ceramic",
+    "url": "https://www.caple.co.uk/online-shop/sinks/ceramic/wil100/"
+  },
+  {
+    "productId": "692c9b45-e678-4622-95f5-7a65c89340cc",
+    "sku": "WIL150",
+    "slug": "wil150",
+    "name": "WIL150",
+    "categoryPath": "Sinks & Taps / Sinks / Ceramic",
+    "url": "https://www.caple.co.uk/online-shop/sinks/ceramic/wil150/"
+  },
+  {
+    "productId": "781d867b-ba93-4f3d-9540-6f3ce6339988",
+    "sku": "WMF1100",
+    "slug": "wmf1100",
+    "name": "WMF1100",
+    "categoryPath": "Appliances / Laundry / Washing Machines",
+    "url": "https://www.caple.co.uk/online-shop/appliances/laundry/washing-machines/wmf1100/"
+  },
+  {
+    "productId": "e194937d-4f9e-48d9-9b64-a7c8fe7dae91",
+    "sku": "WMI3100",
+    "slug": "wmi3100",
+    "name": "WMI3100",
+    "categoryPath": "Appliances / Laundry / Washing Machines",
+    "url": "https://www.caple.co.uk/online-shop/appliances/laundry/washing-machines/wmi3100/"
+  },
+  {
+    "productId": "bb6499a8-1b7c-4106-9219-3a922a0be293",
+    "sku": "WMI4001",
+    "slug": "wmi4001",
+    "name": "WMI4001",
+    "categoryPath": "Appliances / Laundry / Washing Machines",
+    "url": "https://www.caple.co.uk/online-shop/appliances/laundry/washing-machines/wmi4001/"
+  },
+  {
+    "productId": "a2d4660d-a395-4c39-b909-e1a83a1c6c37",
+    "sku": "YORK2",
+    "slug": "york2",
+    "name": "YORK2",
+    "categoryPath": "Sinks & Taps / Sinks / Ceramic",
+    "url": "https://www.caple.co.uk/online-shop/sinks/ceramic/york2/"
+  },
+  {
+    "productId": "e09c20b7-2ede-40a8-8861-fc8e81ffa497",
+    "sku": "ZC622",
+    "slug": "zc622",
+    "name": "ZC622",
+    "categoryPath": "Appliances / Extraction / Wall Chimney Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/zc622/"
+  },
+  {
+    "productId": "a3c567ba-e29f-4d04-a3a6-d38a31049329",
+    "sku": "ZC922",
+    "slug": "zc922",
+    "name": "ZC922",
+    "categoryPath": "Appliances / Extraction / Wall Chimney Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/zc922/"
+  },
+  {
+    "productId": "93026ab7-c83f-49d5-b3b8-775cf5d55085",
+    "sku": "ZEL900",
+    "slug": "zel900",
+    "name": "ZEL900",
+    "categoryPath": "Appliances / Extraction / Wall Chimney Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/zel900/"
+  },
+  {
+    "productId": "8453b463-39bf-4368-9fe8-6b6e042c5be9",
+    "sku": "ZEL900GM",
+    "slug": "zel900gm",
+    "name": "ZEL900GM",
+    "categoryPath": "Appliances / Extraction / Wall Chimney Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/zel900gm/"
+  },
+  {
+    "productId": "5773c5d6-44aa-44ee-82c8-6b82925e17bc",
+    "sku": "ZERO20",
+    "slug": "zero20",
+    "name": "ZERO20",
+    "categoryPath": "Sinks & Taps / Sinks / Stainless Steel",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/zero20/"
+  },
+  {
+    "productId": "19ab5657-98ef-4507-a727-d9cc39c8e5b4",
+    "sku": "ZERO35",
+    "slug": "zero35",
+    "name": "ZERO35",
+    "categoryPath": "Sinks & Taps / Sinks / Stainless Steel",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/zero35/"
+  },
+  {
+    "productId": "d54f6c05-12e7-450f-9aaf-e3635d8bc1a1",
+    "sku": "ZERO45",
+    "slug": "zero45",
+    "name": "ZERO45",
+    "categoryPath": "Sinks & Taps / Sinks / Stainless Steel",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/zero45/"
+  },
+  {
+    "productId": "cd1c4ba1-9344-4158-afce-bf0ce4ed1b00",
+    "sku": "ZERO55",
+    "slug": "zero55",
+    "name": "ZERO55",
+    "categoryPath": "Sinks & Taps / Sinks / Stainless Steel",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/zero55/"
+  },
+  {
+    "productId": "c7fdc032-ff74-4880-ab58-05ae89e2e69f",
+    "sku": "ZEROD45",
+    "slug": "zerod45",
+    "name": "ZEROD45",
+    "categoryPath": "Sinks & Taps / Sinks / Stainless Steel",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/zerod45/"
+  },
+  {
+    "productId": "29bb1eef-038c-4122-923d-627914cce7f5",
+    "sku": "ZI923",
+    "slug": "zi923",
+    "name": "ZI923",
+    "categoryPath": "Appliances / Extraction / Island Hoods",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/island/zi923/"
+  },
+  {
+    "productId": "9221d19d-938e-4662-8065-9c2d3d3c103d",
+    "sku": "ZONA100",
+    "slug": "zona100",
+    "name": "ZONA100",
+    "categoryPath": "Sinks & Taps / Sinks / Stainless Steel",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/zona100/"
+  },
+  {
+    "productId": "5cc33c7c-0dda-41df-a2a4-981855b9a302",
+    "sku": "ZONA200",
+    "slug": "zona200",
+    "name": "ZONA200",
+    "categoryPath": "Sinks & Taps / Sinks / Stainless Steel",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/zona200/"
+  },
+  {
+    "productId": "f015542b-03a1-4c26-8671-98c8c1b5e728",
+    "sku": "ZUBQ4-CH",
+    "slug": "zubq4-ch",
+    "name": "ZUBQ4-CH",
+    "categoryPath": "Sinks & Taps / Taps / Dual Control",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/zubq4-ch/"
+  }
+]

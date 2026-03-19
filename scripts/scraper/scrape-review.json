@@ -1,0 +1,525 @@
+[
+  {
+    "product_id": "7dc55cd2-8dc2-48e6-9916-092843285478",
+    "sku": "CM465BG",
+    "url": "https://www.caple.co.uk/online-shop/appliances/coffee-machines/cm465bg/",
+    "scraped_name": "Built In Coffee Machine Black Glass",
+    "scraped_price": 2348.31,
+    "scraped_features": [
+      "Fully automatic",
+      "Full touch control with white LCD display",
+      "Settings can be adjusted for making various hot drinks such as short espresso, long espresso, normal coffee, long coffee, warm milk, warm water or cappuccino. Milk/coffee mix can also be customised",
+      "5 Drink volume adjustments to modify the amount of coffee dispensed [Espresso, small, medium, large, mug]. Each size can be adjusted to fit your favourite cup",
+      "30 Auto programmes",
+      "Programme machine to switch-on and warm up at set time",
+      "Makes 2 cups at a time",
+      "Coffee bean grinder"
+    ],
+    "partial": false
+  },
+  {
+    "product_id": "c749e813-c8b6-4977-a203-390700b22380",
+    "sku": "DI482",
+    "url": "https://www.caple.co.uk/online-shop/appliances/dishwashers/di482/",
+    "scraped_name": "45cm Fully Integrated Dishwasher",
+    "scraped_price": 636.92,
+    "scraped_features": [
+      "9 Place settings",
+      "30cm Max. plate diameter",
+      "Stainless steel inner door and interior",
+      "Titanium grey baskets",
+      "Cold water connection",
+      "Hidden heating element",
+      "Adjustable upper basket"
+    ],
+    "partial": false
+  },
+  {
+    "product_id": "461a109d-0ffa-488d-b794-c1c4e260f3d5",
+    "sku": "BU526BK",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/integrated/bu526bk/",
+    "scraped_name": "52cm Built-Under Cooker Hood Black Glass",
+    "scraped_price": 428.31,
+    "scraped_features": [
+      "Touch control",
+      "2 x 1.5W LED Lights",
+      "4 speeds (inc. boost function)",
+      "Aluminium grease filters",
+      "Ducting spigot size 150mm",
+      "Required ducting size : 150mm"
+    ],
+    "partial": false
+  },
+  {
+    "product_id": "84ee4308-1ec5-4ca8-ad2b-2537c9e40e46",
+    "sku": "CE1122WH",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/ceiling/ce1122wh/",
+    "scraped_name": "110cm Ceiling Cooker Hood White Glass & Stainless Steel",
+    "scraped_price": 2619.69,
+    "scraped_features": [
+      "Remote control included",
+      "Perimetrical extraction for reduced noise and increased pressure resulting in improved motor performance",
+      "4 Speeds",
+      "Auto timer – switch-off after 10mins"
+    ],
+    "partial": false
+  },
+  {
+    "product_id": "f9323135-8eaa-4b6d-bae3-5fccf042c923",
+    "sku": "DD606BK",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/downdrafts/dd606bk/",
+    "scraped_name": "57.5cm Downdraft Extractor",
+    "scraped_price": 1984.62,
+    "scraped_features": [
+      "Electronic controls on stainless steel finish, touch control on black glass finish",
+      "4 speeds  (inc. boost function)",
+      "Auto timer (switch-off after 10mins)",
+      "For use with gas or electric hobs"
+    ],
+    "partial": false
+  },
+  {
+    "product_id": "5e59bc26-9e4c-49e6-ad5d-d036eb67efb0",
+    "sku": "CR700",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/island/cr700/",
+    "scraped_name": "69cm Ceramica Island Cooker Hood Copper",
+    "scraped_price": 2922.46,
+    "scraped_features": [
+      "Hand made ceramic body with stainless steel filter",
+      "Remote control included",
+      "4 Speeds",
+      "Auto timer – switch-off after 10mins",
+      "Lights : 20W LED light",
+      "Stainless steel washable grease filter",
+      "Recirculation only installation (supplied with washable recirculation kit)"
+    ],
+    "partial": false
+  },
+  {
+    "product_id": "eef5cac8-1029-4407-9a07-4a740fcba5b3",
+    "sku": "GUC1223",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/extraction-extraction/guc1223/",
+    "scraped_name": "Plasma E-Filter",
+    "scraped_price": 810.46,
+    "scraped_features": [
+      "Plasma E-filter with ESD",
+      "Helps to filter against, cooking odours, airborne viruses, bacteria, fungi, cigarette smoke, VOCs, pollen, fine dust and pet allergens",
+      "For use with wall/island hoods",
+      "Fully recyclable through the PlasmaMade return system",
+      "2 year warranty [5 years after registering]"
+    ],
+    "partial": false
+  },
+  {
+    "product_id": "32be705b-19fc-4193-ab8a-f2ffeb71a678",
+    "sku": "TSCH901",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/integrated/tsch901/",
+    "scraped_name": "90cm Built-Under Telescopic Hood Stainless Steel",
+    "scraped_price": 306.46,
+    "scraped_features": [
+      "Rocker switch",
+      "2 speeds",
+      "Lights : 2 x 2W LED light",
+      "2 x Aluminium grease filters",
+      "Required ducting size : 150mm",
+      "Recirculation kit available"
+    ],
+    "partial": false
+  },
+  {
+    "product_id": "13bc23dd-25a8-4c7b-aebc-35291128b9dd",
+    "sku": "BXC611",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/chimney/bxc611/",
+    "scraped_name": "60cm Wall Chimney Hood Stainless Steel",
+    "scraped_price": 278.77,
+    "scraped_features": [
+      "Touch controls",
+      "3 speeds",
+      "Lights : 2 x 1.5W high intensity LED lights",
+      "Aluminium grease filter",
+      "Required ducting  size 150mm",
+      "Recirculation kit available"
+    ],
+    "partial": false
+  },
+  {
+    "product_id": "0f77f878-6d9c-4d16-b20d-3d44faf00f3d",
+    "sku": "C817C",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/ceramic-hobs/c817c/",
+    "scraped_name": "59cm Touch Control Electric Ceramic Hob Black",
+    "scraped_price": 483.69,
+    "scraped_features": [
+      "Frameless",
+      "Touch control",
+      "Red display",
+      "9 power levels",
+      "Programmable timer on each zone",
+      "Minute minder",
+      "Residual heat indicators",
+      "Child lock",
+      "Automatic safety shut-off",
+      "Anti-overheat"
+    ],
+    "partial": false
+  },
+  {
+    "product_id": "b1f518c2-1c96-47dd-90cd-4eb160702f0c",
+    "sku": "C744G",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/gas/c744g/",
+    "scraped_name": "58cm Gas On Glass Hob 4 Burner Black",
+    "scraped_price": 400.62,
+    "scraped_features": [
+      "Flame safety device with auto restart",
+      "Cast iron pan supports",
+      "Auto electronic ignition",
+      "LPG jets included"
+    ],
+    "partial": false
+  },
+  {
+    "product_id": "afdc4e4a-2edd-4f69-9687-444a2be177b8",
+    "sku": "C8410I",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/induction/c8410i/",
+    "scraped_name": "59cm Induction Hob 13 Amp Black",
+    "scraped_price": 542.77,
+    "scraped_features": [
+      "Frameless",
+      "9 Level digital power display",
+      "99 minute timer",
+      "Child safety lock",
+      "Residual heat indicators",
+      "Automatic safety shut-off",
+      "Automatic pan detection"
+    ],
+    "partial": false
+  },
+  {
+    "product_id": "781d867b-ba93-4f3d-9540-6f3ce6339988",
+    "sku": "WMF1100",
+    "url": "https://www.caple.co.uk/online-shop/appliances/laundry/washing-machines/wmf1100/",
+    "scraped_name": "10kg Freestanding Washing Machine",
+    "scraped_price": 558.4,
+    "scraped_features": [
+      "Freestanding Washing machine"
+    ],
+    "partial": false
+  },
+  {
+    "product_id": "8f4132d4-e691-4d6a-ab1a-b2a55934c577",
+    "sku": "PH500H",
+    "url": "https://www.caple.co.uk/online-shop/appliances/plinth-heaters/ph500h/",
+    "scraped_name": "50cm Hydronic Plinth Heater",
+    "scraped_price": 489.23,
+    "scraped_features": [
+      "500mm hydronic plinth heater (central heating)",
+      "Stainless steel grille",
+      "2 speed fan",
+      "Summer setting (fan circulates air round the room)",
+      "Up to 24% more efficient than standard radiators",
+      "Auto switch on",
+      "Easy install",
+      "Low noise"
+    ],
+    "partial": false
+  },
+  {
+    "product_id": "c87fa634-3198-4f64-b3ae-89b6f9c0746d",
+    "sku": "RIF1801",
+    "url": "https://www.caple.co.uk/online-shop/appliances/refrigeration/integrated-refrigeration/rif1801/",
+    "scraped_name": "177cm In-Column Frost Free Freezer",
+    "scraped_price": 1225.85,
+    "scraped_features": [
+      "Matches fridge RiL1800",
+      "Door on door installation",
+      "Reversible door",
+      "Touch controls",
+      "4 Star",
+      "Super freeze"
+    ],
+    "partial": false
+  },
+  {
+    "product_id": "53d935f8-f2bf-476e-a6ff-d0e287648f84",
+    "sku": "CM108SS",
+    "url": "https://www.caple.co.uk/online-shop/appliances/microwaves/built-in/cm108ss/",
+    "scraped_name": "Built-In Microwave Black Glass & Stainless Steel",
+    "scraped_price": 941.54,
+    "scraped_features": [
+      "4 Functions",
+      "Microwave (10 power levels)",
+      "Auto cooking"
+    ],
+    "partial": false
+  },
+  {
+    "product_id": "a6f3e46f-2a9f-4ec7-b3f3-58593be02baa",
+    "sku": "C2237",
+    "url": "https://www.caple.co.uk/online-shop/appliances/ovens/single/c2237/",
+    "scraped_name": "60cm Electric Single Oven Black & Stainless Steel",
+    "scraped_price": 561.23,
+    "scraped_features": [
+      "9 Functions"
+    ],
+    "partial": false
+  },
+  {
+    "product_id": "87e5382c-e354-4af2-ac9d-c3379feff6c0",
+    "sku": "WF1552",
+    "url": "https://www.caple.co.uk/online-shop/appliances/wine-coolers/wf1552/",
+    "scraped_name": "Freestanding Triple Zone Wine  Cooler Stainless Steel",
+    "scraped_price": 2156.8,
+    "scraped_features": [
+      "Freestanding or built-in installation with correct ventilation",
+      "Shelves can accommodate 750ml Bordeaux, Burgundy and Champagne bottles",
+      "Charcoal Filter [x3]",
+      "Vibration free",
+      "2 heaters raise internal temperature when external temperature drops",
+      "100% CFC/HFC free",
+      "Stainless steel handle"
+    ],
+    "partial": false
+  },
+  {
+    "product_id": "18f4002e-eff1-480f-bcaf-717e5099e79c",
+    "sku": "PEMBERLEY",
+    "url": "https://www.caple.co.uk/online-shop/sinks/ceramic/pemberley/",
+    "scraped_name": "Pemberley Sit-On Ceramic Sink",
+    "scraped_price": 670.15,
+    "scraped_features": [
+      "No tap facility",
+      "90mm waste outlet for a basket strainer waste",
+      "Hygiene finish",
+      "Suitable for a waste disposer"
+    ],
+    "partial": false
+  },
+  {
+    "product_id": "598ad243-7b0a-4a77-a974-477459541773",
+    "sku": "INCH",
+    "url": "https://www.caple.co.uk/online-shop/appliances/extraction/integrated/inch/",
+    "scraped_name": "60cm Integrated Hood Silver Grey",
+    "scraped_price": 166.15,
+    "scraped_features": [
+      "Slider control",
+      "3 speeds",
+      "Lights : 2 x 2W LED lights",
+      "Aluminium grease filters",
+      "Required ducting size : 150mm",
+      "Recirculation kit available"
+    ],
+    "partial": false
+  },
+  {
+    "product_id": "17d33c3b-c0d6-49a1-9c89-eb13d799616b",
+    "sku": "C895C",
+    "url": "https://www.caple.co.uk/online-shop/appliances/hobs/modular/c895c/",
+    "scraped_name": "Electric Ceramic Modular Hob 2 Zones",
+    "scraped_price": 195.69,
+    "scraped_features": [
+      "Frameless",
+      "Audible touch control",
+      "9 Level digital  power display on each zone",
+      "Timer [up to 99mins] with audible alarm and auto  switch-off",
+      "Automatic stop and temperature limiter",
+      "Residual heat indicators",
+      "Child safety lock"
+    ],
+    "partial": false
+  },
+  {
+    "product_id": "17f4a381-5c3d-4940-b1d1-8cbcb202cb70",
+    "sku": "TDF1100",
+    "url": "https://www.caple.co.uk/online-shop/appliances/laundry/tumble-dryers/tdf1100/",
+    "scraped_name": "10kg Freestanding Heat Pump Tumble Dryer",
+    "scraped_price": 606.4,
+    "scraped_features": [
+      "10kg Drying"
+    ],
+    "partial": false
+  },
+  {
+    "product_id": "cd9804e2-8874-43f5-ba21-599ed31ae379",
+    "sku": "EMB-BRI-BK",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/emb-bri-bk/",
+    "scraped_name": "Ember Bridge Tap Matt Black",
+    "scraped_price": 577.85,
+    "scraped_features": [
+      "Customisable diamond-knurled accents in 3 colour finishes [copper, gold + black]. The modern cog-style handles + bridge design will complement any kitchen."
+    ],
+    "partial": false
+  },
+  {
+    "product_id": "f63db620-33e9-4bff-8db3-557ac8d5ec13",
+    "sku": "ANT4-CH",
+    "url": "https://www.caple.co.uk/online-shop/taps/dual-lever/ant4-ch/",
+    "scraped_name": "Antique Traditional Dual Lever Tap Polished Chrome",
+    "scraped_price": 123.69,
+    "scraped_features": [
+      "Compatible with Eco/Aerator1"
+    ],
+    "partial": false
+  },
+  {
+    "product_id": "ad2fe481-1f04-4443-adea-3a0d2f239d0e",
+    "sku": "BAN-AB",
+    "url": "https://www.caple.co.uk/online-shop/taps/pot-fillers/ban-ab/",
+    "scraped_name": "Banwell Pot Filler Antique Brass",
+    "scraped_price": 360,
+    "scraped_features": [
+      "Wall mounted pot filler",
+      "Cold water supply only",
+      "Quarter turn ceramic valve"
+    ],
+    "partial": false
+  },
+  {
+    "product_id": "f4af323d-715c-4f36-b8a8-19e8b933c3b9",
+    "sku": "NAV-BCH",
+    "url": "https://www.caple.co.uk/online-shop/taps/pull-out/nav-bch/",
+    "scraped_name": "Navitis Pull-out Tap Black-Chrome Finish with Black Hose",
+    "scraped_price": 313.85,
+    "scraped_features": [],
+    "partial": true
+  },
+  {
+    "product_id": "d54f6c05-12e7-450f-9aaf-e3635d8bc1a1",
+    "sku": "ZERO45",
+    "url": "https://www.caple.co.uk/online-shop/sinks/stainless-steel/zero45/",
+    "scraped_name": "Zero 45 Inset or Undermount Sink Stainless Steel",
+    "scraped_price": 369.23,
+    "scraped_features": [
+      "1mm brushed stainless steel",
+      "No tap facility",
+      "90mm waste outlet for a basket strainer waste",
+      "Suitable for a waste disposer",
+      "Waste and overflow included"
+    ],
+    "partial": false
+  },
+  {
+    "product_id": "a88785fe-c006-4be2-9ec7-11f19752c08f",
+    "sku": "SOT100",
+    "url": "https://www.caple.co.uk/online-shop/sinks/granite/sot100/",
+    "scraped_name": "Sotera 100 Inset Granite Sink with Drainer Anthracite",
+    "scraped_price": 404.31,
+    "scraped_features": [
+      "Geotech granite sink with drainer",
+      "90mm waste outlet for a basket strainer waste",
+      "Suitable for a waste disposer"
+    ],
+    "partial": false
+  },
+  {
+    "product_id": "7230f264-8383-481f-83b1-eb1e89601508",
+    "sku": "WDI3310",
+    "url": "https://www.caple.co.uk/online-shop/appliances/laundry/washing-machines/wdi3310/",
+    "scraped_name": "8/5kg Integrated Washer Dryer",
+    "scraped_price": 995.08,
+    "scraped_features": [
+      "8kg washing",
+      "5kg drying"
+    ],
+    "partial": false
+  },
+  {
+    "product_id": "f1e76830-5c0c-4ebf-99e7-88456390e0a9",
+    "sku": "C4246",
+    "url": "https://www.caple.co.uk/online-shop/appliances/ovens/double/c4246/",
+    "scraped_name": "Electric Built Under Double Oven Stainless Steel & Black",
+    "scraped_price": 947.08,
+    "scraped_features": [
+      "Square bar handle",
+      "Green LED display",
+      "Triple glazed door with heat reflective glass",
+      "Easy clean enamel interior",
+      "Removable chrome shelf racks",
+      "Tangential cooling fan",
+      "Touch control programmable electronic timer"
+    ],
+    "partial": false
+  },
+  {
+    "product_id": "ce2940f6-f848-4f53-a32f-f6d27819bf0a",
+    "sku": "RBL7",
+    "url": "https://www.caple.co.uk/online-shop/appliances/refrigeration/integrated-refrigeration/rbl7/",
+    "scraped_name": "Built Under Larder Fridge",
+    "scraped_price": 564.92,
+    "scraped_features": [
+      "Matches freezer: RBF7",
+      "Mechanically controlled",
+      "Auto defrost",
+      "100% CFC / HFC free",
+      "Door on door installation",
+      "Reversible door",
+      "Internal LED lights"
+    ],
+    "partial": false
+  },
+  {
+    "product_id": "2117445c-d7a0-4397-8aa6-84e7bbb36130",
+    "sku": "RFF732",
+    "url": "https://www.caple.co.uk/online-shop/sale/appliance-sale/rff732/",
+    "scraped_name": "Freestanding 70/30 Fridge Freezer",
+    "scraped_price": 972.92972,
+    "scraped_features": [
+      "Freestanding Fridge Freezer"
+    ],
+    "partial": false
+  },
+  {
+    "product_id": "b390bc09-04ec-4676-9aa4-c4092bf85dd2",
+    "sku": "C3371BG",
+    "url": "https://www.caple.co.uk/online-shop/appliances/ovens/double/c3371bg/",
+    "scraped_name": "Electric Built In Double Oven Black Glass",
+    "scraped_price": 1161.23,
+    "scraped_features": [
+      "MotionHeat+ technology",
+      "Touch control programmable electronic timer",
+      "Triple Glazed door with heat reflective glass",
+      "Easy clean enamel interior",
+      "Removable chrome shelf racks",
+      "Tangential cooling fan"
+    ],
+    "partial": false
+  },
+  {
+    "product_id": "65f44f4d-8aa7-4f02-8174-8ff0fbc9aad6",
+    "sku": "ARDPUR-CH",
+    "url": "https://www.caple.co.uk/online-shop/taps/puriti/ardpur-ch/",
+    "scraped_name": "Ardor Puriti Filter Tap Polished Chrome",
+    "scraped_price": 317.54,
+    "scraped_features": [
+      "Compatible with ECO/AERATOR2"
+    ],
+    "partial": false
+  },
+  {
+    "product_id": "edd78c8f-b6b6-4385-9cde-ca8e34705773",
+    "sku": "KAR-BK",
+    "url": "https://www.caple.co.uk/online-shop/taps/single-lever/kar-bk/",
+    "scraped_name": "Karns Single Lever Tap Chromite Black",
+    "scraped_price": 297.23,
+    "scraped_features": [],
+    "partial": true
+  },
+  {
+    "product_id": "8b2b4d50-633e-49c5-b2b2-fee4c9ecb98f",
+    "sku": "FOS4IN1SS",
+    "url": "https://www.caple.co.uk/online-shop/taps/steaming-hot-water-taps/fos4in1ss/",
+    "scraped_name": "FOSSO 4in1 Steaming Water Tap",
+    "scraped_price": 1488,
+    "scraped_features": [],
+    "partial": true
+  },
+  {
+    "product_id": "a6956809-0b6a-4a6b-b290-760531d13ea0",
+    "sku": "SO111SS",
+    "url": "https://www.caple.co.uk/online-shop/sale/appliance-sale/so111ss/",
+    "scraped_name": "Built In Combi Steam Oven Stainless Steel",
+    "scraped_price": 644.31644,
+    "scraped_features": [
+      "11 Functions"
+    ],
+    "partial": false
+  }
+]

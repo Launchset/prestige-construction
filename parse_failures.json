@@ -1,0 +1,117 @@
+[
+  {
+    "file": "Appliances/Splashbacks/Swatches/Aubergine.eps",
+    "reason": "Expected SKU in folder or filename, got folder: \"Swatches\"",
+    "timestamp": "2026-03-16T17:59:06.129Z"
+  },
+  {
+    "file": "Appliances/Splashbacks/Swatches/Bride.jpg",
+    "reason": "Expected SKU in folder or filename, got folder: \"Swatches\"",
+    "timestamp": "2026-03-16T17:59:06.130Z"
+  },
+  {
+    "file": "Appliances/Splashbacks/Swatches/Dove grey.eps",
+    "reason": "Expected SKU in folder or filename, got folder: \"Swatches\"",
+    "timestamp": "2026-03-16T17:59:06.130Z"
+  },
+  {
+    "file": "Appliances/Splashbacks/Swatches/Fuchsia.eps",
+    "reason": "Expected SKU in folder or filename, got folder: \"Swatches\"",
+    "timestamp": "2026-03-16T17:59:06.130Z"
+  },
+  {
+    "file": "Appliances/Splashbacks/Swatches/Olive green.eps",
+    "reason": "Expected SKU in folder or filename, got folder: \"Swatches\"",
+    "timestamp": "2026-03-16T17:59:06.130Z"
+  },
+  {
+    "file": "Appliances/Splashbacks/Swatches/Vermeer.eps",
+    "reason": "Expected SKU in folder or filename, got folder: \"Swatches\"",
+    "timestamp": "2026-03-16T17:59:06.153Z"
+  },
+  {
+    "file": "Sinks & Taps/Sinks/Stainless Steel/FORM/FORM150/FORM150L & FORM150R/Lifestyle/FORM150R SPI-CH 02.jpg",
+    "reason": "Expected SKU product folder above media folder, got: \"FORM150L & FORM150R\"",
+    "timestamp": "2026-03-16T17:59:40.677Z"
+  },
+  {
+    "file": "Sinks & Taps/Sinks/Stainless Steel/FORM/FORM150/FORM150L & FORM150R/Lifestyle/FORM150RR KAR-SS 01.jpg",
+    "reason": "Expected SKU product folder above media folder, got: \"FORM150L & FORM150R\"",
+    "timestamp": "2026-03-16T17:59:40.677Z"
+  },
+  {
+    "file": "Sinks & Taps/Sinks/Stainless Steel/FORM/FORM150/FORM150L & FORM150R/Product Shot/FORM150L.jpg",
+    "reason": "Expected SKU product folder above media folder, got: \"FORM150L & FORM150R\"",
+    "timestamp": "2026-03-16T17:59:40.677Z"
+  },
+  {
+    "file": "Sinks & Taps/Sinks/Stainless Steel/FORM/FORM150/FORM150L & FORM150R/Product Shot/FORM150R.jpg",
+    "reason": "Expected SKU product folder above media folder, got: \"FORM150L & FORM150R\"",
+    "timestamp": "2026-03-16T17:59:40.677Z"
+  },
+  {
+    "file": "Sinks & Taps/Sinks/Stainless Steel/FORM/FORM150/FORM150L & FORM150R/Spec Sheet/FORM150 Sink Download.pdf",
+    "reason": "Expected SKU product folder above media folder, got: \"FORM150L & FORM150R\"",
+    "timestamp": "2026-03-16T17:59:40.677Z"
+  },
+  {
+    "file": "Sinks & Taps/Sinks/Stainless Steel/FORM/FORM150/FORM150L & FORM150R/Technical Drawing/FORM150L.jpg",
+    "reason": "Expected SKU product folder above media folder, got: \"FORM150L & FORM150R\"",
+    "timestamp": "2026-03-16T17:59:40.678Z"
+  },
+  {
+    "file": "Sinks & Taps/Sinks/Stainless Steel/FORM/FORM150/FORM150L & FORM150R/Technical Drawing/FORM150L.pdf",
+    "reason": "Expected SKU product folder above media folder, got: \"FORM150L & FORM150R\"",
+    "timestamp": "2026-03-16T17:59:40.678Z"
+  },
+  {
+    "file": "Sinks & Taps/Sinks/Stainless Steel/FORM/FORM150/FORM150L & FORM150R/Technical Drawing/FORM150R.jpg",
+    "reason": "Expected SKU product folder above media folder, got: \"FORM150L & FORM150R\"",
+    "timestamp": "2026-03-16T17:59:40.678Z"
+  },
+  {
+    "file": "Sinks & Taps/Sinks/Stainless Steel/FORM/FORM150/FORM150L & FORM150R/Technical Drawing/FORM150R.pdf",
+    "reason": "Expected SKU product folder above media folder, got: \"FORM150L & FORM150R\"",
+    "timestamp": "2026-03-16T17:59:40.678Z"
+  },
+  {
+    "file": "Appliances/Splashbacks/Swatches/Aubergine.eps",
+    "reason": "Expected SKU in folder or filename, got folder: \"Swatches\"",
+    "timestamp": "2026-03-16T18:41:03.371Z"
+  },
+  {
+    "file": "Appliances/Splashbacks/Swatches/Bride.jpg",
+    "reason": "Expected SKU in folder or filename, got folder: \"Swatches\"",
+    "timestamp": "2026-03-16T18:41:03.371Z"
+  },
+  {
+    "file": "Appliances/Splashbacks/Swatches/Dove grey.eps",
+    "reason": "Expected SKU in folder or filename, got folder: \"Swatches\"",
+    "timestamp": "2026-03-16T18:41:03.372Z"
+  },
+  {
+    "file": "Appliances/Splashbacks/Swatches/Fuchsia.eps",
+    "reason": "Expected SKU in folder or filename, got folder: \"Swatches\"",
+    "timestamp": "2026-03-16T18:41:03.372Z"
+  },
+  {
+    "file": "Appliances/Splashbacks/Swatches/Olive green.eps",
+    "reason": "Expected SKU in folder or filename, got folder: \"Swatches\"",
+    "timestamp": "2026-03-16T18:41:03.372Z"
+  },
+  {
+    "file": "Appliances/Splashbacks/Swatches/Vermeer.eps",
+    "reason": "Expected SKU in folder or filename, got folder: \"Swatches\"",
+    "timestamp": "2026-03-16T18:41:03.411Z"
+  },
+  {
+    "file": "Sinks & Taps/Sinks/Stainless Steel/FORM/FORM150/FORM150L & FORM150R/Lifestyle/FORM150RR KAR-SS 01.jpg",
+    "reason": "Expected SKU product folder above media folder, got: \"FORM150L & FORM150R\"",
+    "timestamp": "2026-03-16T18:41:14.132Z"
+  },
+  {
+    "file": "Sinks & Taps/Sinks/Stainless Steel/FORM/FORM150/FORM150L & FORM150R/Spec Sheet/FORM150 Sink Download.pdf",
+    "reason": "Expected SKU product folder above media folder, got: \"FORM150L & FORM150R\"",
+    "timestamp": "2026-03-16T18:41:14.167Z"
+  }
+]

@@ -24,6 +24,7 @@ type Product = {
   id: string;
   name: string;
   slug: string;
+  scraped_name: string | null;
   product_images: ProductImage[] | null;
 };
 
@@ -52,6 +53,7 @@ export default async function CategoryPage({ params }: CategoryRouteProps) {
       id,
       name,
       slug,
+      scraped_name,
       product_images(
         source_path,
         sort_order

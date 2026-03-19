@@ -13,6 +13,7 @@ type Product = {
   id: string;
   name: string;
   slug: string;
+  scraped_name?: string | null;
   product_images?: ProductImage[] | null;
 };
 
@@ -25,10 +26,11 @@ function getImageUrl(sourcePath: string, width = 400, quality = 75) {
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
-  const sortedImages = [...(product.product_images ?? [])].sort(
-    (a, b) => (a.sort_order ?? Number.MAX_SAFE_INTEGER) - (b.sort_order ?? Number.MAX_SAFE_INTEGER)
-  );
+  const sortedImages = [...(product.product_images ?? [])]
+    .filter((image) => typeof image.sort_order === "number" && image.sort_order > 0)
+    .sort((a, b) => (a.sort_order ?? Number.MAX_SAFE_INTEGER) - (b.sort_order ?? Number.MAX_SAFE_INTEGER));
   const thumbnail = sortedImages[0];
+  const displayName = product.scraped_name?.trim() || product.name;
 
   return (
     <Link href={`/product/${product.slug}`} className={styles.productCard}>
@@ -46,7 +48,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         )}
       </div>
       <div className={styles.productBody}>
-        <h3>{product.name}</h3>
+        <h3>{displayName}</h3>
       </div>
     </Link>
   );

@@ -18,27 +18,46 @@ function getImageUrl(sourcePath: string, width = 1200, quality = 80) {
 }
 
 export default function ProductGallery({ images, productName }: ProductGalleryProps) {
-  const sorted = [...images].sort(
-    (a, b) => (a.sort_order ?? Number.MAX_SAFE_INTEGER) - (b.sort_order ?? Number.MAX_SAFE_INTEGER)
-  );
+  const sorted = [...images]
+    .filter((image) => typeof image.sort_order === "number" && image.sort_order > 0)
+    .sort((a, b) => (a.sort_order ?? Number.MAX_SAFE_INTEGER) - (b.sort_order ?? Number.MAX_SAFE_INTEGER));
 
   if (!sorted.length) {
     return <div className={styles.emptyState}>No product images available.</div>;
   }
 
+  const [primaryImage, ...secondaryImages] = sorted;
+
   return (
-    <div className={styles.galleryGrid}>
-      {sorted.map((image) => (
-        <div key={image.source_path} className={styles.galleryItem}>
+    <section className={styles.productGallery}>
+      <div className={styles.galleryHero}>
+        <div className={styles.galleryItem}>
           <Image
-            src={getImageUrl(image.source_path)}
+            src={getImageUrl(primaryImage.source_path)}
             alt={productName}
             className={styles.galleryImage}
             width={1200}
             height={900}
+            priority
           />
         </div>
-      ))}
-    </div>
+      </div>
+
+      {secondaryImages.length > 0 ? (
+        <div className={styles.galleryGrid}>
+          {secondaryImages.map((image) => (
+            <div key={image.source_path} className={styles.galleryItem}>
+              <Image
+                src={getImageUrl(image.source_path)}
+                alt={productName}
+                className={styles.galleryImage}
+                width={800}
+                height={600}
+              />
+            </div>
+          ))}
+        </div>
+      ) : null}
+    </section>
   );
 }

@@ -29,6 +29,21 @@ const supabase = createClient(
     { auth: { persistSession: false } }
 );
 
+const INGEST_CONCURRENCY = Math.max(1, Number.parseInt(process.env.INGEST_CONCURRENCY || "8", 10));
+const RETRY_LIMIT = Math.max(0, Number.parseInt(process.env.INGEST_RETRY_LIMIT || "5", 10));
+const LOG_FLUSH_INTERVAL = Math.max(1, Number.parseInt(process.env.INGEST_LOG_FLUSH_INTERVAL || "100", 10));
+
+const categoryCache = new Map();
+const productCache = new Map();
+const productImageCache = new Map();
+
+const categoryInFlight = new Map();
+const productInFlight = new Map();
+const productImageInFlight = new Map();
+
+const categoryReviewLogBuffer = [];
+const parseFailureLogBuffer = [];
+
 async function listAllR2Keys() {
     let continuationToken = undefined;
     const allKeys = [];
@@ -59,13 +74,181 @@ async function listAllR2Keys() {
     return allKeys;
 }
 
-import readline from "readline";
+function readJsonArray(filePath) {
+    if (!fs.existsSync(filePath)) {
+        return [];
+    }
 
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
+    try {
+        const raw = fs.readFileSync(filePath, "utf8");
+        const parsed = JSON.parse(raw);
+        return Array.isArray(parsed) ? parsed : [];
+    } catch (error) {
+        console.error(`Failed to parse ${filePath}. Resetting file.`);
+        return [];
+    }
+}
+
+function flushBufferedLog(filePath, buffer) {
+    if (buffer.length === 0) {
+        return;
+    }
+
+    const existing = readJsonArray(filePath);
+    existing.push(...buffer.splice(0, buffer.length));
+    fs.writeFileSync(filePath, JSON.stringify(existing, null, 2));
+}
+
+function flushLogs() {
+    flushBufferedLog(CATEGORY_REVIEW_LOG, categoryReviewLogBuffer);
+    flushBufferedLog(FAIL_LOG, parseFailureLogBuffer);
+}
+
+function queueBufferedLog(filePath, buffer, entry) {
+    buffer.push(entry);
+
+    if (buffer.length >= LOG_FLUSH_INTERVAL) {
+        flushBufferedLog(filePath, buffer);
+    }
+}
+
+process.on("exit", flushLogs);
+process.on("SIGINT", () => {
+    flushLogs();
+    process.exit(130);
+});
+process.on("SIGTERM", () => {
+    flushLogs();
+    process.exit(143);
 });
 
+async function fetchAllRows(table, columns) {
+    const rows = [];
+    const pageSize = 1000;
+    let from = 0;
+
+    while (true) {
+        const to = from + pageSize - 1;
+        const { data, error } = await supabase
+            .from(table)
+            .select(columns)
+            .range(from, to);
+
+        if (error) throw error;
+        if (!data?.length) break;
+
+        rows.push(...data);
+
+        if (data.length < pageSize) break;
+        from += pageSize;
+    }
+
+    return rows;
+}
+
+async function preloadCaches() {
+    console.log("Preloading categories and products...");
+
+    const [categories, products] = await Promise.all([
+        fetchAllRows("categories", "id, slug"),
+        fetchAllRows("products", "id, sku, category_id, slug, name")
+    ]);
+
+    for (const category of categories) {
+        categoryCache.set(category.slug, category.id);
+    }
+
+    for (const product of products) {
+        productCache.set(product.sku, product);
+    }
+
+    console.log(`Preloaded ${categories.length} categories and ${products.length} products.`);
+}
+
+function withInFlight(map, key, factory) {
+    if (map.has(key)) {
+        return map.get(key);
+    }
+
+    const promise = (async () => {
+        try {
+            return await factory();
+        } finally {
+            map.delete(key);
+        }
+    })();
+
+    map.set(key, promise);
+    return promise;
+}
+
+function sleep(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function isRetryableError(err) {
+    const message = String(err?.message || "").toLowerCase();
+    const code = String(err?.code || "").toLowerCase();
+    const status = Number(err?.status || err?.statusCode || 0);
+
+    return (
+        message.includes("fetch failed") ||
+        message.includes("econnreset") ||
+        message.includes("etimedout") ||
+        message.includes("network") ||
+        code === "econnreset" ||
+        code === "etimedout" ||
+        code === "und_err_connect_timeout" ||
+        status === 429 ||
+        status >= 500
+    );
+}
+
+async function processWithRetry(key, workerId) {
+    let attempt = 0;
+
+    while (true) {
+        try {
+            return await processKey(key);
+        } catch (err) {
+            attempt++;
+
+            console.error(`Worker ${workerId} failed on ${key} (attempt ${attempt}/${RETRY_LIMIT + 1})`);
+            console.error(err);
+
+            if (!isRetryableError(err) || attempt > RETRY_LIMIT) {
+                return "failed";
+            }
+
+            const backoffMs = Math.min(1000 * (2 ** (attempt - 1)), 8000);
+            await sleep(backoffMs);
+        }
+    }
+}
+
+async function processKey(key) {
+    const parsed = parsePath(key);
+    if (!parsed) {
+        return "skipped";
+    }
+
+    const canonical = normaliseParsed(parsed);
+    const canonicalPath = buildCanonicalPath(canonical);
+    const categoryId = await getOrCreateCategoryChain(canonical.categories);
+    const productId = await upsertProduct({
+        productName: canonical.product,
+        categoryId
+    });
+
+    await upsertProductImage({
+        productId,
+        filePath: canonicalPath,
+        mediaType: canonical.mediaType,
+        sourcePath: canonical.filePath
+    });
+
+    return "processed";
+}
 
 function normaliseParsed(p) {
     const product = p.product.trim().toUpperCase();
@@ -102,129 +285,88 @@ async function main() {
         return;
     }
 
+    await preloadCaches();
+
+    console.log(`Using concurrency ${INGEST_CONCURRENCY} with retry limit ${RETRY_LIMIT}.`);
+
+    let nextIndex = 0;
     let processed = 0;
-    let i = 0;
-    let retryCount = 0;
+    let insertedOrUpdated = 0;
+    let skipped = 0;
+    let failed = 0;
 
-    while (i < keys.length) {
-        const key = keys[i];
+    async function worker(workerId) {
+        while (true) {
+            const currentIndex = nextIndex++;
 
-        const parsed = parsePath(key);
-        if (!parsed) {
-            i++;
-            continue;
-        }
-
-        const canonical = normaliseParsed(parsed);
-        const canonicalPath = buildCanonicalPath(canonical);
-
-        try {
-            const categoryId = await getOrCreateCategoryChain(canonical.categories);
-
-            const productId = await upsertProduct({
-                productName: canonical.product,
-                categoryId
-            });
-
-            await upsertProductImage({
-                productId,
-                filePath: canonicalPath,
-                mediaType: canonical.mediaType,
-                sourcePath: canonical.filePath
-            });
-
-            processed++;
-            if (processed % 100 === 0) {
-                console.log(`Processed ${processed} files...`);
+            if (currentIndex >= keys.length) {
+                return;
             }
 
-            retryCount = 0; // reset retry counter on success
-            i++; // move forward normally
+            const key = keys[currentIndex];
+            const result = await processWithRetry(key, workerId);
 
-        } catch (err) {
-            console.error("Error processing:", key);
-            console.error(err);
+            if (result === "failed") {
+                failed++;
+                continue;
+            }
 
-            const isNetworkError =
-                err?.message?.includes("fetch failed") ||
-                err?.message?.includes("ECONNRESET");
-
-            if (isNetworkError) {
-                retryCount++;
-
-                if (retryCount > 5) {
-                    console.log("Too many retries. Skipping forward.");
-                    retryCount = 0;
-                    i++;
-                    continue;
-                }
-
-                console.log("⚠️ Network error detected. Rewinding 20 files...");
-                i = Math.max(0, i - 20);
-
-                await new Promise(r => setTimeout(r, 2000));
+            processed++;
+            if (result === "processed") {
+                insertedOrUpdated++;
             } else {
-                // non-network error → skip forward
-                i++;
+                skipped++;
+            }
+
+            if (processed % 100 === 0) {
+                console.log(`Processed ${processed}/${keys.length} keys...`);
             }
         }
     }
 
-    console.log("Ingestion complete.");
+    await Promise.all(
+        Array.from({ length: INGEST_CONCURRENCY }, (_, index) => worker(index + 1))
+    );
+
+    flushLogs();
+    console.log(`Ingestion complete. Parsed ${insertedOrUpdated}, skipped ${skipped}, failed ${failed}.`);
+}
+
+function safeFlushLogsOnFatalError(err) {
+    try {
+        flushLogs();
+    } catch (flushError) {
+        console.error("Failed to flush logs after fatal error:", flushError);
+    }
+
+    console.error("Fatal error:", err);
+    process.exitCode = 1;
 }
 
 main().catch((err) => {
-    console.error("Fatal error:", err);
+    safeFlushLogsOnFatalError(err);
 });
 
 const CATEGORY_REVIEW_LOG = "category_rejections.json";
 
 function logCategoryRejection(name, slug, parentId) {
-    const entry = {
+    queueBufferedLog(CATEGORY_REVIEW_LOG, categoryReviewLogBuffer, {
         name,
         slug,
         parentId,
         timestamp: new Date().toISOString()
-    };
-
-    let existing = [];
-
-    if (fs.existsSync(CATEGORY_REVIEW_LOG)) {
-        try {
-            existing = JSON.parse(fs.readFileSync(CATEGORY_REVIEW_LOG, "utf8"));
-        } catch (err) {
-            console.error("Failed to parse category_rejections.json. Resetting file.");
-            existing = [];
-        }
-    }
-
-    existing.push(entry);
-
-    fs.writeFileSync(
-        CATEGORY_REVIEW_LOG,
-        JSON.stringify(existing, null, 2)
-    );
+    });
 }
-
 
 const FAIL_LOG = "parse_failures.json";
 
 function logFailure(filePath, reason) {
-    const failure = {
+    queueBufferedLog(FAIL_LOG, parseFailureLogBuffer, {
         file: filePath,
         reason,
         timestamp: new Date().toISOString()
-    };
-
-    const existing = fs.existsSync(FAIL_LOG)
-        ? JSON.parse(fs.readFileSync(FAIL_LOG, "utf8"))
-        : [];
-
-    existing.push(failure);
-
-    fs.writeFileSync(FAIL_LOG, JSON.stringify(existing, null, 2));
+    });
 }
-
 
 function normalizeFolderName(name) {
     return name
@@ -314,6 +456,28 @@ function looksLikeSKU(name) {
     return (hasLetter && hasNumber) || isAllCaps;
 }
 
+function extractSkuCandidates(text) {
+    return (text.match(/[A-Za-z0-9-]+/g) || [])
+        .map(part => part.trim())
+        .filter(Boolean)
+        .filter(looksLikeSKU);
+}
+
+function findSkuInCombinedFolder(folderName, fileName) {
+    const folderCandidates = extractSkuCandidates(folderName);
+    if (!folderCandidates.length) {
+        return null;
+    }
+
+    const fileCandidates = extractSkuCandidates(fileName);
+    if (!fileCandidates.length) {
+        return null;
+    }
+
+    const fileCandidateSet = new Set(fileCandidates.map((candidate) => candidate.toUpperCase()));
+    return folderCandidates.find((candidate) => fileCandidateSet.has(candidate.toUpperCase())) || null;
+}
+
 
 
 function parsePath(path) {
@@ -327,6 +491,11 @@ function parsePath(path) {
         .split("/")
         .map(s => s.trim())
         .filter(Boolean);
+
+    // Skip the top-level web export tree entirely.
+    if (segments[0]?.toLowerCase() === "web") {
+        return null;
+    }
 
     // 🔍 If path contains Product Shot/WEB or Lifestyle/WEB → skip file
     for (let i = 0; i < segments.length - 1; i++) {
@@ -400,11 +569,19 @@ function parsePath(path) {
                 product = segments.pop();
                 categories = segments;
             } else {
-                logFailure(
-                    cleaned,
-                    `Expected SKU product folder above media folder, got: "${potentialProduct}"`
-                );
-                return null;
+                const combinedSku = findSkuInCombinedFolder(potentialProduct, fileName);
+
+                if (combinedSku) {
+                    segments.pop();
+                    product = combinedSku;
+                    categories = segments;
+                } else {
+                    logFailure(
+                        cleaned,
+                        `Expected SKU product folder above media folder, got: "${potentialProduct}"`
+                    );
+                    return null;
+                }
             }
         }
     } else {
@@ -476,8 +653,22 @@ async function getOrCreateCategoryChain(categoryNames) {
             .replace(/[^a-z0-9-]/g, "-")
             .replace(/-+/g, "-")
             .replace(/^-|-$/g, "");
+        parentId = await getOrCreateCategory({ name, slug, parentId });
+    }
 
-        // check if category exists by slug
+    return parentId;
+}
+
+async function getOrCreateCategory({ name, slug, parentId }) {
+    if (categoryCache.has(slug)) {
+        return categoryCache.get(slug);
+    }
+
+    return withInFlight(categoryInFlight, slug, async () => {
+        if (categoryCache.has(slug)) {
+            return categoryCache.get(slug);
+        }
+
         const { data: existing, error: selectError } = await supabase
             .from("categories")
             .select("id")
@@ -487,13 +678,10 @@ async function getOrCreateCategoryChain(categoryNames) {
         if (selectError) throw selectError;
 
         if (existing) {
-            parentId = existing.id;
-            continue;
+            categoryCache.set(slug, existing.id);
+            return existing.id;
         }
 
-        // 🛑 APPROVAL GATE
-
-        // insert if not exists
         const { data: inserted, error: insertError } = await supabase
             .from("categories")
             .insert([
@@ -508,10 +696,9 @@ async function getOrCreateCategoryChain(categoryNames) {
 
         if (insertError) throw insertError;
 
-        parentId = inserted.id;
-    }
-
-    return parentId;
+        categoryCache.set(slug, inserted.id);
+        return inserted.id;
+    });
 }
 
 async function upsertProduct({ productName, categoryId }) {
@@ -523,41 +710,52 @@ async function upsertProduct({ productName, categoryId }) {
         .replace(/-+/g, "-")
         .replace(/^-|-$/g, "");
 
-    const { data: existing, error: selectError } = await supabase
-        .from("products")
-        .select("id, category_id, slug, name")
-        .eq("sku", sku)
-        .maybeSingle();
+    return withInFlight(productInFlight, sku, async () => {
+        let existing = productCache.get(sku);
 
-    if (selectError) throw selectError;
-
-    if (existing) {
-        const needsUpdate =
-            existing.category_id !== categoryId ||
-            existing.slug !== productSlug ||
-            existing.name !== sku;
-
-        if (needsUpdate) {
-            const { error: updateError } = await supabase
+        if (!existing) {
+            const { data, error: selectError } = await supabase
                 .from("products")
-                .update({ category_id: categoryId, slug: productSlug, name: sku })
-                .eq("id", existing.id);
+                .select("id, category_id, slug, name")
+                .eq("sku", sku)
+                .maybeSingle();
 
-            if (updateError) throw updateError;
+            if (selectError) throw selectError;
+            existing = data || null;
         }
 
-        return existing.id;
-    }
+        if (existing) {
+            const needsUpdate =
+                existing.category_id !== categoryId ||
+                existing.slug !== productSlug ||
+                existing.name !== sku;
 
-    const { data: inserted, error: insertError } = await supabase
-        .from("products")
-        .insert([{ name: sku, slug: productSlug, sku, category_id: categoryId }])
-        .select("id")
-        .single();
+            if (needsUpdate) {
+                const { error: updateError } = await supabase
+                    .from("products")
+                    .update({ category_id: categoryId, slug: productSlug, name: sku })
+                    .eq("id", existing.id);
 
-    if (insertError) throw insertError;
+                if (updateError) throw updateError;
 
-    return inserted.id;
+                existing = { ...existing, category_id: categoryId, slug: productSlug, name: sku };
+            }
+
+            productCache.set(sku, existing);
+            return existing.id;
+        }
+
+        const { data: inserted, error: insertError } = await supabase
+            .from("products")
+            .insert([{ name: sku, slug: productSlug, sku, category_id: categoryId }])
+            .select("id, category_id, slug, name, sku")
+            .single();
+
+        if (insertError) throw insertError;
+
+        productCache.set(sku, inserted);
+        return inserted.id;
+    });
 }
 
 async function upsertProductImage({
@@ -566,45 +764,58 @@ async function upsertProductImage({
     mediaType,
     sourcePath    // this will be the ORIGINAL supplier path
 }) {
-    // Check if image already exists (by canonical path)
-    const { data: existing, error: selectError } = await supabase
-        .from("product_images")
-        .select("id, source_path")
-        .eq("product_id", productId)
-        .eq("file_path", filePath)
-        .maybeSingle();
+    const cacheKey = `${productId}:${filePath}`;
 
-    if (selectError) throw selectError;
+    return withInFlight(productImageInFlight, cacheKey, async () => {
+        let existing = productImageCache.get(cacheKey);
 
-    if (existing) {
-        // Optional: backfill source_path if missing or different
-        if (sourcePath && existing.source_path !== sourcePath) {
-            const { error: updateError } = await supabase
+        if (!existing) {
+            const { data, error: selectError } = await supabase
                 .from("product_images")
-                .update({ source_path: sourcePath, media_type: mediaType })
-                .eq("id", existing.id);
+                .select("id, source_path, media_type")
+                .eq("product_id", productId)
+                .eq("file_path", filePath)
+                .maybeSingle();
 
-            if (updateError) throw updateError;
+            if (selectError) throw selectError;
+            existing = data || null;
         }
 
-        return existing.id;
-    }
+        if (existing) {
+            if (
+                (sourcePath && existing.source_path !== sourcePath) ||
+                existing.media_type !== mediaType
+            ) {
+                const { error: updateError } = await supabase
+                    .from("product_images")
+                    .update({ source_path: sourcePath, media_type: mediaType })
+                    .eq("id", existing.id);
 
-    // Insert new image
-    const { data: inserted, error: insertError } = await supabase
-        .from("product_images")
-        .insert([
-            {
-                product_id: productId,
-                file_path: filePath,
-                media_type: mediaType,
-                source_path: sourcePath
+                if (updateError) throw updateError;
+
+                existing = { ...existing, source_path: sourcePath, media_type: mediaType };
             }
-        ])
-        .select("id")
-        .single();
 
-    if (insertError) throw insertError;
+            productImageCache.set(cacheKey, existing);
+            return existing.id;
+        }
 
-    return inserted.id;
+        const { data: inserted, error: insertError } = await supabase
+            .from("product_images")
+            .insert([
+                {
+                    product_id: productId,
+                    file_path: filePath,
+                    media_type: mediaType,
+                    source_path: sourcePath
+                }
+            ])
+            .select("id, source_path, media_type")
+            .single();
+
+        if (insertError) throw insertError;
+
+        productImageCache.set(cacheKey, inserted);
+        return inserted.id;
+    });
 }
