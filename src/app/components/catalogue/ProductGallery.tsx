@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import styles from "./catalogue.module.css";
 
@@ -22,18 +25,29 @@ export default function ProductGallery({ images, productName }: ProductGalleryPr
     .filter((image) => typeof image.sort_order === "number" && image.sort_order > 0)
     .sort((a, b) => (a.sort_order ?? Number.MAX_SAFE_INTEGER) - (b.sort_order ?? Number.MAX_SAFE_INTEGER));
 
+  const [activeIndex, setActiveIndex] = useState(0);
+
   if (!sorted.length) {
     return <div className={styles.emptyState}>No product images available.</div>;
   }
 
-  const [primaryImage, ...secondaryImages] = sorted;
+  const activeImage = sorted[Math.min(activeIndex, sorted.length - 1)];
+
+  function showPrevious() {
+    setActiveIndex((current) => (current === 0 ? sorted.length - 1 : current - 1));
+  }
+
+  function showNext() {
+    setActiveIndex((current) => (current === sorted.length - 1 ? 0 : current + 1));
+  }
 
   return (
     <section className={styles.productGallery}>
       <div className={styles.galleryHero}>
         <div className={styles.galleryItem}>
           <Image
-            src={getImageUrl(primaryImage.source_path)}
+            key={activeImage.source_path}
+            src={getImageUrl(activeImage.source_path)}
             alt={productName}
             className={styles.galleryImage}
             width={1200}
@@ -41,20 +55,42 @@ export default function ProductGallery({ images, productName }: ProductGalleryPr
             priority
           />
         </div>
+
+        {sorted.length > 1 ? (
+          <>
+            <button
+              type="button"
+              className={`${styles.galleryArrow} ${styles.galleryArrowLeft}`}
+              onClick={showPrevious}
+              aria-label="Show previous image"
+            >
+              ‹
+            </button>
+
+            <button
+              type="button"
+              className={`${styles.galleryArrow} ${styles.galleryArrowRight}`}
+              onClick={showNext}
+              aria-label="Show next image"
+            >
+              ›
+            </button>
+
+          </>
+        ) : null}
       </div>
 
-      {secondaryImages.length > 0 ? (
-        <div className={styles.galleryGrid}>
-          {secondaryImages.map((image) => (
-            <div key={image.source_path} className={styles.galleryItem}>
-              <Image
-                src={getImageUrl(image.source_path)}
-                alt={productName}
-                className={styles.galleryImage}
-                width={800}
-                height={600}
-              />
-            </div>
+      {sorted.length > 1 ? (
+        <div className={styles.galleryDots}>
+          {sorted.map((image, index) => (
+            <button
+              key={image.source_path}
+              type="button"
+              className={`${styles.galleryDot} ${index === activeIndex ? styles.galleryDotActive : ""}`}
+              onClick={() => setActiveIndex(index)}
+              aria-label={`Show image ${index + 1}`}
+              aria-pressed={index === activeIndex}
+            />
           ))}
         </div>
       ) : null}

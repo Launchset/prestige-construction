@@ -44,12 +44,66 @@
 }
 
 .productMetaCard {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 18px 20px;
+  border: 1px solid #e5dbce;
+  border-radius: 20px;
+  background: #fffdfa;
+  box-shadow: 0 8px 20px rgba(31, 24, 18, 0.04);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.productMetaCard:link,
+.productMetaCard:visited,
+.productMetaCard:hover,
+.productMetaCard:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+.productMetaCard:hover {
+  transform: translateY(-1px);
+  border-color: #d6c7b5;
+  box-shadow: 0 14px 28px rgba(31, 24, 18, 0.08);
+  cursor: pointer;
+}
+
+.productMetaCard strong {
+  text-decoration: none;
+  font-size: 15px;
+  line-height: 1.35;
+  font-weight: 600;
+  color: #1e1a16;
+}
+
+.downloadRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.downloadIcon {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  border-radius: 10px;
   display: grid;
-  gap: 6px;
-  padding: 16px 18px;
-  border: 1px solid #e7ddd0;
-  border-radius: 18px;
-  background: #faf7f1;
+  place-items: center;
+  background: #f4ede3;
+  color: #6b5538;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.downloadIcon svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+  fill: currentColor;
 }
 
 .metaLabel {
@@ -60,22 +114,24 @@
 }
 
 .productPanel {
-  padding: 22px 24px;
-  border: 1px solid #e7ddd0;
+  padding: 24px 26px;
   border-radius: 24px;
-  background: linear-gradient(180deg, #fffdf9 0%, #f8f2e8 100%);
+
+  background: linear-gradient(180deg, #ffffff 0%, #f6efe6 100%);
+  border: 1px solid #e7ddd0;
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
 }
 
 .panelTitle {
-  margin: 0 0 14px;
+  margin: 0 0 12px;
   font-size: 18px;
+  font-weight: 600;
 }
 
 .productDescription {
-  margin: 0;
-  font-size: 16px;
-  line-height: 1.7;
-  color: #37342f;
+  font-size: 15.5px;
+  line-height: 1.65;
 }
 
 .featureList {
@@ -135,17 +191,18 @@
 
 .productCard {
   background: #ffffff;
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
   text-decoration: none;
   color: #141414;
-  box-shadow: 0 10px 24px rgba(17, 17, 17, 0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  box-shadow: 0 8px 20px rgba(17, 17, 17, 0.06);
+  transition: all 0.25s ease;
 }
 
 .productCard:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 34px rgba(17, 17, 17, 0.12);
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 18px 40px rgba(17, 17, 17, 0.12);
 }
 
 .productImageWrap {
@@ -189,8 +246,97 @@
   gap: 18px;
 }
 
+.galleryHero {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #f3f2f0;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+}
+
+/* smooth zoom = expensive feel */
+.galleryImage {
+  transition: transform 0.5s ease, filter 0.3s ease;
+}
+
+.galleryHero:hover .galleryImage {
+  transform: scale(1.04);
+  filter: brightness(1.03);
+}
+
+.galleryHero {
+  position: relative;
+}
+
 .galleryHero .galleryItem {
   min-height: 480px;
+}
+
+.galleryArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  border: none;
+
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.65);
+
+  color: #2c2924;
+  font-size: 28px;
+
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.galleryArrow:hover {
+  background: white;
+  transform: translateY(-50%) scale(1.08);
+}
+
+.galleryArrowLeft {
+  left: 18px;
+}
+
+.galleryArrowRight {
+  right: 18px;
+}
+
+.galleryCounter {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(33, 31, 28, 0.72);
+  color: #fffdf8;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+}
+
+.galleryDots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.galleryDot {
+  width: 12px;
+  height: 12px;
+  border: none;
+  border-radius: 999px;
+  background: #d6ccbf;
+  cursor: pointer;
+}
+
+.galleryDotActive {
+  background: #5f8147;
 }
 
 .galleryItem {
@@ -253,5 +399,24 @@
 
   .galleryHero .galleryItem {
     min-height: 320px;
+  }
+
+  .galleryArrow {
+    width: 44px;
+    height: 44px;
+    font-size: 30px;
+  }
+
+  .galleryArrowLeft {
+    left: 12px;
+  }
+
+  .galleryArrowRight {
+    right: 12px;
+  }
+
+  .galleryCounter {
+    right: 12px;
+    bottom: 12px;
   }
 }

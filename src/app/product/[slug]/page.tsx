@@ -4,12 +4,19 @@ import ProductGallery from "@/app/components/catalogue/ProductGallery";
 import styles from "@/app/components/catalogue/catalogue.module.css";
 import { createClient } from "@/lib/supabase/server";
 
+const ASSETS_BASE = process.env.NEXT_PUBLIC_ASSETS_BASE?.replace(/\/+$/, "") ?? "";
+
+function normalizeAssetPath(path: string) {
+  return path.replace(/^web\//i, "");
+}
+
 type ProductRouteProps = {
   params: Promise<{ slug: string }>;
 };
 
 type ProductImage = {
   source_path: string;
+  media_type: string | null;
   sort_order: number | null;
 };
 
@@ -49,6 +56,7 @@ export default async function ProductPage({ params }: ProductRouteProps) {
       scraped_description,
       product_images(
         source_path,
+        media_type,
         sort_order
       )
     `)
@@ -67,6 +75,12 @@ export default async function ProductPage({ params }: ProductRouteProps) {
   const displayImages = (typedProduct.product_images ?? [])
     .filter((image) => typeof image.sort_order === "number" && image.sort_order > 0)
     .sort((a, b) => (a.sort_order ?? Number.MAX_SAFE_INTEGER) - (b.sort_order ?? Number.MAX_SAFE_INTEGER));
+  const specSheet = (typedProduct.product_images ?? []).find((image) =>
+    image.media_type === "Spec Sheet" && image.source_path.toLowerCase().endsWith(".pdf")
+  );
+  const specSheetUrl = specSheet && ASSETS_BASE
+    ? `${ASSETS_BASE}/i/${normalizeAssetPath(specSheet.source_path)}`
+    : null;
 
   let category: Category | null = null;
   if (typedProduct.category_id) {
@@ -96,16 +110,27 @@ export default async function ProductPage({ params }: ProductRouteProps) {
       <section className={styles.productHero}>
         <div className={styles.productCopy}>
           <p className={styles.productEyebrow}>{category?.name ?? "Product"}</p>
-          <h1 className={styles.heading}>{typedProduct.sku}</h1>
-          {displayName !== typedProduct.sku ? (
-            <p className={styles.productSubtitle}>{displayName}</p>
-          ) : null}
+          <h1 className={styles.heading}>{displayName}</h1>
 
           <div className={styles.productMetaRow}>
-            <div className={styles.productMetaCard}>
-              <span className={styles.metaLabel}>SKU</span>
-              <strong>{typedProduct.sku}</strong>
-            </div>
+            {specSheetUrl ? (
+              <a
+                href={specSheetUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.productMetaCard}
+              >
+                <span className={styles.metaLabel}>Spec Sheet</span>
+                <div className={styles.downloadRow}>
+                  <span className={styles.downloadIcon} aria-hidden="true">
+                    <svg viewBox="0 0 24 24" focusable="false">
+                      <path d="M5 20h14v-2H5zm7-18v12l4-4 1.41 1.41L12 19l-5.41-5.59L8 10l4 4V2z" />
+                    </svg>
+                  </span>
+                  <strong>Download spec sheet</strong>
+                </div>
+              </a>
+            ) : null}
 
             {typeof typedProduct.scraped_price === "number" ? (
               <div className={styles.productMetaCard}>
@@ -119,10 +144,6 @@ export default async function ProductPage({ params }: ProductRouteProps) {
               </div>
             ) : null}
 
-            <div className={styles.productMetaCard}>
-              <span className={styles.metaLabel}>Images</span>
-              <strong>{displayImages.length}</strong>
-            </div>
           </div>
 
           {typedProduct.scraped_description ? (
