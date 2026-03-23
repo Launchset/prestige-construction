@@ -122,11 +122,14 @@ export default async function ProductPage({ params }: ProductRouteProps) {
               >
                 <span className={styles.metaLabel}>Spec Sheet</span>
                 <div className={styles.downloadRow}>
-                  <span className={styles.downloadIcon} aria-hidden="true">
-                    <svg viewBox="0 0 24 24" focusable="false">
-                      <path d="M5 20h14v-2H5zm7-18v12l4-4 1.41 1.41L12 19l-5.41-5.59L8 10l4 4V2z" />
-                    </svg>
-                  </span>
+                  <img
+                    src="/icons/downloadlogo.webp"
+                    alt=""
+                    aria-hidden="true"
+                    width="34"
+                    height="34"
+                    className={styles.downloadIconImage}
+                  />
                   <strong>Download spec sheet</strong>
                 </div>
               </a>

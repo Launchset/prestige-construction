@@ -1,25 +1,25 @@
 .page {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 24px 80px;
+  padding: 48px 24px 80px;
 }
 
 .heading {
   font-size: 40px;
   line-height: 1.15;
-  margin: 0 0 24px;
+  margin: 0;
 }
 
 .productHero {
   display: grid;
   grid-template-columns: minmax(280px, 420px) minmax(0, 1fr);
-  gap: 36px;
+  gap: 32px;
   align-items: start;
 }
 
 .productCopy {
   display: grid;
-  gap: 20px;
+  gap: 24px;
 }
 
 .productEyebrow {
@@ -40,7 +40,7 @@
 .productMetaRow {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 12px;
+  gap: 16px;
 }
 
 .productMetaCard {
@@ -48,8 +48,8 @@
   color: inherit;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 18px 20px;
+  gap: 16px;
+  padding: 24px;
   border: 1px solid #e5dbce;
   border-radius: 20px;
   background: #fffdfa;
@@ -83,7 +83,7 @@
 .downloadRow {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 16px;
 }
 
 .downloadIcon {
@@ -106,6 +106,15 @@
   fill: currentColor;
 }
 
+.downloadIconImage {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
 .metaLabel {
   font-size: 11px;
   letter-spacing: 0.18em;
@@ -114,7 +123,7 @@
 }
 
 .productPanel {
-  padding: 24px 26px;
+  padding: 24px;
   border-radius: 24px;
 
   background: linear-gradient(180deg, #ffffff 0%, #f6efe6 100%);
@@ -124,21 +133,22 @@
 }
 
 .panelTitle {
-  margin: 0 0 12px;
+  margin: 0 0 16px;
   font-size: 18px;
   font-weight: 600;
 }
 
 .productDescription {
+  margin: 0;
   font-size: 15.5px;
   line-height: 1.65;
 }
 
 .featureList {
   margin: 0;
-  padding-left: 20px;
+  padding-left: 24px;
   display: grid;
-  gap: 10px;
+  gap: 8px;
   color: #37342f;
   line-height: 1.6;
 }
@@ -356,8 +366,8 @@
 .breadcrumb {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
+  gap: 8px;
+  margin-bottom: 24px;
   color: #666666;
   font-size: 14px;
 }
@@ -381,7 +391,7 @@
 
 @media (max-width: 700px) {
   .page {
-    padding: 28px 18px 56px;
+    padding: 32px 16px 56px;
   }
 
   .heading {
