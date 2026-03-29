@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Prestige Construction
 
-## Getting Started
+Next.js app for product browsing, account login, checkout, Stripe payment, and order tracking.
 
-First, run the development server:
+## Local Setup
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Required Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Set these in `.env.local` for local development:
 
-## Learn More
+```env
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_public_key
+SUPABASE_URL=https://your-project.supabase.co
+SUPABASE_SERVICE_ROLE=your_service_role_key
+STRIPE_SECRET_KEY=sk_test_...
+STRIPE_WEBHOOK_SECRET=whsec_...
+SITE_URL=http://localhost:3000
+NEXT_PUBLIC_ASSETS_BASE=https://your-asset-host.example
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_...
+```
 
-To learn more about Next.js, take a look at the following resources:
+Notes:
+- `NEXT_PUBLIC_*` values are used by browser code.
+- `SUPABASE_SERVICE_ROLE` stays server-only.
+- `STRIPE_WEBHOOK_SECRET` comes from the Stripe CLI during local testing.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Supabase Model
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The app uses two access paths:
+- Customer login/signup through Supabase Auth.
+- Admin access through a `profiles.role = 'admin'` check.
 
-## Deploy on Vercel
+Orders are attached to the signed-in account via `orders.user_id`. Customers can read their own orders, admins can read all orders, and the live schema/policies are captured in `supabase/auth.sql` and `supabase/orders.sql`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Stripe Local Testing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Use the local Stripe CLI binary when testing webhooks:
+
+```bash
+/tmp/stripe-cli/stripe login
+/tmp/stripe-cli/stripe listen --forward-to localhost:3000/api/stripe/webhook
+```
+
+Copy the printed `whsec_...` value into `.env.local` as `STRIPE_WEBHOOK_SECRET`.
+
+## Documentation
+
+- [Local setup and flows](docs/local-setup.md)
+- [Manual verification checklist](docs/verification-checklist.md)
+

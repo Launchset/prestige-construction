@@ -205,7 +205,6 @@
   overflow: hidden;
   text-decoration: none;
   color: #141414;
-
   box-shadow: 0 8px 20px rgba(17, 17, 17, 0.06);
   transition: all 0.25s ease;
 }
@@ -261,10 +260,9 @@
   border-radius: 20px;
   overflow: hidden;
   background: #f3f2f0;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
 }
 
-/* smooth zoom = expensive feel */
 .galleryImage {
   transition: transform 0.5s ease, filter 0.3s ease;
 }
@@ -290,17 +288,13 @@
   height: 48px;
   border-radius: 999px;
   border: none;
-
   backdrop-filter: blur(12px);
   background: rgba(255, 255, 255, 0.65);
-
   color: #2c2924;
   font-size: 28px;
-
   display: grid;
   place-items: center;
   cursor: pointer;
-
   transition: all 0.2s ease;
 }
 
@@ -396,11 +390,6 @@
 
   .heading {
     font-size: 32px;
-  }
-
-  .productHero {
-    grid-template-columns: 1fr;
-    gap: 24px;
   }
 
   .galleryGrid {

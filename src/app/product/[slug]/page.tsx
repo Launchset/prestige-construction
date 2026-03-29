@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ProductGallery from "@/app/components/catalogue/ProductGallery";
-import styles from "@/app/components/catalogue/catalogue.module.css";
+import styles from "./product-page.module.css";
 import { createClient } from "@/lib/supabase/server";
 
 const ASSETS_BASE = process.env.NEXT_PUBLIC_ASSETS_BASE?.replace(/\/+$/, "") ?? "";
@@ -75,6 +75,9 @@ export default async function ProductPage({ params }: ProductRouteProps) {
   const displayImages = (typedProduct.product_images ?? [])
     .filter((image) => typeof image.sort_order === "number" && image.sort_order > 0)
     .sort((a, b) => (a.sort_order ?? Number.MAX_SAFE_INTEGER) - (b.sort_order ?? Number.MAX_SAFE_INTEGER));
+  const primaryImage = (typedProduct.product_images ?? [])
+    .filter((img) => typeof img.sort_order === "number" && img.sort_order > 0)
+    .sort((a, b) => (a.sort_order ?? 999) - (b.sort_order ?? 999))[0];
   const specSheet = (typedProduct.product_images ?? []).find((image) =>
     image.media_type === "Spec Sheet" && image.source_path.toLowerCase().endsWith(".pdf")
   );
@@ -92,6 +95,8 @@ export default async function ProductPage({ params }: ProductRouteProps) {
 
     category = (data as Category | null) ?? null;
   }
+
+  const enquiryHref = `/enquire?productSlug=${encodeURIComponent(typedProduct.slug)}&productName=${encodeURIComponent(displayName)}&image=${encodeURIComponent(primaryImage?.source_path || "")}`;
 
   return (
     <main className={styles.page}>
@@ -168,10 +173,18 @@ export default async function ProductPage({ params }: ProductRouteProps) {
           ) : null}
         </div>
 
-        <ProductGallery
-          images={displayImages as ProductImage[]}
-          productName={displayName}
-        />
+        <div className={styles.galleryWrapper}>
+          <div className={styles.galleryInner}>
+            <ProductGallery
+              images={displayImages as ProductImage[]}
+              productName={displayName}
+            />
+          </div>
+
+          <a href={enquiryHref} className={styles.enquireButton}>
+            Enquire Now
+          </a>
+        </div>
       </section>
     </main>
   );

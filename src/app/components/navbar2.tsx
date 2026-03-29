@@ -41,7 +41,7 @@ export default function Navbar2() {
                                 type="text"
                                 placeholder="Search…"
                             />
-                            <Link href="/profile" className={styles.profileBtn}>👤</Link>
+                            <Link href="/account" className={styles.profileBtn}>Account</Link>
                         </div>
 
                         <nav className={styles.tabs}>
@@ -109,11 +109,11 @@ export default function Navbar2() {
                         </nav>
 
                         <Link
-                            href="/profile"
+                            href="/account"
                             className={styles.mobileProfile}
                             onClick={() => setMenuOpen(false)}
                         >
-                            👤 Profile
+                            Account
                         </Link>
 
                     </div>
