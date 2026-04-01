@@ -44,19 +44,16 @@ export default function OrderDetailClient({ orderId }: OrderDetailClientProps) {
   const [order, setOrder] = useState<OrderRecord | null>(null);
   const [role, setRole] = useState<AccountRole>("customer");
   const [error, setError] = useState("");
-  const [configError, setConfigError] = useState("");
   const [loading, setLoading] = useState(true);
 
-  const supabase = useMemo(() => {
+  const { supabase, configError } = useMemo(() => {
     try {
-      return createBrowserClient();
+      return { supabase: createBrowserClient(), configError: "" };
     } catch (error) {
       const message = error instanceof Error
         ? error.message
         : "Supabase account configuration is missing.";
-      setConfigError(message);
-      setLoading(false);
-      return null;
+      return { supabase: null, configError: message };
     }
   }, []);
 

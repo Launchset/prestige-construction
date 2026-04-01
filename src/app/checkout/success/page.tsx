@@ -1,29 +1,16 @@
 import Link from "next/link";
 import styles from "../../enquire/enquire.module.css";
-import { createClient } from "@/lib/supabase/server";
 
 type CheckoutSuccessPageProps = {
   searchParams: Promise<{ order_id?: string; session_id?: string }>;
 };
 
-type OrderRecord = {
-  id: string;
-  product_name: string;
-  product_slug: string;
-  unit_amount_pence: number;
-  currency: string;
-  customer_name: string;
-  customer_email: string;
-  status: string;
-  stripe_session_id: string | null;
-  stripe_payment_status: string | null;
-};
+function getShortReference(value: string) {
+  if (value.length <= 12) {
+    return value;
+  }
 
-function formatMoney(amountPence: number, currency: string) {
-  return new Intl.NumberFormat("en-GB", {
-    style: "currency",
-    currency: currency.toUpperCase(),
-  }).format(amountPence / 100);
+  return `${value.slice(0, 6)}...${value.slice(-4)}`;
 }
 
 export default async function CheckoutSuccessPage({ searchParams }: CheckoutSuccessPageProps) {
@@ -48,88 +35,36 @@ export default async function CheckoutSuccessPage({ searchParams }: CheckoutSucc
     );
   }
 
-  const supabase = createClient();
-  const { data: existingOrder } = await supabase
-    .from("orders")
-    .select(`
-      id,
-      product_name,
-      product_slug,
-      unit_amount_pence,
-      currency,
-      customer_name,
-      customer_email,
-      status,
-      stripe_session_id,
-      stripe_payment_status
-    `)
-    .eq("id", orderId)
-    .maybeSingle();
-
-  const order = (existingOrder as OrderRecord | null) ?? null;
-
-  if (!order) {
-    return (
-      <main className={styles.page}>
-        <section className={styles.shell}>
-          <header className={styles.header}>
-            <p className={styles.eyebrow}>Prestige Construction</p>
-            <h1 className={styles.title}>Order not found</h1>
-            <p className={styles.intro}>
-              The payment completed page was reached, but the referenced order record was not found
-              in Supabase.
-            </p>
-          </header>
-        </section>
-      </main>
-    );
-  }
-  const orderMatchesSession = !order.stripe_session_id || order.stripe_session_id === sessionId;
-  const resolvedStatus = orderMatchesSession ? order.status : "pending";
-
   return (
     <main className={styles.page}>
       <section className={styles.shell}>
         <header className={styles.header}>
           <p className={styles.eyebrow}>Prestige Construction</p>
-          <h1 className={styles.title}>
-            {resolvedStatus === "paid" ? "Payment received" : "Payment awaiting confirmation"}
-          </h1>
+          <h1 className={styles.title}>Payment submitted</h1>
           <p className={styles.intro}>
-            {resolvedStatus === "paid"
-              ? "Your order has been recorded and matched to a successful Stripe payment."
-              : "Your order exists, but payment is still awaiting confirmation from Stripe."}
+            Stripe has returned you to the site. Your account order list will show the full details
+            once the payment update has finished syncing.
           </p>
         </header>
-
-        {!orderMatchesSession ? (
-          <p className={styles.error}>
-            The order reference and Stripe session did not match, so the order status was not
-            updated automatically.
-          </p>
-        ) : null}
 
         <section className={styles.checkoutCard}>
           <div className={styles.checkoutHeader}>
             <p className={styles.sectionEyebrow}>Order Confirmation</p>
-            <h2 className={styles.sectionTitle}>Order {order.id}</h2>
+            <h2 className={styles.sectionTitle}>Order {getShortReference(orderId)}</h2>
             <p className={styles.checkoutText}>
-              {order.product_name} for {formatMoney(order.unit_amount_pence, order.currency)}
+              Sign in to your account area to view the full order details and the latest payment
+              status.
             </p>
           </div>
 
           <div className={styles.summaryCard}>
             <div className={styles.summaryMeta}>
-              <span className={styles.summaryLabel}>Customer</span>
-              <strong className={styles.summaryValue}>{order.customer_name}</strong>
+              <span className={styles.summaryLabel}>Order Reference</span>
+              <strong className={styles.summaryValue}>{getShortReference(orderId)}</strong>
             </div>
             <div className={styles.summaryMeta}>
-              <span className={styles.summaryLabel}>Email</span>
-              <strong className={styles.summaryValue}>{order.customer_email}</strong>
-            </div>
-            <div className={styles.summaryMeta}>
-              <span className={styles.summaryLabel}>Status</span>
-              <strong className={styles.summaryValue}>{resolvedStatus}</strong>
+              <span className={styles.summaryLabel}>Session Reference</span>
+              <strong className={styles.summaryValue}>{getShortReference(sessionId)}</strong>
             </div>
           </div>
 

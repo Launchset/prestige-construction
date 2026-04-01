@@ -10,6 +10,12 @@ function normalizeAssetPath(path: string) {
   return path.replace(/^web\//i, "");
 }
 
+function getApprovedImages(images: ProductImage[] | null | undefined) {
+  return [...(images ?? [])]
+    .filter((image) => typeof image.sort_order === "number" && image.sort_order > 0)
+    .sort((a, b) => (a.sort_order ?? Number.MAX_SAFE_INTEGER) - (b.sort_order ?? Number.MAX_SAFE_INTEGER));
+}
+
 type ProductRouteProps = {
   params: Promise<{ slug: string }>;
 };
@@ -68,16 +74,17 @@ export default async function ProductPage({ params }: ProductRouteProps) {
   }
 
   const typedProduct = product as Product;
-  const displayName = typedProduct.scraped_name?.trim() || typedProduct.name;
+  const displayImages = getApprovedImages(typedProduct.product_images);
+  const primaryImage = displayImages[0];
+
+  if (!typedProduct.scraped_name?.trim() || !primaryImage) {
+    notFound();
+  }
+
+  const displayName = typedProduct.scraped_name;
   const displayFeatures = Array.isArray(typedProduct.scraped_features)
     ? typedProduct.scraped_features.filter(Boolean)
     : [];
-  const displayImages = (typedProduct.product_images ?? [])
-    .filter((image) => typeof image.sort_order === "number" && image.sort_order > 0)
-    .sort((a, b) => (a.sort_order ?? Number.MAX_SAFE_INTEGER) - (b.sort_order ?? Number.MAX_SAFE_INTEGER));
-  const primaryImage = (typedProduct.product_images ?? [])
-    .filter((img) => typeof img.sort_order === "number" && img.sort_order > 0)
-    .sort((a, b) => (a.sort_order ?? 999) - (b.sort_order ?? 999))[0];
   const specSheet = (typedProduct.product_images ?? []).find((image) =>
     image.media_type === "Spec Sheet" && image.source_path.toLowerCase().endsWith(".pdf")
   );
@@ -96,7 +103,7 @@ export default async function ProductPage({ params }: ProductRouteProps) {
     category = (data as Category | null) ?? null;
   }
 
-  const enquiryHref = `/enquire?productSlug=${encodeURIComponent(typedProduct.slug)}&productName=${encodeURIComponent(displayName)}&image=${encodeURIComponent(primaryImage?.source_path || "")}`;
+  const enquiryHref = `/enquire?productSlug=${encodeURIComponent(typedProduct.slug)}&productName=${encodeURIComponent(displayName)}&image=${encodeURIComponent(primaryImage.source_path)}`;
 
   return (
     <main className={styles.page}>
@@ -176,7 +183,7 @@ export default async function ProductPage({ params }: ProductRouteProps) {
         <div className={styles.galleryWrapper}>
           <div className={styles.galleryInner}>
             <ProductGallery
-              images={displayImages as ProductImage[]}
+              images={displayImages}
               productName={displayName}
             />
           </div>

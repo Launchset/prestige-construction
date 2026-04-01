@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import styles from "./styles.module.css";
 
 type SectionKey = "lifestyle" | "product" | "specs" | "drawings" | "other";
@@ -49,6 +49,13 @@ function toSectionKeyFromMediaType(mediaType: string | null): SectionKey {
   return "other";
 }
 
+function getInitialSelectedIds(images: ImageItem[]) {
+  return (images ?? [])
+    .filter((img) => img.sort_order !== null)
+    .sort((a, b) => (a.sort_order ?? 0) - (b.sort_order ?? 0))
+    .map((img) => img.id);
+}
+
 export default function ImageReviewClient({
   product,
   images,
@@ -56,16 +63,7 @@ export default function ImageReviewClient({
   completeReview,
   skipCategory,
 }: ImageReviewClientProps) {
-  const [selectedIds, setSelectedIds] = useState<string[]>([]);
-
-  useEffect(() => {
-    const initial = (images ?? [])
-      .filter((img) => img.sort_order !== null)
-      .sort((a, b) => (a.sort_order ?? 0) - (b.sort_order ?? 0))
-      .map((img) => img.id);
-
-    setSelectedIds(initial);
-  }, [images]);
+  const [selectedIds, setSelectedIds] = useState<string[]>(() => getInitialSelectedIds(images));
 
   const selectedOrder = useMemo(
     () => new Map(selectedIds.map((id, index) => [id, index + 1])),

@@ -25,23 +25,21 @@ export default function CheckoutStartForm({ productSlug }: CheckoutStartFormProp
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
-  const [configError, setConfigError] = useState("");
 
-  const supabase = useMemo(() => {
+  const { supabase, configError } = useMemo(() => {
     try {
-      return createBrowserClient();
+      return { supabase: createBrowserClient(), configError: "" };
     } catch (error) {
       const message = error instanceof Error
         ? error.message
         : "Supabase account configuration is missing.";
-      setConfigError(message);
-      setIsAuthenticated(false);
-      return null;
+      return { supabase: null, configError: message };
     }
   }, []);
 
   useEffect(() => {
     if (!supabase) {
+      setIsAuthenticated(false);
       return;
     }
     const client = supabase;

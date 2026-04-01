@@ -4,8 +4,6 @@ import { useState } from "react";
 import Image from "next/image";
 import styles from "./catalogue.module.css";
 
-const BASE = process.env.NEXT_PUBLIC_ASSETS_BASE?.replace(/\/+$/, "") ?? "";
-
 type GalleryImage = {
   source_path: string;
   sort_order: number | null;
@@ -15,10 +13,6 @@ type ProductGalleryProps = {
   images: GalleryImage[];
   productName: string;
 };
-
-function getImageUrl(sourcePath: string, width = 1200, quality = 80) {
-  return `${BASE}/i/${sourcePath}?w=${width}&q=${quality}`;
-}
 
 export default function ProductGallery({ images, productName }: ProductGalleryProps) {
   const sorted = [...images]
@@ -47,12 +41,14 @@ export default function ProductGallery({ images, productName }: ProductGalleryPr
         <div className={styles.galleryItem}>
           <Image
             key={activeImage.source_path}
-            src={getImageUrl(activeImage.source_path)}
+            src={activeImage.source_path}
             alt={productName}
             className={styles.galleryImage}
             width={1200}
             height={900}
-            priority
+            sizes="(max-width: 700px) calc(100vw - 32px), (max-width: 1200px) 60vw, 900px"
+            quality={80}
+            preload
           />
         </div>
 
@@ -75,7 +71,6 @@ export default function ProductGallery({ images, productName }: ProductGalleryPr
             >
               ›
             </button>
-
           </>
         ) : null}
       </div>

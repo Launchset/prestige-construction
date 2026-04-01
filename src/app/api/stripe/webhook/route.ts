@@ -13,8 +13,19 @@ function getWebhookSecret() {
   return webhookSecret;
 }
 
-async function markOrderPaid(session: Stripe.Checkout.Session) {
-  const orderId = session.metadata?.orderId || session.client_reference_id || "";
+function getOrderReference(session: Stripe.Checkout.Session) {
+  return session.metadata?.orderId || session.client_reference_id || "";
+}
+
+async function updateOrderFromSession(
+  session: Stripe.Checkout.Session,
+  update: {
+    status: "paid" | "pending" | "cancelled" | "checkout_failed";
+    paidAt?: string | null;
+    preservePaid?: boolean;
+  },
+) {
+  const orderId = getOrderReference(session);
 
   if (!orderId) {
     console.error("Stripe webhook missing order reference", {
@@ -24,44 +35,23 @@ async function markOrderPaid(session: Stripe.Checkout.Session) {
   }
 
   const supabase = createClient();
-  const paidAt = typeof session.created === "number"
-    ? new Date(session.created * 1000).toISOString()
-    : new Date().toISOString();
 
-  const { error } = await supabase
+  let query = supabase
     .from("orders")
     .update({
-      status: session.payment_status === "paid" ? "paid" : "pending",
+      status: update.status,
       stripe_session_id: session.id,
       stripe_payment_status: session.payment_status,
-      paid_at: session.payment_status === "paid" ? paidAt : null,
+      paid_at: update.paidAt ?? null,
       updated_at: new Date().toISOString(),
     })
     .eq("id", orderId);
 
-  if (error) {
-    throw new Error(error.message);
-  }
-}
-
-async function markOrderCancelled(session: Stripe.Checkout.Session) {
-  const orderId = session.metadata?.orderId || session.client_reference_id || "";
-
-  if (!orderId) {
-    return;
+  if (update.preservePaid) {
+    query = query.neq("status", "paid");
   }
 
-  const supabase = createClient();
-  const { error } = await supabase
-    .from("orders")
-    .update({
-      status: "cancelled",
-      stripe_session_id: session.id,
-      stripe_payment_status: session.payment_status,
-      updated_at: new Date().toISOString(),
-    })
-    .eq("id", orderId)
-    .neq("status", "paid");
+  const { error } = await query;
 
   if (error) {
     throw new Error(error.message);
@@ -91,10 +81,28 @@ export async function POST(request: Request) {
     switch (event.type) {
       case "checkout.session.completed":
       case "checkout.session.async_payment_succeeded":
-        await markOrderPaid(event.data.object as Stripe.Checkout.Session);
+        {
+          const session = event.data.object as Stripe.Checkout.Session;
+
+          await updateOrderFromSession(session, {
+            status: "paid",
+            paidAt: typeof session.created === "number"
+              ? new Date(session.created * 1000).toISOString()
+              : new Date().toISOString(),
+          });
+        }
+        break;
+      case "checkout.session.async_payment_failed":
+        await updateOrderFromSession(event.data.object as Stripe.Checkout.Session, {
+          status: "checkout_failed",
+          preservePaid: true,
+        });
         break;
       case "checkout.session.expired":
-        await markOrderCancelled(event.data.object as Stripe.Checkout.Session);
+        await updateOrderFromSession(event.data.object as Stripe.Checkout.Session, {
+          status: "cancelled",
+          preservePaid: true,
+        });
         break;
       default:
         break;

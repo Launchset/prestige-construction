@@ -1,14 +1,20 @@
-console.log("ACCESS:", process.env.R2_ACCESS_KEY_ID);
-console.log("SECRET:", process.env.R2_SECRET_ACCESS_KEY);
-console.log("ACCOUNT:", process.env.R2_ACCOUNT_ID);
-console.log("BUCKET:", process.env.R2_BUCKET);
-
-
 import { config } from "dotenv";
 import { S3Client, ListObjectsV2Command } from "@aws-sdk/client-s3";
 
 // Load environment variables
 config({ path: ".env.import" });
+
+function isConfigured(value) {
+    if (!value) {
+      return false;
+    }
+
+    return true;
+}
+
+console.log("R2 bucket:", process.env.R2_BUCKET || "(missing)");
+console.log("R2 account configured:", isConfigured(process.env.R2_ACCOUNT_ID));
+console.log("R2 access key configured:", isConfigured(process.env.R2_ACCESS_KEY_ID));
 
 const client = new S3Client({
     region: "auto",

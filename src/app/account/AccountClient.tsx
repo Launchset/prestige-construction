@@ -1,11 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import type { User } from "@supabase/supabase-js";
 import { createBrowserClient } from "@/lib/supabase/browser";
 import { getAccountRole } from "@/lib/supabase/account";
+import { getSafeInternalPath } from "@/lib/safe-path";
 import styles from "./account.module.css";
 
 type Mode = "login" | "signup";
@@ -22,28 +23,31 @@ export default function AccountClient() {
   const [role, setRole] = useState<string | null>(null);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
-  const [configError, setConfigError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const supabase = useMemo(() => {
+  const { supabase, configError } = useMemo(() => {
     try {
-      return createBrowserClient();
+      return { supabase: createBrowserClient(), configError: "" };
     } catch (error) {
       const message = error instanceof Error
         ? error.message
         : "Supabase account configuration is missing.";
-      setConfigError(message);
-      return null;
+      return { supabase: null, configError: message };
     }
   }, []);
 
-  function resolveNextPath(resolvedRole: string | null) {
-    if (requestedNextPath) {
-      return requestedNextPath;
-    }
+  const resolveNextPath = useCallback(
+    (resolvedRole: string | null) => {
+      const safeNextPath = getSafeInternalPath(requestedNextPath);
 
-    return resolvedRole === "admin" ? "/admin/orders" : "/account/orders";
-  }
+      if (safeNextPath) {
+        return safeNextPath;
+      }
+
+      return resolvedRole === "admin" ? "/admin/orders" : "/account/orders";
+    },
+    [requestedNextPath],
+  );
 
   useEffect(() => {
     if (!supabase) {
@@ -110,7 +114,7 @@ export default function AccountClient() {
       isMounted = false;
       subscription.unsubscribe();
     };
-  }, [requestedNextPath, router, supabase]);
+  }, [resolveNextPath, router, supabase]);
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();

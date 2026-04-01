@@ -1,34 +1,67 @@
 /* =====================================================
-   HEADER
+   HEADER WRAP
 ===================================================== */
 .header {
     width: 100%;
-    background: #f6efe6;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    background: transparent;
+    padding: 0;
     font-family: "Inter", system-ui, sans-serif;
-    overflow-x: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transform: translateY(0);
+    transition: transform 0.28s ease;
+    will-change: transform;
+}
+
+.header {
+    -webkit-mask-image: linear-gradient(to bottom,
+            black 90%,
+            transparent 100%);
+    mask-image: linear-gradient(to bottom,
+            black 90%,
+            transparent 100%);
+}
+
+.hidden {
+    transform: translateY(-100%);
 }
 
 /* =====================================================
-   SHELL / LAYOUT
+   MAIN BAND
 ===================================================== */
 .shell {
+    min-height: 92px;
+    padding: 14px 22px;
+
     display: flex;
     align-items: center;
     gap: 24px;
 
-    padding: clamp(12px, 1.5vw, 14px) clamp(20px, 4vw, 36px);
-    min-height: 120px;
+
+    background:
+        radial-gradient(circle at 18% 50%, rgba(203, 167, 86, 0.18), transparent 18%),
+        radial-gradient(circle at 55% 50%, rgba(255, 223, 154, 0.18), transparent 24%),
+        radial-gradient(circle at 88% 50%, rgba(181, 145, 72, 0.16), transparent 20%),
+        linear-gradient(90deg,
+            #111111 0%,
+            #27231e 20%,
+            #3f372c 42%,
+            #5f523f 68%,
+            #d7c6ab 100%);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 244, 220, 0.08),
+        0 10px 25px rgba(40, 28, 12, 0.08);
 }
 
 /* =====================================================
    LOGO
 ===================================================== */
 .logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
     flex-shrink: 0;
+    text-decoration: none;
 }
 
 .logoInner {
@@ -36,188 +69,229 @@
     flex-direction: column;
     justify-content: center;
 
-    background: #1c1c1c;
-    border: 3px solid #b59a55;
+    min-width: 250 px;
+    height: 72px;
+    padding: 14px 22px;
 
-    padding: clamp(12px, 1.5vw, 16px) clamp(18px, 2.5vw, 24px);
-    min-width: clamp(190px, 20vw, 240px);
-    min-height: 80px;
+    border: 2px solid rgba(194, 155, 77, 0.85);
+
+    background:
+        radial-gradient(circle at 50% 50%, rgba(194, 155, 77, 0.12), transparent 58%),
+        linear-gradient(180deg, #101010 0%, #060606 100%);
 }
 
 .logoTop {
-    color: #d7c17b;
-    font-size: clamp(22px, 3vw, 28px);
+    color: #d9bf73;
+    font-size: 28px;
     font-weight: 700;
-    letter-spacing: 0.24em;
+    letter-spacing: 0.22em;
+    line-height: 1;
 }
 
 .logoBottom {
-    margin-top: 6px;
-    color: #d7c17b;
-    font-size: clamp(11px, 1.5vw, 13px);
-    letter-spacing: 0.28em;
+    margin-top: 10px;
+    color: #d9bf73;
+    font-size: 12px;
+    letter-spacing: 0.34em;
+    line-height: 1;
 }
 
 /* =====================================================
-   MIDDLE SECTION (SEARCH + TABS)
+   DESKTOP NAV
 ===================================================== */
-.middle {
+.desktopNav {
     flex: 1 1 auto;
     min-width: 0;
 
     display: flex;
-    flex-direction: column;
-    gap: 12px;
-
-    padding-right: 20px;
+    align-items: center;
+    gap: 0;
+    margin-left: 10px;
 }
 
-/* Utilities row (search + profile) */
-.utilities {
+.navItemWrap {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    gap: 12px;
-    width: 100%;
-}
-
-/* =====================================================
-   DESKTOP SEARCH
-===================================================== */
-.searchInput {
-    width: 280px;
-    max-width: 100%;
-    margin-left: auto;
-
-    padding: 12px 16px;
-    font-size: 15px;
-
-    background: #ffffff;
-    border-radius: 12px;
-    border: 1px solid rgba(0, 0, 0, 0.25);
-    outline: none;
-}
-
-.searchInput:focus {
-    border-color: #5a7a48;
-    box-shadow: 0 0 0 2px rgba(90, 122, 72, 0.15);
-}
-
-/* =====================================================
-   NAV TABS (DESKTOP)
-===================================================== */
-.tabs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px 16px;
-    width: 100%;
 }
 
 .tab {
-    flex: 1 1 auto;
-    text-align: center;
+    position: relative;
     text-decoration: none;
-
-    font-size: clamp(14px, 1.4vw, 15px);
-    padding: clamp(10px, 1.2vw, 12px) clamp(14px, 2vw, 18px);
-
-    background: #ffffff;
-    color: #333;
-    border-radius: 16px;
-    border: 1px solid rgba(0, 0, 0, 0.18);
-
-    transition: background 0.15s ease, transform 0.15s ease;
+    color: rgba(255, 248, 235, 0.9);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1;
+    padding: 8px 0;
+    transition: color 0.2s ease, opacity 0.2s ease;
 }
 
 .tab:hover {
-    background: #eee6da;
+    color: #ffffff;
+}
+
+.tab::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 0;
+    height: 2px;
+    background: #d9bf73;
+    transition: width 0.25s ease;
+}
+
+.tab:hover::after,
+.active::after {
+    width: 100%;
 }
 
 .active {
-    background: #5a7a48;
-    color: #ffffff;
-    border-color: transparent;
-    font-weight: 600;
+    color: #fff8ea;
+}
+
+.navDot {
+    margin: 0 20px;
+    color: rgba(255, 239, 204, 0.35);
+    font-size: 22px;
+    line-height: 1;
 }
 
 /* =====================================================
-   DESKTOP BOOK BUTTON
+   ACTIONS
 ===================================================== */
-.right {
-    flex: 0 0 auto;
+.actions {
+    flex-shrink: 0;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    gap: 16px;
+}
+
+.profileBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 13px 22px;
+    border-radius: 999px;
+
+    text-decoration: none;
+    color: #3a2d1e;
+    font-size: 17px;
+    font-weight: 500;
+
+    border: 1px solid rgba(126, 94, 45, 0.3);
+    background: linear-gradient(180deg, #efe3d0 0%, #e7d7c2 100%);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.65),
+        0 6px 16px rgba(40, 28, 12, 0.08);
+
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.profileBtn:hover {
+    transform: translateY(-1px);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.7),
+        0 10px 20px rgba(40, 28, 12, 0.12);
+}
+
+.profileIcon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    font-size: 15px;
+    line-height: 1;
+    opacity: 0.8;
 }
 
 .bookBtn {
-    background: #5a7a48;
-    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-    font-size: 18px;
-    font-weight: 800;
-    padding: 18px 44px;
+    min-width: 184px;
+    padding: 14px 28px;
+    border-radius: 999px;
 
-    border-radius: 22px;
     text-decoration: none;
+    color: #f9f1db;
+    font-size: 17px;
+    font-weight: 700;
 
-    transition: background 0.2s ease, transform 0.15s ease;
+    border: 1px solid rgba(207, 169, 87, 0.6);
+
+    background:
+        radial-gradient(circle at 85% 50%, rgba(209, 173, 92, 0.15), transparent 28%),
+        linear-gradient(180deg, #3d4f2d 0%, #26331d 100%);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 226, 163, 0.18),
+        0 8px 18px rgba(20, 18, 10, 0.18);
+
+    transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
 }
 
 .bookBtn:hover {
-    background: #4a653c;
-    transform: translateY(-2px);
+    transform: translateY(-1px);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 226, 163, 0.2),
+        0 12px 24px rgba(20, 18, 10, 0.24);
+    filter: brightness(1.03);
+}
+
+.bookBtn::after {
+    content: "›";
+    margin-left: 10px;
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 400;
 }
 
 /* =====================================================
-   HAMBURGER (MOBILE TRIGGER)
+   HAMBURGER
 ===================================================== */
 .hamburger {
     display: none;
-    align-self: center;
-
-    font-size: 40px;
+    margin-left: auto;
+    font-size: 34px;
     line-height: 1;
-    font-weight: 500;
-
     border: none;
     background: none;
+    color: #2c2419;
     cursor: pointer;
 }
 
 /* =====================================================
-   MOBILE MENU OVERLAY
+   MOBILE MENU
 ===================================================== */
 .mobileOverlay {
     position: fixed;
     inset: 0;
     z-index: 1000;
-
     background: rgba(0, 0, 0, 0.4);
 }
 
-/* =====================================================
-   MOBILE DRAWER
-===================================================== */
 .mobileMenu {
     position: absolute;
     top: 0;
     right: 0;
-
     width: 82%;
     max-width: 360px;
     height: 100dvh;
-
     padding: 20px;
     box-sizing: border-box;
 
     display: flex;
     flex-direction: column;
+    gap: 14px;
 
     background: #f6efe6;
     animation: slideIn 0.25s ease forwards;
 }
-
 
 @keyframes slideIn {
     from {
@@ -229,28 +303,6 @@
     }
 }
 
-/* =====================================================
-   MOBILE SEARCH
-===================================================== */
-.mobileSearchWrap {
-    margin-bottom: 8px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-}
-
-.mobileSearch {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 14px 18px;
-
-    font-size: 16px;
-    border-radius: 14px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-/* =====================================================
-   MOBILE NAV ITEMS
-===================================================== */
 .mobileNav {
     display: flex;
     flex-direction: column;
@@ -258,23 +310,31 @@
 }
 
 .mobileItem,
-.mobileProfile {
-    padding: 16px;
+.mobileProfile,
+.mobileCta {
+    padding: 16px 18px;
     font-size: 17px;
-    color: #333;
     text-decoration: none;
-
-    background: #ffffff;
     border-radius: 16px;
-    border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
+.mobileItem,
 .mobileProfile {
+    color: #2d2a26;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.mobileCta {
     margin-top: auto;
+    text-align: center;
+    color: #fff;
+    background: #5a7a48;
+    font-weight: 700;
 }
 
 /* =====================================================
-   FLOATING MOBILE BOOK CTA
+   FLOATING MOBILE CTA
 ===================================================== */
 .floatingBook {
     position: fixed;
@@ -295,41 +355,40 @@
 }
 
 /* =====================================================
-   RESPONSIVE RULES
+   RESPONSIVE
 ===================================================== */
-@media (max-width: 1200px) {
-    .shell {
-        flex-wrap: wrap;
-    }
+@media (max-width: 1180px) {
 
-    .right {
-        margin-left: auto;
-    }
-}
-
-@media (max-width: 1024px) {
-
-    .middle,
-    .right {
+    .desktopNav,
+    .actions {
         display: none;
-    }
-
-    .searchInput {
-        display: none;
-    }
-
-    .bookBtn {
-        font-size: 16px;
-        padding: 14px 28px;
     }
 
     .hamburger {
         display: block;
-        margin-left: auto;
+    }
+
+    .shell {
+        min-height: 82px;
+        background: linear-gradient(90deg, #111 0%, #5c513d 100%);
+    }
+
+    .logoInner {
+        min-width: 220px;
+        height: 76px;
+    }
+
+    .logoTop {
+        font-size: 25px;
+    }
+
+    .logoBottom {
+        font-size: 10px;
+        letter-spacing: 0.24em;
     }
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1181px) {
     .floatingBook {
         display: none;
     }

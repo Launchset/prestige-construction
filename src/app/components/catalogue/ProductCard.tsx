@@ -2,8 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./catalogue.module.css";
 
-const BASE = process.env.NEXT_PUBLIC_ASSETS_BASE?.replace(/\/+$/, "") ?? "";
-
 type ProductImage = {
   source_path: string;
   sort_order: number | null;
@@ -21,10 +19,6 @@ type ProductCardProps = {
   product: Product;
 };
 
-function getImageUrl(sourcePath: string, width = 400, quality = 75) {
-  return `${BASE}/i/${sourcePath}?w=${width}&q=${quality}`;
-}
-
 export default function ProductCard({ product }: ProductCardProps) {
   const sortedImages = [...(product.product_images ?? [])]
     .filter((image) => typeof image.sort_order === "number" && image.sort_order > 0)
@@ -37,11 +31,13 @@ export default function ProductCard({ product }: ProductCardProps) {
       <div className={styles.productImageWrap}>
         {thumbnail ? (
           <Image
-            src={getImageUrl(thumbnail.source_path)}
+            src={thumbnail.source_path}
             alt={product.name}
             className={styles.productImage}
             width={400}
             height={300}
+            sizes="(max-width: 700px) 50vw, (max-width: 1180px) 33vw, 220px"
+            quality={68}
           />
         ) : (
           <div className={styles.productPlaceholder}>No image</div>

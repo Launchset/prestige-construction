@@ -2,28 +2,55 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./navbar2.module.css";
 
 const NAV_ITEMS = [
-    { label: "Kitchens", href: "/kitchens" },
     { label: "Appliances", href: "/appliances" },
-    { label: "Sinks & Taps", href: "/sinks-taps" },
-    { label: "Bedrooms", href: "/bedrooms" },
-    { label: "TV units", href: "/tv-units" },
-    { label: "Flooring", href: "/flooring" },
-    { label: "Crittall doors", href: "/crittall-doors" },
+    { label: "Sinks", href: "/sinks-taps-sinks" },
+    { label: "Taps", href: "/sinks-taps-taps" },
 ];
 
 export default function Navbar2() {
     const pathname = usePathname();
     const [menuOpen, setMenuOpen] = useState(false);
+    const [isHidden, setIsHidden] = useState(false);
+    const lastScrollYRef = useRef(0);
+    const tickingRef = useRef(false);
+
+    useEffect(() => {
+        lastScrollYRef.current = window.scrollY;
+
+        const updateNavbarVisibility = () => {
+            const currentScrollY = window.scrollY;
+            const isScrollingDown = currentScrollY > lastScrollYRef.current;
+            const shouldHide = currentScrollY > 100 && isScrollingDown && !menuOpen;
+
+            setIsHidden((prev) => (prev === shouldHide ? prev : shouldHide));
+            lastScrollYRef.current = currentScrollY;
+            tickingRef.current = false;
+        };
+
+        const handleScroll = () => {
+            if (tickingRef.current) {
+                return;
+            }
+
+            tickingRef.current = true;
+            window.requestAnimationFrame(updateNavbarVisibility);
+        };
+
+        window.addEventListener("scroll", handleScroll, { passive: true });
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, [menuOpen]);
 
     return (
         <>
-            <header className={styles.header}>
+            <header className={`${styles.header} ${isHidden ? styles.hidden : ""}`}>
                 <div className={styles.shell}>
-                    {/* LOGO */}
                     <Link href="/" className={styles.logo}>
                         <div className={styles.logoInner}>
                             <div className={styles.logoTop}>PRESTIGE</div>
@@ -33,39 +60,39 @@ export default function Navbar2() {
                         </div>
                     </Link>
 
-                    {/* DESKTOP NAV */}
-                    <div className={styles.middle}>
-                        <div className={styles.utilities}>
-                            <input
-                                className={styles.searchInput}
-                                type="text"
-                                placeholder="Search…"
-                            />
-                            <Link href="/account" className={styles.profileBtn}>Account</Link>
-                        </div>
-
-                        <nav className={styles.tabs}>
-                            {NAV_ITEMS.map((item) => (
+                    <nav className={styles.desktopNav}>
+                        {NAV_ITEMS.map((item, index) => (
+                            <div key={item.href} className={styles.navItemWrap}>
                                 <Link
-                                    key={item.href}
                                     href={item.href}
                                     className={`${styles.tab} ${pathname === item.href ? styles.active : ""
                                         }`}
                                 >
                                     {item.label}
                                 </Link>
-                            ))}
-                        </nav>
-                    </div>
 
-                    {/* DESKTOP BOOK */}
-                    <div className={styles.right}>
-                        <Link className={styles.bookBtn} href="/book">
-                            Book now
+                                {index < NAV_ITEMS.length - 1 && (
+                                    <span className={styles.navDot} aria-hidden="true">
+                                        •
+                                    </span>
+                                )}
+                            </div>
+                        ))}
+                    </nav>
+
+                    <div className={styles.actions}>
+                        <Link href="/account" className={styles.profileBtn}>
+                            <span className={styles.profileIcon} aria-hidden="true">
+                                ○
+                            </span>
+                            Account
+                        </Link>
+
+                        <Link className={styles.bookBtn} href="/enquire">
+                            Enquire
                         </Link>
                     </div>
 
-                    {/* MOBILE HAMBURGER */}
                     <button
                         className={styles.hamburger}
                         onClick={() => setMenuOpen(true)}
@@ -76,7 +103,6 @@ export default function Navbar2() {
                 </div>
             </header>
 
-            {/* MOBILE MENU */}
             {menuOpen && (
                 <div
                     className={styles.mobileOverlay}
@@ -86,15 +112,6 @@ export default function Navbar2() {
                         className={styles.mobileMenu}
                         onClick={(e) => e.stopPropagation()}
                     >
-
-                        <div className={styles.mobileSearchWrap}>
-                            <input
-                                className={styles.mobileSearch}
-                                placeholder="Search…"
-                            />
-                        </div>
-
-
                         <nav className={styles.mobileNav}>
                             {NAV_ITEMS.map((item) => (
                                 <Link
@@ -116,14 +133,15 @@ export default function Navbar2() {
                             Account
                         </Link>
 
+                        <Link
+                            href="/enquire"
+                            className={styles.mobileCta}
+                            onClick={() => setMenuOpen(false)}
+                        >
+                            Enquire
+                        </Link>
                     </div>
                 </div>
-            )}
-
-            {!menuOpen && (
-                <Link href="/book" className={styles.floatingBook}>
-                    Book now
-                </Link>
             )}
         </>
     );
