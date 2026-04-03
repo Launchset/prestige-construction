@@ -10,22 +10,21 @@ export default function Footer() {
                 <div className={styles.left}>
 
                     <div className={styles.info}>
-                        <p>📍 xxx,xxx,xxx, United Kingdom</p>
-                        <p>📞 +44 xxxx xxxx</p>
+                        <p>📍 unit 13 Telford Rd, Ferndown, Wimborne BH21 7QP, United Kingdom</p>
+                        <p>
+                            📞 <a href="tel:+447775457427">+44 7775 457427</a>
+                        </p>
                     </div>
 
                     <div className={styles.socials}>
                         <a
-                            href="#"
+                            href="https://www.instagram.com/prestige_kitchensandbedrooms/"
                             aria-label="Instagram"
                         >
                             <img src="/Instagram.webp" alt="Instagram" />
                         </a>
-                        <a href="#" aria-label="Facebook">
+                        <a href="https://www.facebook.com/profile.php?id=61585955789857" aria-label="Facebook">
                             <img src="/Facebook.webp" alt="Facebook" />
-                        </a>
-                        <a href="#" aria-label="TikTok">
-                            <img src="/TikTok.webp" alt="TikTok" />
                         </a>
                     </div>
                 </div>

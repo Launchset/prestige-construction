@@ -2,11 +2,10 @@
     position: relative;
     background: #ece3da;
     overflow: hidden;
-    padding-block: clamp(2rem, 3vh, 1rem);
+    padding-top: calc(var(--navbar-offset) + clamp(1rem, 3vh, 2rem));
     padding-inline: 1.5rem;
     padding-bottom: 1rem;
-    height: calc(100vh - var(--navbar-offset));
-    min-height: calc(100vh - var(--navbar-offset));
+    min-height: 100vh;
 }
 
 
@@ -155,6 +154,7 @@
 
     .hero {
         height: auto;
+        min-height: auto;
     }
 
     .hero::before {

@@ -40,6 +40,15 @@
     opacity: 0.85;
 }
 
+.info a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.info a:hover {
+    text-decoration: underline;
+}
+
 .socials {
     margin-top: 10px;
     display: flex;

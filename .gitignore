@@ -16,13 +16,18 @@
 # next.js
 /.next/
 /out/
+/.open-next/
 
 # production
 /build
+/dist/
 
 # misc
 .DS_Store
 *.pem
+.vscode/
+.idea/
+/.turbo/
 
 # debug
 npm-debug.log*
@@ -36,6 +41,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# cloudflare
+/.wrangler/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
@@ -43,6 +51,15 @@ next-env.d.ts
 .env.import
 imports
 .env.local
+
+# generated import/scraper reports
+/parse_failures.json
+/scripts/scraper/caple-matched-products.json
+/scripts/scraper/caple-unmatched-products.json
+/scripts/scraper/caple-unused-index-entries.json
+/scripts/scraper/caple-unused-index-non-spare.json
+/scripts/scraper/pdf-feature-review.json
+/scripts/scraper/scrape-run-report.json
 
 # local skills / tool metadata
 skills/

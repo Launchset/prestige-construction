@@ -5,7 +5,7 @@ type EnquirePageProps = {
   searchParams: Promise<{ product?: string; productSlug?: string; productName?: string; image?: string }>;
 };
 
-const CONTACT_PHONE = "+447XXXXXXXXX";
+const CONTACT_PHONE = "+447775457427";
 const ASSETS_BASE = process.env.NEXT_PUBLIC_ASSETS_BASE?.replace(/\/+$/, "") ?? "";
 
 function normalizeAssetPath(path: string) {

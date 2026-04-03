@@ -1,5 +1,5 @@
 .categories {
-    padding: 96px 24px;
+    padding: 32px 24px;
     background: #ffffff;
 }
 
@@ -32,7 +32,7 @@
     aspect-ratio: 4 / 5;
     overflow: hidden;
     text-decoration: none;
-    border-radius: 2px;
+    border-radius: 16px;
 }
 
 .image {
@@ -67,6 +67,37 @@
     opacity: 0.9;
 }
 
+/* Desktop */
+@media (min-width: 1025px) {
+    .categories {
+        padding: 32px 48px 72px;
+    }
+
+    .inner {
+        max-width: 1080px;
+    }
+
+    .title {
+        margin-bottom: 20px;
+    }
+
+    .subtitle {
+        margin-bottom: 40px;
+    }
+
+    .grid {
+        gap: 24px;
+    }
+
+    .card {
+        aspect-ratio: 4 / 4.35;
+    }
+
+    .overlay {
+        padding: 28px;
+    }
+}
+
 /* Tablet */
 @media (max-width: 1024px) {
     .grid {
@@ -83,6 +114,10 @@
 @media (max-width: 600px) {
     .categories {
         padding: 72px 20px;
+    }
+
+    .card {
+        aspect-ratio: 4 / 3;
     }
 
     .title {

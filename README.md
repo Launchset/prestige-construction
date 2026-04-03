@@ -25,12 +25,18 @@ STRIPE_WEBHOOK_SECRET=whsec_...
 SITE_URL=http://localhost:3000
 NEXT_PUBLIC_ASSETS_BASE=https://your-asset-host.example
 NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_...
+MAILJET_API_KEY=your_mailjet_api_key
+MAILJET_API_SECRET=your_mailjet_secret_key
+MAILJET_FROM_EMAIL=hello@yourdomain.com
+MAILJET_FROM_NAME="Prestige Construction"
+ENQUIRY_NOTIFICATION_EMAIL=your-inbox@example.com
 ```
 
 Notes:
 - `NEXT_PUBLIC_*` values are used by browser code.
 - `SUPABASE_SERVICE_ROLE` stays server-only.
 - `STRIPE_WEBHOOK_SECRET` comes from the Stripe CLI during local testing.
+- `MAILJET_FROM_EMAIL` must be a sender address/domain verified in Mailjet before production use.
 
 ## Supabase Model
 
@@ -40,7 +46,7 @@ The app uses two access paths:
 
 Orders are attached to the signed-in account via `orders.user_id`. Customers can read their own orders, admins can read all orders, and the live schema/policies are captured in `supabase/auth.sql` and `supabase/orders.sql`.
 
-Enquiries are stored in `public.enquiries` using `supabase/enquiries.sql`. Apply `supabase/auth.sql` first if the database is new, then apply the enquiries SQL before using the enquiry form in any environment that does not already have the table.
+Enquiries are stored in `public.enquiries` using `supabase/enquiries.sql`, and the same API route can send a Mailjet notification email when `MAILJET_API_KEY`, `MAILJET_API_SECRET`, `MAILJET_FROM_EMAIL`, and `ENQUIRY_NOTIFICATION_EMAIL` are set. Apply `supabase/auth.sql` first if the database is new, then apply the enquiries SQL before using the enquiry form in any environment that does not already have the table.
 
 ## Supabase CLI
 

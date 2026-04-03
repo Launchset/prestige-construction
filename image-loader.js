@@ -7,6 +7,10 @@ function normalizeAssetPath(path) {
 }
 
 export default function imageLoader({ src, width, quality }) {
+  if (src.startsWith("/")) {
+    return src;
+  }
+
   const normalizedPath = normalizeAssetPath(src);
 
   if (!ASSETS_BASE) {
