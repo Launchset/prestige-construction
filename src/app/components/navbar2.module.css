@@ -61,39 +61,15 @@
 ===================================================== */
 .logo {
     flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
     text-decoration: none;
 }
 
-.logoInner {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    min-width: 250 px;
+.logoImage {
+    display: block;
+    width: auto;
     height: 72px;
-    padding: 14px 22px;
-
-    border: 2px solid rgba(194, 155, 77, 0.85);
-
-    background:
-        radial-gradient(circle at 50% 50%, rgba(194, 155, 77, 0.12), transparent 58%),
-        linear-gradient(180deg, #101010 0%, #060606 100%);
-}
-
-.logoTop {
-    color: #d9bf73;
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: 0.22em;
-    line-height: 1;
-}
-
-.logoBottom {
-    margin-top: 10px;
-    color: #d9bf73;
-    font-size: 12px;
-    letter-spacing: 0.34em;
-    line-height: 1;
 }
 
 /* =====================================================
@@ -373,18 +349,8 @@
         background: linear-gradient(90deg, #111 0%, #5c513d 100%);
     }
 
-    .logoInner {
-        min-width: 220px;
-        height: 76px;
-    }
-
-    .logoTop {
-        font-size: 25px;
-    }
-
-    .logoBottom {
-        font-size: 10px;
-        letter-spacing: 0.24em;
+    .logoImage {
+        height: 56px;
     }
 }
 

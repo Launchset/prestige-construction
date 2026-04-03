@@ -51,12 +51,12 @@ function isStorageUnavailableError(error: { code?: string; message?: string } | 
 function getStorageConfigurationError() {
   const missing: string[] = [];
 
-  if (!process.env.SUPABASE_URL) {
-    missing.push("SUPABASE_URL");
+  if (!process.env.NEXT_PUBLIC_SUPABASE_URL && !process.env.SUPABASE_URL) {
+    missing.push("NEXT_PUBLIC_SUPABASE_URL");
   }
 
-  if (!process.env.SUPABASE_SERVICE_ROLE) {
-    missing.push("SUPABASE_SERVICE_ROLE");
+  if (!process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+    missing.push("NEXT_PUBLIC_SUPABASE_ANON_KEY");
   }
 
   if (!missing.length) {

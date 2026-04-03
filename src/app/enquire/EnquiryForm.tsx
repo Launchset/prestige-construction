@@ -5,6 +5,7 @@ import styles from "./enquire.module.css";
 
 type EnquiryFormProps = {
   product: string;
+  isProductEnquiry: boolean;
 };
 
 type FormState = {
@@ -14,8 +15,10 @@ type FormState = {
   message: string;
 };
 
-export default function EnquiryForm({ product }: EnquiryFormProps) {
-  const defaultMessage = `I'm interested in ${product}`;
+export default function EnquiryForm({ product, isProductEnquiry }: EnquiryFormProps) {
+  const defaultMessage = isProductEnquiry
+    ? `I'm interested in ${product}`
+    : "I'd like to book a free design consultation and discuss my project.";
   const [form, setForm] = useState<FormState>({
     name: "",
     email: "",

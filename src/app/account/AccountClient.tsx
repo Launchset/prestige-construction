@@ -40,7 +40,7 @@ export default function AccountClient() {
     (resolvedRole: string | null) => {
       const safeNextPath = getSafeInternalPath(requestedNextPath);
 
-      if (safeNextPath) {
+      if (safeNextPath && safeNextPath !== "/account") {
         return safeNextPath;
       }
 
@@ -67,6 +67,8 @@ export default function AccountClient() {
       setUser(sessionData.user ?? null);
 
       if (sessionData.user) {
+        router.replace(resolveNextPath(null));
+
         const { role: resolvedRole, error: roleError } = await getAccountRole(
           client,
           sessionData.user.id,
@@ -95,6 +97,8 @@ export default function AccountClient() {
       setUser(session?.user ?? null);
 
       if (session?.user) {
+        router.replace(resolveNextPath(null));
+
         const { role: resolvedRole, error: roleError } = await getAccountRole(
           client,
           session.user.id,
@@ -160,12 +164,18 @@ export default function AccountClient() {
   }
 
   if (user) {
+    const accountPath = resolveNextPath(role);
+
     return (
       <div className={styles.card}>
         <h2 className={styles.sectionTitle}>Signed in</h2>
         <p className={styles.sectionText}>
           You are already signed in as {user.email}. Redirecting to your account.
         </p>
+        {error ? <p className={styles.error}>{error}</p> : null}
+        <Link href={accountPath} className={styles.secondaryButton}>
+          Go to My Account
+        </Link>
         {role === "admin" ? (
           <Link href="/admin/orders" className={styles.secondaryButton}>
             Go to Admin Orders

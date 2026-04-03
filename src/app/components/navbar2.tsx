@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -52,12 +53,14 @@ export default function Navbar2() {
             <header className={`${styles.header} ${isHidden ? styles.hidden : ""}`}>
                 <div className={styles.shell}>
                     <Link href="/" className={styles.logo}>
-                        <div className={styles.logoInner}>
-                            <div className={styles.logoTop}>PRESTIGE</div>
-                            <div className={styles.logoBottom}>
-                                KITCHENS &amp; BEDROOMS
-                            </div>
-                        </div>
+                        <Image
+                            src="/logo.png"
+                            alt="Prestige Kitchens and Bedrooms"
+                            width={232}
+                            height={87}
+                            priority
+                            className={styles.logoImage}
+                        />
                     </Link>
 
                     <nav className={styles.desktopNav}>

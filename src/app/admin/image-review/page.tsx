@@ -1,14 +1,20 @@
 import ImageReviewClient from "./ImageReviewClient";
 import { revalidatePath } from "next/cache";
-import { createClient } from "@/lib/supabase/server";
+import { notFound } from "next/navigation";
+import { createServiceClient } from "@/lib/supabase/service";
 
 export default async function ImageReviewPage() {
-  const supabase = createClient();
+  // Keep the image-review tool in the repo for local use, but hide it from production deploys.
+  if (process.env.NODE_ENV === "production") {
+    notFound();
+  }
+
+  const supabase = createServiceClient();
 
   async function completeReview(productId: string, selectedIds: string[]) {
     "use server";
 
-    const supabase = createClient();
+    const supabase = createServiceClient();
 
     // reset only the images we are ordering
     const { error: resetError } = await supabase
@@ -34,7 +40,7 @@ export default async function ImageReviewPage() {
   async function skipCategory(productId: string) {
     "use server";
 
-    const supabase = createClient();
+    const supabase = createServiceClient();
 
     // mark this product as skipped so the category counts as reviewed
     const { data: skippedRows, error } = await supabase

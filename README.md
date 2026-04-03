@@ -20,6 +20,8 @@ NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_public_key
 SUPABASE_URL=https://your-project.supabase.co
 SUPABASE_SERVICE_ROLE=your_service_role_key
+SUPABASE_WEBHOOK_ADMIN_EMAIL=admin@example.com
+SUPABASE_WEBHOOK_ADMIN_PASSWORD=your_admin_password
 STRIPE_SECRET_KEY=sk_test_...
 STRIPE_WEBHOOK_SECRET=whsec_...
 SITE_URL=http://localhost:3000
@@ -34,7 +36,8 @@ ENQUIRY_NOTIFICATION_EMAIL=your-inbox@example.com
 
 Notes:
 - `NEXT_PUBLIC_*` values are used by browser code.
-- `SUPABASE_SERVICE_ROLE` stays server-only.
+- `SUPABASE_SERVICE_ROLE` is only for local data scripts and the local-only `/admin/image-review` route. Do not put it in Cloudflare production env vars.
+- `SUPABASE_WEBHOOK_ADMIN_EMAIL` and `SUPABASE_WEBHOOK_ADMIN_PASSWORD` must belong to a Supabase user whose `profiles.role` is `admin`, so Stripe webhooks can update order status through RLS.
 - `STRIPE_WEBHOOK_SECRET` comes from the Stripe CLI during local testing.
 - `MAILJET_FROM_EMAIL` must be a sender address/domain verified in Mailjet before production use.
 
@@ -73,6 +76,7 @@ Notes:
 - `npm run supabase:db:push:dry` shows what would be applied without changing the remote database.
 - The repo now includes migration files under `supabase/migrations/` for `auth`, `orders`, and `enquiries`.
 - If your remote project is missing `public.enquiries`, run `npm run supabase:db:push` after linking to apply it from this repo.
+- `/admin/image-review` is intentionally hidden in production and only available in local development.
 
 ## Stripe Local Testing
 

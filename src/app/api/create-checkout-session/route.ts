@@ -3,13 +3,17 @@ import { createHash } from "node:crypto";
 import { createClient } from "@/lib/supabase/server";
 import { getCheckoutProductBySlug } from "@/lib/products";
 import { getStripeClient } from "@/lib/stripe/server";
-import { createPublicClient } from "@/lib/supabase/public";
 
 type CheckoutPayload = {
   productSlug?: string;
   name?: string;
   phone?: string;
   address?: string;
+  addressNumber?: string;
+  road?: string;
+  townCity?: string;
+  county?: string;
+  postcode?: string;
 };
 
 type OrderInsert = {
@@ -23,6 +27,11 @@ type OrderInsert = {
   customer_email: string;
   customer_phone: string;
   shipping_address: string;
+  shipping_address_number: string;
+  shipping_road: string;
+  shipping_town_city: string;
+  shipping_county: string;
+  shipping_postcode: string;
   status: string;
   user_id: string;
   stripe_payment_status: string;
@@ -38,6 +47,27 @@ type OrderRecord = {
 
 function isValidEmail(email: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function normalizePostcode(postcode: string) {
+  return postcode.trim().replace(/\s+/g, " ").toUpperCase();
+}
+
+function formatShippingAddress(address: {
+  addressNumber: string;
+  road: string;
+  townCity: string;
+  county: string;
+  postcode: string;
+}) {
+  return [
+    `${address.addressNumber} ${address.road}`.trim(),
+    address.townCity,
+    address.county,
+    address.postcode,
+  ]
+    .filter(Boolean)
+    .join(", ");
 }
 
 function buildCheckoutFingerprint(input: {
@@ -132,11 +162,12 @@ async function loadMatchingSessionOrder(
 }
 
 export async function POST(request: Request) {
+  let accessToken = "";
   let orderId: string | null = null;
 
   try {
     const authHeader = request.headers.get("authorization") || "";
-    const accessToken = authHeader.startsWith("Bearer ") ? authHeader.slice(7).trim() : "";
+    accessToken = authHeader.startsWith("Bearer ") ? authHeader.slice(7).trim() : "";
 
     if (!accessToken) {
       return NextResponse.json(
@@ -145,8 +176,8 @@ export async function POST(request: Request) {
       );
     }
 
-    const publicSupabase = createPublicClient();
-    const { data: authData, error: authError } = await publicSupabase.auth.getUser(accessToken);
+    const supabase = createClient({ accessToken });
+    const { data: authData, error: authError } = await supabase.auth.getUser(accessToken);
     const authenticatedUser = authData.user ?? null;
 
     if (authError || !authenticatedUser) {
@@ -161,11 +192,30 @@ export async function POST(request: Request) {
     const name = body.name?.trim() || "";
     const email = authenticatedUser.email?.trim().toLowerCase() || "";
     const phone = body.phone?.trim() || "";
-    const address = body.address?.trim() || "";
+    const addressNumber = body.addressNumber?.trim() || "";
+    const road = body.road?.trim() || "";
+    const townCity = body.townCity?.trim() || "";
+    const county = body.county?.trim() || "";
+    const postcode = normalizePostcode(body.postcode || "");
+    const legacyAddress = body.address?.trim() || "";
+    const address = legacyAddress || formatShippingAddress({
+      addressNumber,
+      road,
+      townCity,
+      county,
+      postcode,
+    });
 
-    if (!productSlug || !name || !email || !phone || !address) {
+    if (
+      !productSlug ||
+      !name ||
+      !email ||
+      !phone ||
+      !address ||
+      (!legacyAddress && (!addressNumber || !road || !townCity || !county || !postcode))
+    ) {
       return NextResponse.json(
-        { error: "Product, name, phone, and address are required." },
+        { error: "Product, name, phone, and full delivery address are required." },
         { status: 400 }
       );
     }
@@ -190,7 +240,6 @@ export async function POST(request: Request) {
       );
     }
 
-    const supabase = createClient();
     const stripe = getStripeClient();
     const now = new Date().toISOString();
     const checkoutFingerprint = buildCheckoutFingerprint({
@@ -237,6 +286,11 @@ export async function POST(request: Request) {
         customer_email: email,
         customer_phone: phone,
         shipping_address: address,
+        shipping_address_number: addressNumber,
+        shipping_road: road,
+        shipping_town_city: townCity,
+        shipping_county: county,
+        shipping_postcode: postcode,
         status: "pending",
         stripe_payment_status: "unpaid",
         updated_at: now,
@@ -387,8 +441,8 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error("Checkout session creation failed", error);
 
-    if (orderId) {
-      const supabase = createClient();
+    if (orderId && accessToken) {
+      const supabase = createClient({ accessToken });
       await supabase
         .from("orders")
         .update({

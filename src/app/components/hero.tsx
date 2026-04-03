@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./hero.module.css";
 
 export default function Hero() {
@@ -15,9 +16,9 @@ export default function Hero() {
                     your home, lifestyle, and budget.
                 </p>
 
-                <button className={styles.cta}>
+                <Link href="/enquire" className={styles.cta}>
                     Book your free design appointment
-                </button>
+                </Link>
             </div>
 
             <div className={styles.imagesOuter}>

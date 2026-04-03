@@ -90,6 +90,9 @@
 }
 
 .cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     background: #f8c45d;
     /* match your current CTA */
     color: #000000;
@@ -97,6 +100,7 @@
     border-radius: 999px;
     border: none;
     font-weight: 600;
+    text-decoration: none;
     cursor: pointer;
     z-index: 1;
 }

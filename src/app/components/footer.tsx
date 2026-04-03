@@ -31,10 +31,15 @@ export default function Footer() {
 
                 {/* RIGHT */}
                 <div className={styles.right}>
-                    <Link href="/privacy-policy">Privacy Policy</Link>
+                    <div className={styles.legalLinks}>
+                        <Link href="/privacy-policy">Privacy Policy</Link>
+                        <Link href="/cookie-policy">Cookie Policy</Link>
+                        <Link href="/terms-and-conditions">Terms &amp; Conditions</Link>
+                        <Link href="/returns-policy">Returns Policy</Link>
+                    </div>
 
                     <a
-                        href="#"
+                        href="https://launchset.dev"
                         target="_blank"
                         rel="noopener noreferrer"
                     >

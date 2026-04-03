@@ -32,7 +32,7 @@ function getSupabaseAnonKey() {
   return anonKey;
 }
 
-export function createPublicClient() {
+export function getSupabasePublicConfig() {
   const url = getSupabaseUrl();
   const anonKey = getSupabaseAnonKey();
 
@@ -41,6 +41,12 @@ export function createPublicClient() {
       "Supabase public configuration is missing. Set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY to your real Supabase project values."
     );
   }
+
+  return { url, anonKey };
+}
+
+export function createPublicClient() {
+  const { url, anonKey } = getSupabasePublicConfig();
 
   return createSupabaseClient(url, anonKey);
 }

@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
 import { createClient } from "@/lib/supabase/server";
+import { getAccountRole } from "@/lib/supabase/account";
 import { getStripeClient } from "@/lib/stripe/server";
 
 function getWebhookSecret() {
@@ -15,6 +16,42 @@ function getWebhookSecret() {
 
 function getOrderReference(session: Stripe.Checkout.Session) {
   return session.metadata?.orderId || session.client_reference_id || "";
+}
+
+async function createWebhookSupabaseClient() {
+  const email = process.env.SUPABASE_WEBHOOK_ADMIN_EMAIL?.trim() || "";
+  const password = process.env.SUPABASE_WEBHOOK_ADMIN_PASSWORD?.trim() || "";
+
+  if (!email || !password) {
+    throw new Error(
+      "Missing SUPABASE_WEBHOOK_ADMIN_EMAIL or SUPABASE_WEBHOOK_ADMIN_PASSWORD environment variable.",
+    );
+  }
+
+  const authClient = createClient();
+  const { data: authData, error: authError } = await authClient.auth.signInWithPassword({
+    email,
+    password,
+  });
+  const accessToken = authData.session?.access_token;
+  const user = authData.user ?? null;
+
+  if (authError || !accessToken || !user) {
+    throw new Error(authError?.message || "Unable to authenticate Stripe webhook admin user.");
+  }
+
+  const supabase = createClient({ accessToken });
+  const { role, error: roleError } = await getAccountRole(supabase, user.id);
+
+  if (roleError) {
+    throw new Error(roleError);
+  }
+
+  if (role !== "admin") {
+    throw new Error("Stripe webhook Supabase user must have the admin role.");
+  }
+
+  return supabase;
 }
 
 async function updateOrderFromSession(
@@ -34,7 +71,7 @@ async function updateOrderFromSession(
     return;
   }
 
-  const supabase = createClient();
+  const supabase = await createWebhookSupabaseClient();
 
   let query = supabase
     .from("orders")

@@ -13,6 +13,11 @@ create table if not exists public.orders (
   customer_email text not null,
   customer_phone text not null,
   shipping_address text not null,
+  shipping_address_number text not null default '',
+  shipping_road text not null default '',
+  shipping_town_city text not null default '',
+  shipping_county text not null default '',
+  shipping_postcode text not null default '',
   status text not null default 'pending' check (status in ('pending', 'paid', 'cancelled', 'checkout_failed')),
   stripe_session_id text unique,
   stripe_payment_status text,
@@ -30,7 +35,10 @@ alter table public.orders enable row level security;
 
 drop policy if exists "Users can view their own orders" on public.orders;
 drop policy if exists "Users can insert their own orders" on public.orders;
+drop policy if exists "Users can update their own checkout orders" on public.orders;
+drop policy if exists "Users can delete their own pending orders" on public.orders;
 drop policy if exists "Admins can view all orders" on public.orders;
+drop policy if exists "Admins can update all orders" on public.orders;
 
 create policy "Users can view their own orders"
 on public.orders
@@ -42,7 +50,34 @@ on public.orders
 for insert
 with check (auth.uid() = user_id);
 
+create policy "Users can update their own checkout orders"
+on public.orders
+for update
+using (
+  auth.uid() = user_id
+  and status in ('pending', 'checkout_failed')
+)
+with check (
+  auth.uid() = user_id
+  and status in ('pending', 'checkout_failed')
+  and coalesce(stripe_payment_status, 'unpaid') in ('unpaid', 'failed')
+);
+
+create policy "Users can delete their own pending orders"
+on public.orders
+for delete
+using (
+  auth.uid() = user_id
+  and status in ('pending', 'checkout_failed')
+);
+
 create policy "Admins can view all orders"
 on public.orders
 for select
 using (public.is_admin());
+
+create policy "Admins can update all orders"
+on public.orders
+for update
+using (public.is_admin())
+with check (public.is_admin());

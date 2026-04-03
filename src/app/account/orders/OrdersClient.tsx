@@ -34,12 +34,6 @@ function formatStatus(status: string) {
 export default function OrdersClient() {
   const router = useRouter();
 
-  const [user, setUser] = useState<User | null>(null);
-  const [role, setRole] = useState<string | null>(null);
-  const [orders, setOrders] = useState<OrderRecord[]>([]);
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(true);
-
   const { supabase, configError } = useMemo(() => {
     try {
       return { supabase: createBrowserClient(), configError: "" };
@@ -51,6 +45,12 @@ export default function OrdersClient() {
     }
   }, []);
 
+  const [user, setUser] = useState<User | null>(null);
+  const [role, setRole] = useState<string | null>(null);
+  const [orders, setOrders] = useState<OrderRecord[]>([]);
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(() => Boolean(supabase));
+
   useEffect(() => {
     if (!supabase) {
       return;
@@ -60,10 +60,13 @@ export default function OrdersClient() {
     let isMounted = true;
 
     async function loadOrders() {
-      const { data: userData } = await client.auth.getUser();
-      const currentUser = userData.user ?? null;
+      const { data: sessionData } = await client.auth.getSession();
+      const currentUser = sessionData.session?.user ?? null;
 
       if (!currentUser) {
+        if (isMounted) {
+          setLoading(false);
+        }
         router.replace("/account");
         return;
       }
@@ -128,7 +131,7 @@ export default function OrdersClient() {
         <p className={styles.eyebrow}>Account</p>
         <h2 className={styles.sectionTitle}>Your order access</h2>
         <p className={styles.sectionText}>
-          Signed in as {user?.email ?? "Loading..."}.
+          Signed in as {user?.email ?? (loading ? "Checking session..." : "Unknown account")}.
         </p>
         <div className={styles.actions}>
           {role === "admin" ? (

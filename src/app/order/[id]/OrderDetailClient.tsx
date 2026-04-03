@@ -14,6 +14,11 @@ type OrderRecord = {
   customer_email: string;
   customer_phone: string;
   shipping_address: string;
+  shipping_address_number: string | null;
+  shipping_road: string | null;
+  shipping_town_city: string | null;
+  shipping_county: string | null;
+  shipping_postcode: string | null;
   unit_amount_pence: number;
   currency: string;
   status: string;
@@ -36,6 +41,19 @@ function formatStatus(status: string) {
     .split("_")
     .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
     .join(" ");
+}
+
+function formatShippingAddress(order: OrderRecord) {
+  const addressParts = [
+    `${order.shipping_address_number || ""} ${order.shipping_road || ""}`.trim(),
+    order.shipping_town_city || "",
+    order.shipping_county || "",
+    order.shipping_postcode || "",
+  ].filter(Boolean);
+
+  return addressParts.length > 0
+    ? addressParts.join(", ")
+    : order.shipping_address;
 }
 
 export default function OrderDetailClient({ orderId }: OrderDetailClientProps) {
@@ -98,6 +116,11 @@ export default function OrderDetailClient({ orderId }: OrderDetailClientProps) {
           customer_email,
           customer_phone,
           shipping_address,
+          shipping_address_number,
+          shipping_road,
+          shipping_town_city,
+          shipping_county,
+          shipping_postcode,
           unit_amount_pence,
           currency,
           status,
@@ -196,7 +219,7 @@ export default function OrderDetailClient({ orderId }: OrderDetailClientProps) {
             </div>
             <div className={styles.orderMeta}>
               <span className={styles.orderLabel}>Address</span>
-              <strong className={styles.orderValue}>{order.shipping_address}</strong>
+              <strong className={styles.orderValue}>{formatShippingAddress(order)}</strong>
             </div>
             <div className={styles.orderMeta}>
               <span className={styles.orderLabel}>Placed</span>

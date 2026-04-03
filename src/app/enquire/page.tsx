@@ -16,24 +16,33 @@ export default async function EnquirePage({ searchParams }: EnquirePageProps) {
   const params = await searchParams;
   const productSlug = params.productSlug?.trim() || "";
   const legacyProduct = params.product?.trim() || "";
+  const isProductEnquiry = Boolean(productSlug || legacyProduct || params.productName?.trim());
   const productName = params.productName?.trim() || legacyProduct || productSlug || "General Enquiry";
   const image = params.image?.trim() || null;
   const imageUrl = image && ASSETS_BASE
     ? `${ASSETS_BASE}/i/${normalizeAssetPath(image)}`
     : null;
   const checkoutHref = productSlug ? `/checkout/${encodeURIComponent(productSlug)}` : null;
+  const pageTitle = isProductEnquiry ? "Enquire About This Product" : "Book a Free Design Consultation";
+  const introCopy = isProductEnquiry
+    ? "Choose the route that suits you best: buy now, speak with us directly, or send a more detailed enquiry."
+    : "Tell us about your kitchen, bedroom, or interiors project and we’ll come back with the right next step.";
+  const actionCopy = isProductEnquiry
+    ? "Secure checkout available. Or speak with us before ordering."
+    : "Call us now to book an appointment, or send your details and we’ll arrange a free design consultation.";
 
   return (
     <main className={styles.page}>
       <section className={styles.shell}>
         <header className={styles.header}>
           <p className={styles.eyebrow}>Prestige Construction</p>
-          <h1 className={styles.title}>Enquire About This Product</h1>
-          <p className={styles.productLabel}>Enquiry for: <strong>{productName}</strong></p>
-          <p className={styles.intro}>
-            Choose the route that suits you best: buy now, speak with us directly, or send a more
-            detailed enquiry.
-          </p>
+          <h1 className={styles.title}>{pageTitle}</h1>
+          {isProductEnquiry ? (
+            <p className={styles.productLabel}>
+              Enquiry for: <strong>{productName}</strong>
+            </p>
+          ) : null}
+          <p className={styles.intro}>{introCopy}</p>
         </header>
 
         <section className={styles.enquireLayout}>
@@ -42,9 +51,7 @@ export default async function EnquirePage({ searchParams }: EnquirePageProps) {
               <div className={styles.actionsIntro}>
                 <p className={styles.sectionEyebrow}>Quick Actions</p>
                 <h2 id="actions-title" className={styles.sectionTitle}>How would you like to proceed?</h2>
-                <p className={styles.sectionText}>
-                  Secure checkout available. Or speak with us before ordering.
-                </p>
+                <p className={styles.sectionText}>{actionCopy}</p>
               </div>
 
               {imageUrl ? (
@@ -53,17 +60,13 @@ export default async function EnquirePage({ searchParams }: EnquirePageProps) {
                 </div>
               ) : null}
 
-              <div className={styles.actionBlock}>
-                {checkoutHref ? (
+              {checkoutHref ? (
+                <div className={styles.actionBlock}>
                   <a href={checkoutHref} className={styles.buyButton}>
                     Buy Now →
                   </a>
-                ) : (
-                  <p className={styles.actionHint}>
-                    Direct checkout is only available when this enquiry has a valid product slug.
-                  </p>
-                )}
-              </div>
+                </div>
+              ) : null}
 
               <div className={styles.actionBlock}>
                 <a href={`tel:${CONTACT_PHONE}`} className={styles.callButton}>
@@ -83,7 +86,7 @@ export default async function EnquirePage({ searchParams }: EnquirePageProps) {
               </p>
             </div>
 
-            <EnquiryForm product={productName} />
+            <EnquiryForm product={productName} isProductEnquiry={isProductEnquiry} />
           </section>
         </section>
       </section>

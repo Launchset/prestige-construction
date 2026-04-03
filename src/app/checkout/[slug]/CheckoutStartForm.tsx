@@ -12,14 +12,22 @@ type CheckoutStartFormProps = {
 type FormState = {
   name: string;
   phone: string;
-  address: string;
+  addressNumber: string;
+  road: string;
+  townCity: string;
+  county: string;
+  postcode: string;
 };
 
 export default function CheckoutStartForm({ productSlug }: CheckoutStartFormProps) {
   const [form, setForm] = useState<FormState>({
     name: "",
     phone: "",
-    address: "",
+    addressNumber: "",
+    road: "",
+    townCity: "",
+    county: "",
+    postcode: "",
   });
   const [accountEmail, setAccountEmail] = useState("");
   const [error, setError] = useState("");
@@ -87,8 +95,16 @@ export default function CheckoutStartForm({ productSlug }: CheckoutStartFormProp
     event.preventDefault();
     setError("");
 
-    if (!form.name.trim() || !form.phone.trim() || !form.address.trim()) {
-      setError("Please complete all checkout fields before continuing to payment.");
+    if (
+      !form.name.trim() ||
+      !form.phone.trim() ||
+      !form.addressNumber.trim() ||
+      !form.road.trim() ||
+      !form.townCity.trim() ||
+      !form.county.trim() ||
+      !form.postcode.trim()
+    ) {
+      setError("Please complete all delivery address fields before continuing to payment.");
       return;
     }
 
@@ -125,7 +141,11 @@ export default function CheckoutStartForm({ productSlug }: CheckoutStartFormProp
           productSlug,
           name: form.name,
           phone: form.phone,
-          address: form.address,
+          addressNumber: form.addressNumber,
+          road: form.road,
+          townCity: form.townCity,
+          county: form.county,
+          postcode: form.postcode,
         }),
       });
 
@@ -199,15 +219,71 @@ export default function CheckoutStartForm({ productSlug }: CheckoutStartFormProp
         />
       </label>
 
+      <div className={styles.fieldGrid}>
+        <label className={styles.field}>
+          <span>House / Building Number</span>
+          <input
+            type="text"
+            name="addressNumber"
+            value={form.addressNumber}
+            onChange={(event) => updateField("addressNumber", event.target.value)}
+            required
+            placeholder="e.g. 13 or Flat 2"
+          />
+        </label>
+
+        <label className={styles.field}>
+          <span>Road / Street</span>
+          <input
+            type="text"
+            name="road"
+            value={form.road}
+            onChange={(event) => updateField("road", event.target.value)}
+            autoComplete="address-line1"
+            required
+            placeholder="e.g. Telford Road"
+          />
+        </label>
+      </div>
+
+      <div className={styles.fieldGrid}>
+        <label className={styles.field}>
+          <span>Town / City</span>
+          <input
+            type="text"
+            name="townCity"
+            value={form.townCity}
+            onChange={(event) => updateField("townCity", event.target.value)}
+            autoComplete="address-level2"
+            required
+            placeholder="e.g. Wimborne"
+          />
+        </label>
+
+        <label className={styles.field}>
+          <span>County</span>
+          <input
+            type="text"
+            name="county"
+            value={form.county}
+            onChange={(event) => updateField("county", event.target.value)}
+            autoComplete="address-level1"
+            required
+            placeholder="e.g. Dorset"
+          />
+        </label>
+      </div>
+
       <label className={styles.field}>
-        <span>Address</span>
-        <textarea
-          name="address"
-          value={form.address}
-          onChange={(event) => updateField("address", event.target.value)}
+        <span>Postcode</span>
+        <input
+          type="text"
+          name="postcode"
+          value={form.postcode}
+          onChange={(event) => updateField("postcode", event.target.value)}
+          autoComplete="postal-code"
           required
-          rows={5}
-          placeholder="Delivery or installation address"
+          placeholder="e.g. BH21 7QP"
         />
       </label>
 

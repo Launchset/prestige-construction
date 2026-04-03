@@ -75,6 +75,13 @@
     opacity: 0.85;
 }
 
+.legalLinks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 18px;
+    justify-content: flex-end;
+}
+
 .right a:hover {
     text-decoration: underline;
     opacity: 1;
@@ -109,5 +116,9 @@
     .left,
     .right {
         align-items: center;
+    }
+
+    .legalLinks {
+        justify-content: center;
     }
 }

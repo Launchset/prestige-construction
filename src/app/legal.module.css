@@ -1,0 +1,110 @@
+.page {
+    background: #f7f1ea;
+    color: #1f1d1a;
+    padding: calc(var(--navbar-offset) + 2rem) 1.5rem 4rem;
+}
+
+.shell {
+    width: min(980px, 100%);
+    margin: 0 auto;
+}
+
+.eyebrow {
+    margin: 0 0 0.8rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #b48f33;
+}
+
+.title {
+    margin: 0;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    color: #1a1714;
+}
+
+.meta {
+    margin: 1rem 0 0;
+    color: #6a6158;
+    font-size: 0.95rem;
+}
+
+.intro {
+    margin: 1.8rem 0 0;
+    max-width: 760px;
+    color: #4f4740;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.sectionList {
+    margin-top: 2.5rem;
+    display: grid;
+    gap: 1.4rem;
+}
+
+.section {
+    padding: 1.6rem;
+    border: 1px solid rgba(91, 70, 47, 0.14);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.78);
+    box-shadow: 0 20px 48px rgba(44, 34, 22, 0.08);
+}
+
+.sectionTitle {
+    margin: 0;
+    color: #1d1a17;
+    font-size: 1.5rem;
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+.section p,
+.section li {
+    color: #4f4740;
+    font-size: 0.98rem;
+    line-height: 1.75;
+}
+
+.section p {
+    margin: 1rem 0 0;
+}
+
+.section ul {
+    margin: 1rem 0 0;
+    padding-left: 1.2rem;
+    display: grid;
+    gap: 0.75rem;
+}
+
+.section strong {
+    color: #201c18;
+}
+
+.section a {
+    color: #6e5422;
+    text-underline-offset: 0.2em;
+}
+
+.notice {
+    margin-top: 2rem;
+    padding: 1rem 1.2rem;
+    border-radius: 18px;
+    background: #efe4d6;
+    color: #5a5047;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+    .page {
+        padding-inline: 1rem;
+    }
+
+    .section {
+        padding: 1.25rem;
+    }
+}

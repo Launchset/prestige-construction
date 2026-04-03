@@ -1,8 +1,24 @@
 import { createClient as createSupabaseClient } from "@supabase/supabase-js";
+import { getSupabasePublicConfig } from "./public";
 
-export function createClient() {
-  return createSupabaseClient(
-    process.env.SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE!,
-  );
+type CreateClientOptions = {
+  accessToken?: string;
+};
+
+export function createClient(options: CreateClientOptions = {}) {
+  const { url, anonKey } = getSupabasePublicConfig();
+
+  return createSupabaseClient(url, anonKey, {
+    auth: {
+      autoRefreshToken: false,
+      persistSession: false,
+    },
+    global: options.accessToken
+      ? {
+          headers: {
+            Authorization: `Bearer ${options.accessToken}`,
+          },
+        }
+      : undefined,
+  });
 }
