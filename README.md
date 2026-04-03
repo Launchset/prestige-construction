@@ -89,6 +89,38 @@ Use the local Stripe CLI binary when testing webhooks:
 
 Copy the printed `whsec_...` value into `.env.local` as `STRIPE_WEBHOOK_SECRET`.
 
+## Cloudflare Deployment
+
+This repo is wired for Cloudflare Workers through OpenNext.
+
+```bash
+npm run preview
+npm run deploy
+```
+
+Files involved:
+- `open-next.config.ts` defines the OpenNext Cloudflare adapter config.
+- `wrangler.jsonc` points Wrangler at `.open-next/worker.js` and `.open-next/assets` and enables `nodejs_compat`.
+
+Manual Cloudflare steps before first production deploy:
+- Run `npx wrangler login` on this machine and complete the browser login flow. `wrangler whoami` currently reports `Not logged in`.
+- Add your production environment variables/secrets in the Worker settings or with `wrangler secret put`, including:
+  - `NEXT_PUBLIC_SUPABASE_URL`
+  - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+  - `NEXT_PUBLIC_ASSETS_BASE`
+  - `SUPABASE_WEBHOOK_ADMIN_EMAIL`
+  - `SUPABASE_WEBHOOK_ADMIN_PASSWORD`
+  - `STRIPE_SECRET_KEY`
+  - `STRIPE_WEBHOOK_SECRET`
+  - `SITE_URL`
+  - `MAILJET_API_KEY`
+  - `MAILJET_API_SECRET`
+  - `MAILJET_FROM_EMAIL`
+  - `MAILJET_FROM_NAME`
+  - `ENQUIRY_NOTIFICATION_EMAIL`
+- Do not add `SUPABASE_SERVICE_ROLE` to Cloudflare production.
+- In Cloudflare Dashboard, attach your hostname to the Worker from Workers & Pages -> your Worker -> Settings -> Domains & Routes -> Add -> Custom Domain.
+
 ## Documentation
 
 - [Supabase auth schema](supabase/auth.sql)

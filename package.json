@@ -5,6 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
     "start": "next start",
     "lint": "eslint",
     "extract:pdf-features": "node scripts/extractPdfFeatures.mjs",
@@ -22,7 +25,7 @@
     "axios": "^1.13.6",
     "cheerio": "^1.2.0",
     "dotenv": "^17.3.1",
-    "next": "16.1.1",
+    "next": "16.1.5",
     "pdf-parse": "^2.4.5",
     "react": "19.2.3",
     "react-dom": "19.2.3",
@@ -30,14 +33,16 @@
     "stripe": "^21.0.1"
   },
   "devDependencies": {
+    "@opennextjs/cloudflare": "^1.18.0",
     "@types/node": "^20.19.33",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.1.1",
+    "eslint-config-next": "16.1.5",
     "supabase": "^2.84.6",
     "ts-node": "^10.9.2",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "wrangler": "^4.80.0"
   },
   "description": "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).",
   "main": "index.js",
