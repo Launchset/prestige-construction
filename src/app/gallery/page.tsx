@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { readdir } from "node:fs/promises";
+import path from "node:path";
 import styles from "./gallery.module.css";
 
 export const metadata: Metadata = {
@@ -9,22 +11,23 @@ export const metadata: Metadata = {
     "Browse recent Prestige Kitchens & Bedrooms work and showroom inspiration from completed kitchen and bathroom projects.",
 };
 
-const GALLERY_IMAGES = [
-  "dsc4161.webp",
-  "dsc5097.webp",
-  "dsc5101-ba.webp",
-  "e842f5b3-61c9-4a09-9fbf-56c4b14d4a10.webp",
-  "img-3056.webp",
-  "img-3887.webp",
-  "img-6797.webp",
-  "img-8601.webp",
-  "img-8602.webp",
-  "img-8605.webp",
-  "screenshot-2024-08-10-at-14-35-40.webp",
-];
+async function getGalleryImages() {
+  const galleryDir = path.join(process.cwd(), "public", "galary");
+
+  try {
+    const files = await readdir(galleryDir, { withFileTypes: true });
+
+    return files
+      .filter((entry) => entry.isFile() && /\.(webp|png|jpe?g|avif)$/i.test(entry.name))
+      .map((entry) => entry.name)
+      .sort((left, right) => left.localeCompare(right));
+  } catch {
+    return [];
+  }
+}
 
 export default async function GalleryPage() {
-  const images = GALLERY_IMAGES;
+  const images = await getGalleryImages();
 
   return (
     <main className={styles.page}>
