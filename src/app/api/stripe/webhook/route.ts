@@ -4,6 +4,8 @@ import { createClient } from "@/lib/supabase/server";
 import { getAccountRole } from "@/lib/supabase/account";
 import { getStripeClient } from "@/lib/stripe/server";
 
+const stripeWebhookCryptoProvider = Stripe.createSubtleCryptoProvider();
+
 function getWebhookSecret() {
   const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
 
@@ -108,7 +110,13 @@ export async function POST(request: Request) {
   let event: Stripe.Event;
 
   try {
-    event = stripe.webhooks.constructEvent(body, signature, getWebhookSecret());
+    event = await stripe.webhooks.constructEventAsync(
+      body,
+      signature,
+      getWebhookSecret(),
+      undefined,
+      stripeWebhookCryptoProvider,
+    );
   } catch (error) {
     console.error("Stripe webhook signature verification failed", error);
     return NextResponse.json({ error: "Invalid Stripe webhook signature." }, { status: 400 });
