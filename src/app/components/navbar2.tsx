@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import styles from "./navbar2.module.css";
 
 const NAV_ITEMS = [
+    { label: "Gallery", href: "/gallery" },
     { label: "Appliances", href: "/appliances" },
     { label: "Sinks", href: "/sinks-taps-sinks" },
     { label: "Taps", href: "/sinks-taps-taps" },
