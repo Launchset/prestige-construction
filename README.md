@@ -101,6 +101,7 @@ npm run deploy
 Files involved:
 - `open-next.config.ts` defines the OpenNext Cloudflare adapter config.
 - `wrangler.jsonc` points Wrangler at `.open-next/worker.js` and `.open-next/assets` and enables `nodejs_compat`.
+- `src/lib/stripe/server.ts` contains the Worker-safe Stripe client configuration.
 
 Manual Cloudflare steps before first production deploy:
 - Run `npx wrangler login` on this machine and complete the browser login flow. `wrangler whoami` currently reports `Not logged in`.
@@ -120,6 +121,61 @@ Manual Cloudflare steps before first production deploy:
   - `ENQUIRY_NOTIFICATION_EMAIL`
 - Do not add `SUPABASE_SERVICE_ROLE` to Cloudflare production.
 - In Cloudflare Dashboard, attach your hostname to the Worker from Workers & Pages -> your Worker -> Settings -> Domains & Routes -> Add -> Custom Domain.
+
+### Production Notes
+
+- Production plain-text env vars are committed in `wrangler.jsonc` so deploys do not wipe them from Cloudflare.
+- Production secrets still live in Cloudflare and must remain configured there:
+  - `MAILJET_API_KEY`
+  - `MAILJET_API_SECRET`
+  - `STRIPE_SECRET_KEY`
+  - `STRIPE_WEBHOOK_SECRET`
+  - `SUPABASE_WEBHOOK_ADMIN_EMAIL`
+  - `SUPABASE_WEBHOOK_ADMIN_PASSWORD`
+
+### Stripe on Cloudflare Workers
+
+Production checkout failed on Cloudflare because the Worker was creating the Stripe client with the default transport:
+
+```ts
+new Stripe(secretKey)
+```
+
+That can hang during `stripe.checkout.sessions.create(...)` in the Worker runtime.
+
+The required production-safe fix is in `src/lib/stripe/server.ts`:
+
+```ts
+new Stripe(secretKey, {
+  httpClient: Stripe.createFetchHttpClient(),
+  maxNetworkRetries: 0,
+  timeout: 20_000,
+})
+```
+
+Rules:
+- Do not switch the Stripe client back to the default constructor in production code.
+- Keep `Stripe.createFetchHttpClient()` for Cloudflare Workers deployments.
+- Keep the explicit timeout so checkout failures surface quickly in logs instead of hanging the browser on `Preparing secure checkout...`.
+
+### Checkout Debugging
+
+If checkout hangs on `Preparing secure checkout...`, tail the production Worker and look for `/api/create-checkout-session`.
+
+- If there is no `POST /api/create-checkout-session`, the browser/form/auth flow is blocking before the server call.
+- If there is a `500` with `Creating Stripe checkout session timed out`, the Stripe Worker client configuration is wrong or a live Stripe network call is hanging.
+- If the route is redeployed and you still need the exact failing step, the timeout labels in `src/app/api/create-checkout-session/route.ts` identify which external call stalled.
+
+### Deployment Fallback
+
+If `npm run deploy` uploads a new Worker version but Cloudflare fails the final deployment step with API error `10013`, use Wrangler Versions to promote the uploaded version directly:
+
+```bash
+npx wrangler versions list --name prestige-construction
+npx wrangler versions deploy <version-id>@100 --name prestige-construction -y --message "Deploy fix"
+```
+
+This was the successful fallback path for promoting the Stripe fix to production when the normal `workers/scripts/.../deployments` call returned a Cloudflare `500`.
 
 ## Documentation
 
