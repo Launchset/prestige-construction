@@ -10,7 +10,11 @@ export function getStripeClient() {
   }
 
   if (!stripeClient) {
-    stripeClient = new Stripe(secretKey);
+    stripeClient = new Stripe(secretKey, {
+      httpClient: Stripe.createFetchHttpClient(),
+      maxNetworkRetries: 0,
+      timeout: 20_000,
+    });
   }
 
   return stripeClient;
