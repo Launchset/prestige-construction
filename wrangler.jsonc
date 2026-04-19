@@ -4,7 +4,48 @@
   "main": ".open-next/worker.js",
   "compatibility_date": "2026-04-03",
   "compatibility_flags": ["nodejs_compat"],
+  "observability": {
+    "enabled": false,
+    "head_sampling_rate": 1,
+    "logs": {
+      "enabled": true,
+      "head_sampling_rate": 1,
+      "persist": true,
+      "invocation_logs": true
+    },
+    "traces": {
+      "enabled": false,
+      "persist": true,
+      "head_sampling_rate": 1
+    }
+  },
   "workers_dev": false,
+  "routes": [
+    {
+      "pattern": "www.prestigekitchensandbedrooms.com",
+      "custom_domain": true
+    }
+  ],
+  "vars": {
+    "NEXT_PUBLIC_SUPABASE_URL": "https://xebgrcnxyyfltidieoqc.supabase.co",
+    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhlYmdyY254eXlmbHRpZGllb3FjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE0NDYwMjIsImV4cCI6MjA4NzAyMjAyMn0.yqyGAiTwt6jrKSN91UfBjBQuB5wOqAW-OpgLY62YEuc",
+    "NEXT_PUBLIC_ASSETS_BASE": "https://assets.prestigekitchensandbedrooms.com",
+    "SITE_URL": "https://www.prestigekitchensandbedrooms.com",
+    "SUPABASE_URL": "https://xebgrcnxyyfltidieoqc.supabase.co",
+    "MAILJET_FROM_EMAIL": "info@prestigekitchensandbedrooms.com",
+    "MAILJET_FROM_NAME": "Prestige kitchens",
+    "ENQUIRY_NOTIFICATION_EMAIL": "info@prestigekitchensandbedrooms.com"
+  },
+  "secrets": {
+    "required": [
+      "MAILJET_API_KEY",
+      "MAILJET_API_SECRET",
+      "STRIPE_SECRET_KEY",
+      "STRIPE_WEBHOOK_SECRET",
+      "SUPABASE_WEBHOOK_ADMIN_EMAIL",
+      "SUPABASE_WEBHOOK_ADMIN_PASSWORD"
+    ]
+  },
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS"
@@ -17,7 +58,11 @@
         "NEXT_PUBLIC_SUPABASE_URL": "https://xebgrcnxyyfltidieoqc.supabase.co",
         "NEXT_PUBLIC_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhlYmdyY254eXlmbHRpZGllb3FjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE0NDYwMjIsImV4cCI6MjA4NzAyMjAyMn0.yqyGAiTwt6jrKSN91UfBjBQuB5wOqAW-OpgLY62YEuc",
         "NEXT_PUBLIC_ASSETS_BASE": "https://assets.prestigekitchensandbedrooms.com",
-        "SUPABASE_URL": "https://xebgrcnxyyfltidieoqc.supabase.co"
+        "SITE_URL": "https://prestige-construction-shadow.jhelyar04.workers.dev",
+        "SUPABASE_URL": "https://xebgrcnxyyfltidieoqc.supabase.co",
+        "MAILJET_FROM_EMAIL": "info@prestigekitchensandbedrooms.com",
+        "MAILJET_FROM_NAME": "Prestige kitchens",
+        "ENQUIRY_NOTIFICATION_EMAIL": "info@prestigekitchensandbedrooms.com"
       }
     }
   }

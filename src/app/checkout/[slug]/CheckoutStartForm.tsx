@@ -54,9 +54,10 @@ export default function CheckoutStartForm({ productSlug }: CheckoutStartFormProp
 
     let isMounted = true;
 
-    async function loadUser() {
-      const { data } = await client.auth.getUser();
-      const user = data.user ?? null;
+    async function loadSession() {
+      const { data: sessionData } = await client.auth.getSession();
+      const sessionUser = sessionData.session?.user ?? null;
+      const user = sessionUser ?? (await client.auth.getUser()).data.user ?? null;
 
       if (!isMounted) {
         return;
@@ -66,10 +67,12 @@ export default function CheckoutStartForm({ productSlug }: CheckoutStartFormProp
 
       if (user?.email) {
         setAccountEmail(user.email);
+      } else {
+        setAccountEmail("");
       }
     }
 
-    loadUser();
+    loadSession();
 
     const {
       data: { subscription },
@@ -118,16 +121,30 @@ export default function CheckoutStartForm({ productSlug }: CheckoutStartFormProp
         return;
       }
 
-      if (!accountEmail) {
-        setError("Please sign in again before placing your order.");
+      let { data: sessionData, error: sessionError } = await client.auth.getSession();
+      let session = sessionData.session ?? null;
+
+      if (!session?.access_token) {
+        const refreshResult = await client.auth.refreshSession();
+        sessionError = refreshResult.error ?? sessionError;
+        session = refreshResult.data.session ?? session;
+      }
+
+      const accessToken = session?.access_token || "";
+      const sessionEmail = session?.user?.email?.trim() || accountEmail;
+
+      if (!accessToken) {
+        console.error("CHECKOUT DEBUG: missing Supabase access token", {
+          sessionError: sessionError?.message ?? null,
+          hasSession: Boolean(session),
+          hasAccountEmail: Boolean(accountEmail),
+        });
+        setError("Your account session expired. Please sign in again before placing your order.");
         return;
       }
 
-      const { data: sessionData } = await client.auth.getSession();
-      const accessToken = sessionData.session?.access_token || "";
-
-      if (!accessToken) {
-        setError("Please login or create an account before placing an order.");
+      if (!sessionEmail) {
+        setError("Please sign in again before placing your order.");
         return;
       }
 

@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { readdir } from "node:fs/promises";
-import path from "node:path";
 import styles from "./gallery.module.css";
 
 export const metadata: Metadata = {
@@ -11,23 +9,22 @@ export const metadata: Metadata = {
     "Browse recent Prestige Kitchens & Bedrooms work and showroom inspiration from completed kitchen and bathroom projects.",
 };
 
-async function getGalleryImages() {
-  const galleryDir = path.join(process.cwd(), "public", "galary");
+const GALLERY_IMAGES = [
+  { src: "/galary/dsc4161.webp", alt: "Kitchen project with dark fitted cabinetry." },
+  { src: "/galary/dsc5097.webp", alt: "Finished fitted kitchen interior." },
+  { src: "/galary/dsc5101-ba.webp", alt: "Bathroom installation with fitted vanity and tiling." },
+  { src: "/galary/e842f5b3-61c9-4a09-9fbf-56c4b14d4a10.webp", alt: "Kitchen design detail from a recent project." },
+  { src: "/galary/img-3056.webp", alt: "Kitchen installation photographed from the dining side." },
+  { src: "/galary/img-3887.webp", alt: "Kitchen project with island and integrated appliances." },
+  { src: "/galary/img-6797.webp", alt: "Modern kitchen interior with fitted storage." },
+  { src: "/galary/img-8601.webp", alt: "Completed kitchen project showing cabinetry and worktops." },
+  { src: "/galary/img-8602.webp", alt: "Kitchen project showing fitted cabinetry and layout." },
+  { src: "/galary/img-8605.webp", alt: "Kitchen installation photographed from the living space." },
+  { src: "/galary/screenshot-2024-08-10-at-14-35-40.webp", alt: "Prestige Kitchens & Bedrooms design inspiration image." },
+];
 
-  try {
-    const files = await readdir(galleryDir, { withFileTypes: true });
-
-    return files
-      .filter((entry) => entry.isFile() && /\.(webp|png|jpe?g|avif)$/i.test(entry.name))
-      .map((entry) => entry.name)
-      .sort((left, right) => left.localeCompare(right));
-  } catch {
-    return [];
-  }
-}
-
-export default async function GalleryPage() {
-  const images = await getGalleryImages();
+export default function GalleryPage() {
+  const images = GALLERY_IMAGES;
 
   return (
     <main className={styles.page}>
@@ -46,11 +43,11 @@ export default async function GalleryPage() {
           <section className={styles.section}>
             <div className={styles.grid}>
               {images.map((image) => (
-                <div key={image} className={styles.card}>
+                <div key={image.src} className={styles.card}>
                   <div className={styles.imageFrame}>
                     <Image
-                      src={`/galary/${image}`}
-                      alt="Prestige Kitchens & Bedrooms project image"
+                      src={image.src}
+                      alt={image.alt}
                       fill
                       className={styles.image}
                       sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw"
@@ -64,8 +61,8 @@ export default async function GalleryPage() {
           <div className={styles.emptyState}>
             <h2>No gallery images yet</h2>
             <p>
-              Add project photos to <code>public/galary</code> and they will appear
-              here automatically.
+              Add project photos to <code>public/galary</code> and update the
+              gallery list in <code>src/app/gallery/page.tsx</code>.
             </p>
           </div>
         )}

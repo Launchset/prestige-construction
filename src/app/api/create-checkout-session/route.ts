@@ -45,6 +45,56 @@ type OrderRecord = {
   status: string;
 };
 
+type MutationResult<T> = {
+  data: T;
+  error: unknown;
+};
+
+type AccessTokenClaims = {
+  sub?: string;
+  email?: string;
+  exp?: number;
+};
+
+function decodeBase64UrlJson<T>(value: string): T | null {
+  try {
+    const normalized = value.replace(/-/g, "+").replace(/_/g, "/");
+    const padding = normalized.length % 4 === 0 ? "" : "=".repeat(4 - (normalized.length % 4));
+    const decoded = atob(`${normalized}${padding}`);
+    return JSON.parse(decoded) as T;
+  } catch {
+    return null;
+  }
+}
+
+function getAccessTokenClaims(accessToken: string): AccessTokenClaims | null {
+  const [, payload] = accessToken.split(".");
+  if (!payload) {
+    return null;
+  }
+
+  return decodeBase64UrlJson<AccessTokenClaims>(payload);
+}
+
+async function withTimeout<T>(label: string, promise: PromiseLike<T>, timeoutMs = 15_000): Promise<T> {
+  let timer: ReturnType<typeof setTimeout> | null = null;
+
+  try {
+    return await Promise.race<T>([
+      Promise.resolve(promise),
+      new Promise<never>((_, reject) => {
+        timer = setTimeout(() => {
+          reject(new Error(`${label} timed out after ${timeoutMs}ms`));
+        }, timeoutMs);
+      }),
+    ]);
+  } finally {
+    if (timer) {
+      clearTimeout(timer);
+    }
+  }
+}
+
 function isValidEmail(email: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
@@ -177,10 +227,16 @@ export async function POST(request: Request) {
     }
 
     const supabase = createClient({ accessToken });
-    const { data: authData, error: authError } = await supabase.auth.getUser(accessToken);
-    const authenticatedUser = authData.user ?? null;
+    const tokenClaims = getAccessTokenClaims(accessToken);
+    const tokenExpired = typeof tokenClaims?.exp === "number" && tokenClaims.exp * 1000 <= Date.now();
+    const authenticatedUser = tokenClaims?.sub
+      ? {
+          id: tokenClaims.sub,
+          email: tokenClaims.email ?? "",
+        }
+      : null;
 
-    if (authError || !authenticatedUser) {
+    if (!authenticatedUser || tokenExpired) {
       return NextResponse.json(
         { error: "Your login session could not be verified. Please sign in again." },
         { status: 401 }
@@ -227,7 +283,10 @@ export async function POST(request: Request) {
       );
     }
 
-    const product = await getCheckoutProductBySlug(productSlug);
+    const product = await withTimeout(
+      "Loading checkout product",
+      getCheckoutProductBySlug(productSlug),
+    );
 
     if (!product) {
       return NextResponse.json({ error: "Product not found." }, { status: 404 });
@@ -252,7 +311,7 @@ export async function POST(request: Request) {
       address,
     });
 
-    let order: OrderRecord | null = await findRecentMatchingOrder(supabase, {
+    let order: OrderRecord | null = await withTimeout("Finding recent matching order", findRecentMatchingOrder(supabase, {
       userId: authenticatedUser.id,
       productId: product.id,
       productSlug: product.slug,
@@ -260,10 +319,14 @@ export async function POST(request: Request) {
       email,
       phone,
       address,
-    });
+    }));
 
     if (order?.stripe_session_id) {
-      const existingSession = await loadOpenCheckoutSession(stripe, order.stripe_session_id);
+      const existingSession = await withTimeout(
+        "Loading existing Stripe session",
+        loadOpenCheckoutSession(stripe, order.stripe_session_id),
+        20_000,
+      );
 
       if (existingSession?.url) {
         return NextResponse.json({
@@ -296,11 +359,15 @@ export async function POST(request: Request) {
         updated_at: now,
       };
 
-      const { data: insertedOrder, error: orderError } = await supabase
-        .from("orders")
-        .insert(orderPayload)
-        .select("id, created_at, stripe_session_id, status")
-        .single();
+      const insertResult = await withTimeout(
+        "Creating order",
+        supabase
+          .from("orders")
+          .insert(orderPayload)
+          .select("id, created_at, stripe_session_id, status")
+          .single(),
+      ) as MutationResult<OrderRecord | null>;
+      const { data: insertedOrder, error: orderError } = insertResult;
 
       if (orderError || !insertedOrder) {
         console.error("Failed to create order", orderError);
@@ -313,22 +380,25 @@ export async function POST(request: Request) {
       order = insertedOrder as OrderRecord;
       orderId = order.id;
 
-      const duplicateOrder = await supabase
-        .from("orders")
-        .select("id, created_at, stripe_session_id, status")
-        .eq("user_id", authenticatedUser.id)
-        .eq("product_id", product.id)
-        .eq("product_slug", product.slug)
-        .eq("customer_name", name)
-        .eq("customer_email", email)
-        .eq("customer_phone", phone)
-        .eq("shipping_address", address)
-        .in("status", ["pending", "checkout_failed"])
-        .gte("created_at", new Date(Date.now() - 60 * 60 * 1000).toISOString())
-        .neq("id", order.id)
-        .order("created_at", { ascending: false })
-        .limit(1)
-        .maybeSingle();
+      const duplicateOrder = await withTimeout(
+        "Checking duplicate order",
+        supabase
+          .from("orders")
+          .select("id, created_at, stripe_session_id, status")
+          .eq("user_id", authenticatedUser.id)
+          .eq("product_id", product.id)
+          .eq("product_slug", product.slug)
+          .eq("customer_name", name)
+          .eq("customer_email", email)
+          .eq("customer_phone", phone)
+          .eq("shipping_address", address)
+          .in("status", ["pending", "checkout_failed"])
+          .gte("created_at", new Date(Date.now() - 60 * 60 * 1000).toISOString())
+          .neq("id", order.id)
+          .order("created_at", { ascending: false })
+          .limit(1)
+          .maybeSingle(),
+      ) as MutationResult<OrderRecord | null>;
 
       if (duplicateOrder.error) {
         throw duplicateOrder.error;
@@ -350,7 +420,11 @@ export async function POST(request: Request) {
     }
 
     const reuseOpenSession = order.stripe_session_id
-      ? await loadOpenCheckoutSession(stripe, order.stripe_session_id)
+      ? await withTimeout(
+          "Reusing open Stripe session",
+          loadOpenCheckoutSession(stripe, order.stripe_session_id),
+          20_000,
+        )
       : null;
 
     if (reuseOpenSession?.url) {
@@ -364,64 +438,78 @@ export async function POST(request: Request) {
       ? `${checkoutFingerprint}:${order.id}:${order.stripe_session_id}`
       : checkoutFingerprint;
 
-    await supabase
-      .from("orders")
-      .update({
-        status: "pending",
-        stripe_payment_status: "unpaid",
-        updated_at: now,
-      })
-      .eq("id", order.id);
+    await withTimeout(
+      "Updating order before Stripe checkout",
+      supabase
+        .from("orders")
+        .update({
+          status: "pending",
+          stripe_payment_status: "unpaid",
+          updated_at: now,
+        })
+        .eq("id", order.id),
+    );
 
     orderId = order.id;
 
     const requestUrl = new URL(request.url);
     const siteUrl = process.env.SITE_URL?.replace(/\/+$/, "") || requestUrl.origin;
-    const session = await stripe.checkout.sessions.create(
-      {
-        mode: "payment",
-        client_reference_id: order.id,
-        customer_email: email,
-        success_url: `${siteUrl}/checkout/success?order_id=${order.id}&session_id={CHECKOUT_SESSION_ID}`,
-        cancel_url: `${siteUrl}/checkout/${product.slug}?cancelled=1`,
-        line_items: [
-          {
-            quantity: 1,
-            price_data: {
-              currency: "gbp",
-              unit_amount: product.priceInPence,
-              product_data: {
-                name: product.name,
-                metadata: {
-                  productId: product.id,
-                  productSlug: product.slug,
+    const session = await withTimeout(
+      "Creating Stripe checkout session",
+      stripe.checkout.sessions.create(
+        {
+          mode: "payment",
+          client_reference_id: order.id,
+          customer_email: email,
+          success_url: `${siteUrl}/checkout/success?order_id=${order.id}&session_id={CHECKOUT_SESSION_ID}`,
+          cancel_url: `${siteUrl}/checkout/${product.slug}?cancelled=1`,
+          line_items: [
+            {
+              quantity: 1,
+              price_data: {
+                currency: "gbp",
+                unit_amount: product.priceInPence,
+                product_data: {
+                  name: product.name,
+                  metadata: {
+                    productId: product.id,
+                    productSlug: product.slug,
+                  },
                 },
               },
             },
+          ],
+          metadata: {
+            orderId: order.id,
+            productId: product.id,
+            productSlug: product.slug,
+            checkoutFingerprint,
           },
-        ],
-        metadata: {
-          orderId: order.id,
-          productId: product.id,
-          productSlug: product.slug,
-          checkoutFingerprint,
         },
-      },
-      { idempotencyKey }
+        { idempotencyKey }
+      ),
+      20_000,
     );
 
-    const { error: sessionUpdateError } = await supabase
-      .from("orders")
-      .update({
-        stripe_session_id: session.id,
-        stripe_payment_status: session.payment_status,
-        status: "pending",
-        updated_at: new Date().toISOString(),
-      })
-      .eq("id", order.id);
+    const sessionUpdateResult = await withTimeout(
+      "Attaching Stripe session to order",
+      supabase
+        .from("orders")
+        .update({
+          stripe_session_id: session.id,
+          stripe_payment_status: session.payment_status,
+          status: "pending",
+          updated_at: new Date().toISOString(),
+        })
+        .eq("id", order.id),
+    ) as MutationResult<unknown>;
+    const { error: sessionUpdateError } = sessionUpdateResult;
 
     if (sessionUpdateError) {
-      const existingOrder = await loadMatchingSessionOrder(supabase, session.id);
+      const existingOrder = await withTimeout(
+        "Loading existing order for Stripe session",
+        loadMatchingSessionOrder(supabase, session.id),
+      );
 
       if (existingOrder && existingOrder.id !== order.id) {
         await supabase.from("orders").delete().eq("id", order.id);
