@@ -54,6 +54,17 @@
     "shadow": {
       "name": "prestige-construction-shadow",
       "workers_dev": true,
+      "routes": [],
+      "secrets": {
+        "required": [
+          "MAILJET_API_KEY",
+          "MAILJET_API_SECRET",
+          "STRIPE_SECRET_KEY",
+          "STRIPE_WEBHOOK_SECRET",
+          "SUPABASE_WEBHOOK_ADMIN_EMAIL",
+          "SUPABASE_WEBHOOK_ADMIN_PASSWORD"
+        ]
+      },
       "vars": {
         "NEXT_PUBLIC_SUPABASE_URL": "https://xebgrcnxyyfltidieoqc.supabase.co",
         "NEXT_PUBLIC_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhlYmdyY254eXlmbHRpZGllb3FjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE0NDYwMjIsImV4cCI6MjA4NzAyMjAyMn0.yqyGAiTwt6jrKSN91UfBjBQuB5wOqAW-OpgLY62YEuc",
