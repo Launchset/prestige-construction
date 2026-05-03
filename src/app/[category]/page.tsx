@@ -61,7 +61,7 @@ export default async function CategoryPage({ params }: CategoryRouteProps) {
     .from("categories")
     .select("*")
     .eq("slug", categorySlug)
-    .single();
+    .maybeSingle();
 
   if (!category) {
     notFound();

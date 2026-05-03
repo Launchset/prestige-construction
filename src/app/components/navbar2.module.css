@@ -81,8 +81,13 @@
 
     display: flex;
     align-items: center;
-    gap: 0;
+    gap: 22px;
     margin-left: 10px;
+}
+
+.navGroup {
+    display: flex;
+    align-items: center;
 }
 
 .navItemWrap {
@@ -131,6 +136,13 @@
     color: rgba(255, 239, 204, 0.35);
     font-size: 22px;
     line-height: 1;
+}
+
+.groupDivider {
+    width: 1px;
+    height: 28px;
+    margin-left: 22px;
+    background: rgba(255, 248, 235, 0.7);
 }
 
 /* =====================================================

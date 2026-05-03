@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ProductGallery from "@/app/components/catalogue/ProductGallery";
@@ -44,11 +45,10 @@ type Category = {
   slug: string;
 };
 
-export default async function ProductPage({ params }: ProductRouteProps) {
-  const { slug } = await params;
+async function loadProductBySlug(slug: string) {
   const supabase = createClient();
 
-  const { data: product } = await supabase
+  const { data } = await supabase
     .from("products")
     .select(`
       id,
@@ -67,7 +67,58 @@ export default async function ProductPage({ params }: ProductRouteProps) {
       )
     `)
     .eq("slug", slug)
-    .single();
+    .maybeSingle();
+
+  return (data as Product | null) ?? null;
+}
+
+export async function generateMetadata({ params }: ProductRouteProps): Promise<Metadata> {
+  const { slug } = await params;
+  const product = await loadProductBySlug(slug);
+  const displayName = product?.scraped_name?.trim() || product?.name?.trim() || "";
+  const primaryImage = getApprovedImages(product?.product_images)[0];
+
+  if (!product || !displayName || !primaryImage) {
+    return {
+      title: "Product Not Found",
+      robots: {
+        index: false,
+        follow: false,
+      },
+    };
+  }
+
+  const description = product.scraped_description?.trim()
+    || `View ${displayName}, download the spec sheet, and send a product enquiry to Prestige Kitchens & Bedrooms.`;
+  const imageUrl = ASSETS_BASE
+    ? `${ASSETS_BASE}/i/${normalizeAssetPath(primaryImage.source_path)}`
+    : null;
+
+  return {
+    title: displayName,
+    description,
+    alternates: {
+      canonical: `/product/${product.slug}`,
+    },
+    openGraph: {
+      title: displayName,
+      description,
+      images: imageUrl
+        ? [
+            {
+              url: imageUrl,
+              alt: displayName,
+            },
+          ]
+        : undefined,
+    },
+  };
+}
+
+export default async function ProductPage({ params }: ProductRouteProps) {
+  const { slug } = await params;
+  const supabase = createClient();
+  const product = await loadProductBySlug(slug);
 
   if (!product) {
     notFound();
@@ -104,9 +155,42 @@ export default async function ProductPage({ params }: ProductRouteProps) {
   }
 
   const enquiryHref = `/enquire?productSlug=${encodeURIComponent(typedProduct.slug)}&productName=${encodeURIComponent(displayName)}&image=${encodeURIComponent(primaryImage.source_path)}`;
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: displayName,
+    sku: typedProduct.sku,
+    description:
+      typedProduct.scraped_description ||
+      `View ${displayName} and send a product enquiry to Prestige Kitchens & Bedrooms.`,
+    image: ASSETS_BASE
+      ? displayImages.map((image) => `${ASSETS_BASE}/i/${normalizeAssetPath(image.source_path)}`)
+      : undefined,
+    brand: {
+      "@type": "Brand",
+      name: "Prestige Kitchens & Bedrooms",
+    },
+    category: category?.name,
+    offers:
+      typeof typedProduct.scraped_price === "number"
+        ? {
+            "@type": "Offer",
+            price: typedProduct.scraped_price.toFixed(2),
+            priceCurrency: "GBP",
+            availability: "https://schema.org/InStock",
+            url: `${process.env.SITE_URL?.replace(/\/+$/, "") || "http://localhost:3000"}/product/${typedProduct.slug}`,
+          }
+        : undefined,
+  };
 
   return (
     <main className={styles.page}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(productJsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
       <nav className={styles.breadcrumb} aria-label="Breadcrumb">
         <Link href="/">Home</Link>
         <span>/</span>

@@ -1,6 +1,6 @@
 .process {
-    background: #f6efe6;
-    padding: 40px 24px;
+    background: linear-gradient(180deg, #f8f3ec 0%, #efe4d6 100%);
+    padding: 72px 24px;
 }
 
 .inner {
@@ -19,8 +19,11 @@
 }
 
 .title {
-    font-size: 40px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.2rem, 4vw, 3.3rem);
+    line-height: 1.05;
     margin-bottom: 16px;
+    color: #1f1a16;
 }
 
 .subtitle {
@@ -33,12 +36,17 @@
 .grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 48px;
+    gap: 22px;
 }
 
 
 .step {
     position: relative;
+    padding: 28px 20px;
+    border: 1px solid rgba(171, 146, 105, 0.28);
+    border-radius: 8px;
+    background: rgba(255, 253, 250, 0.72);
+    box-shadow: 0 16px 34px rgba(40, 28, 12, 0.06);
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
@@ -60,14 +68,24 @@
 
 /* Arrow between steps (desktop only) */
 .step:not(:last-child)::after {
-    content: "→";
+    content: "➜";
     position: absolute;
-    top: 42px;
-    /* aligns roughly with icon centre */
-    right: -32px;
-    font-size: 58px;
-    color: #b38b2d;
-    opacity: 0.6;
+    top: 50%;
+    right: -23px;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    border: 1px solid rgba(179, 139, 45, 0.28);
+    background: rgba(255, 248, 235, 0.96);
+    color: #9d7828;
+    font-size: 20px;
+    line-height: 1;
+    z-index: 2;
+    transform: translateY(-50%);
+    box-shadow: 0 10px 24px rgba(40, 28, 12, 0.1);
 }
 
 

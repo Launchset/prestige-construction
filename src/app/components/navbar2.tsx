@@ -6,11 +6,19 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import styles from "./navbar2.module.css";
 
-const NAV_ITEMS = [
-    { label: "Appliances", href: "/appliances" },
-    { label: "Sinks", href: "/sinks-taps-sinks" },
-    { label: "Taps", href: "/sinks-taps-taps" },
+const NAV_GROUPS = [
+    [
+        { label: "Gallery", href: "/gallery" },
+        { label: "About", href: "/about" },
+    ],
+    [
+        { label: "Appliances", href: "/appliances" },
+        { label: "Sinks", href: "/sinks-taps-sinks" },
+        { label: "Taps", href: "/sinks-taps-taps" },
+    ],
 ];
+
+const MOBILE_NAV_ITEMS = NAV_GROUPS.flat();
 
 export default function Navbar2() {
     const pathname = usePathname();
@@ -64,20 +72,28 @@ export default function Navbar2() {
                     </Link>
 
                     <nav className={styles.desktopNav}>
-                        {NAV_ITEMS.map((item, index) => (
-                            <div key={item.href} className={styles.navItemWrap}>
-                                <Link
-                                    href={item.href}
-                                    className={`${styles.tab} ${pathname === item.href ? styles.active : ""
-                                        }`}
-                                >
-                                    {item.label}
-                                </Link>
+                        {NAV_GROUPS.map((group, groupIndex) => (
+                            <div key={`group-${groupIndex}`} className={styles.navGroup}>
+                                {group.map((item, itemIndex) => (
+                                    <div key={item.href} className={styles.navItemWrap}>
+                                        <Link
+                                            href={item.href}
+                                            className={`${styles.tab} ${pathname === item.href ? styles.active : ""
+                                                }`}
+                                        >
+                                            {item.label}
+                                        </Link>
 
-                                {index < NAV_ITEMS.length - 1 && (
-                                    <span className={styles.navDot} aria-hidden="true">
-                                        •
-                                    </span>
+                                        {itemIndex < group.length - 1 && (
+                                            <span className={styles.navDot} aria-hidden="true">
+                                                •
+                                            </span>
+                                        )}
+                                    </div>
+                                ))}
+
+                                {groupIndex < NAV_GROUPS.length - 1 && (
+                                    <span className={styles.groupDivider} aria-hidden="true" />
                                 )}
                             </div>
                         ))}
@@ -92,7 +108,7 @@ export default function Navbar2() {
                         </Link>
 
                         <Link className={styles.bookBtn} href="/enquire">
-                            Enquire
+                            Contact
                         </Link>
                     </div>
 
@@ -116,7 +132,7 @@ export default function Navbar2() {
                         onClick={(e) => e.stopPropagation()}
                     >
                         <nav className={styles.mobileNav}>
-                            {NAV_ITEMS.map((item) => (
+                            {MOBILE_NAV_ITEMS.map((item) => (
                                 <Link
                                     key={item.href}
                                     href={item.href}
@@ -141,7 +157,7 @@ export default function Navbar2() {
                             className={styles.mobileCta}
                             onClick={() => setMenuOpen(false)}
                         >
-                            Enquire
+                            Contact
                         </Link>
                     </div>
                 </div>

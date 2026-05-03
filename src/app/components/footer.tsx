@@ -12,7 +12,10 @@ export default function Footer() {
                     <div className={styles.info}>
                         <p>📍 unit 13 Telford Rd, Ferndown, Wimborne BH21 7QP, United Kingdom</p>
                         <p>
-                            📞 <a href="tel:+447775457427">+44 7775 457427</a>
+                            📞 <a href="tel:+447765504961">07765 504961</a>
+                        </p>
+                        <p>
+                            📞 <a href="tel:+447887241451">07887 241451</a>
                         </p>
                     </div>
 

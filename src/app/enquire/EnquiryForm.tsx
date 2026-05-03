@@ -23,7 +23,7 @@ export default function EnquiryForm({ product, isProductEnquiry }: EnquiryFormPr
     name: "",
     email: "",
     phone: "",
-    message: defaultMessage,
+    message: "",
   });
   const [error, setError] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -69,7 +69,7 @@ export default function EnquiryForm({ product, isProductEnquiry }: EnquiryFormPr
         name: "",
         email: "",
         phone: "",
-        message: defaultMessage,
+        message: "",
       });
     } catch {
       setError("Something went wrong. Please try again.");
@@ -130,6 +130,7 @@ export default function EnquiryForm({ product, isProductEnquiry }: EnquiryFormPr
           onChange={(event) => updateField("message", event.target.value)}
           required
           rows={6}
+          placeholder={defaultMessage}
         />
       </label>
 

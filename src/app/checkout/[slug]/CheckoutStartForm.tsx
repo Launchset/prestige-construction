@@ -121,7 +121,8 @@ export default function CheckoutStartForm({ productSlug }: CheckoutStartFormProp
         return;
       }
 
-      let { data: sessionData, error: sessionError } = await client.auth.getSession();
+      const { data: sessionData, error: initialSessionError } = await client.auth.getSession();
+      let sessionError = initialSessionError;
       let session = sessionData.session ?? null;
 
       if (!session?.access_token) {
