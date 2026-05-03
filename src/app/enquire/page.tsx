@@ -5,7 +5,10 @@ type EnquirePageProps = {
   searchParams: Promise<{ product?: string; productSlug?: string; productName?: string; image?: string }>;
 };
 
-const CONTACT_PHONE = "+447775457427";
+const CONTACT_NUMBERS = [
+  { href: "+447765504961", label: "Call 07765 504961" },
+  { href: "+447887241451", label: "Call 07887 241451" },
+];
 const ASSETS_BASE = process.env.NEXT_PUBLIC_ASSETS_BASE?.replace(/\/+$/, "") ?? "";
 
 function normalizeAssetPath(path: string) {
@@ -68,13 +71,25 @@ export default async function EnquirePage({ searchParams }: EnquirePageProps) {
                 </div>
               ) : null}
 
-              <div className={styles.actionBlock}>
-                <a href={`tel:${CONTACT_PHONE}`} className={styles.callButton}>
-                  Call Now
-                </a>
-              </div>
-
+              {CONTACT_NUMBERS.map((contact) => (
+                <div key={contact.href} className={styles.actionBlock}>
+                  <a href={`tel:${contact.href}`} className={styles.callButton}>
+                    {contact.label}
+                  </a>
+                </div>
+              ))}
             </div>
+
+            {!isProductEnquiry ? (
+              <div className={styles.locationBlock}>
+                <p className={styles.locationLabel}>Showroom</p>
+                <address className={styles.locationAddress}>
+                  <span>Unit 13, Telford Road</span>
+                  <span>Ferndown Industrial Estate</span>
+                  <span>Ferndown, BH21 7QP</span>
+                </address>
+              </div>
+            ) : null}
           </aside>
 
           <section className={styles.formColumn} aria-labelledby="enquiry-form-title">

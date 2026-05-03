@@ -1,0 +1,251 @@
+.section {
+  position: relative;
+  padding: 72px 24px;
+  background: linear-gradient(180deg, #f8f3ec 0%, #efe4d6 100%);
+  overflow: hidden;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 14% 26%, rgba(255, 246, 224, 0.75), transparent 24%),
+    radial-gradient(circle at 84% 22%, rgba(214, 181, 116, 0.2), transparent 20%),
+    radial-gradient(circle at 52% 78%, rgba(255, 255, 255, 0.34), transparent 26%);
+}
+
+.section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 24px;
+  right: 24px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(181, 139, 58, 0.24) 18%, rgba(181, 139, 58, 0.34) 50%, rgba(181, 139, 58, 0.24) 82%, transparent 100%);
+}
+
+.inner {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #a77c2f;
+}
+
+.title {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.35rem, 4vw, 3.55rem);
+  line-height: 1.02;
+  color: #1f1a16;
+  text-shadow: 0 1px 0 rgba(255, 252, 245, 0.8);
+}
+
+.subtitle {
+  max-width: 46ch;
+  margin: 14px auto 0;
+  color: #5c5248;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.railViewport {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 18px 0 8px;
+  z-index: 1;
+}
+
+.railTrack {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  width: max-content;
+  animation: marquee 42s linear infinite;
+  will-change: transform;
+}
+
+.railViewport:hover .railTrack,
+.railViewport:focus-within .railTrack {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 9px));
+  }
+}
+
+.tile {
+  display: block;
+  text-decoration: none;
+  flex: 0 0 auto;
+  width: min(30vw, 340px);
+  --tilt: 0deg;
+  --lift: 0px;
+  padding: 12px 0;
+}
+
+.imageFrame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #f3f2f0;
+  transform: translate3d(0, var(--lift), 0) rotate(var(--tilt));
+  transition: transform 0.28s ease;
+  transform-origin: center center;
+  backface-visibility: hidden;
+  box-shadow:
+    0 18px 36px rgba(31, 24, 18, 0.12),
+    0 6px 16px rgba(167, 126, 53, 0.12),
+    0 0 0 1px rgba(255, 248, 235, 0.5);
+}
+
+.tile:hover .imageFrame {
+  transform: translate3d(0, calc(var(--lift) - 4px), 0) rotate(var(--tilt));
+  box-shadow:
+    0 22px 42px rgba(31, 24, 18, 0.15),
+    0 10px 24px rgba(181, 139, 58, 0.2),
+    0 0 24px rgba(232, 200, 132, 0.2),
+    0 0 0 1px rgba(255, 248, 235, 0.72);
+}
+
+.imageFrame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255, 248, 230, 0.34), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0));
+  mix-blend-mode: screen;
+}
+
+.tiltLeft {
+  width: min(29vw, 320px);
+  aspect-ratio: 1.2 / 1;
+  --tilt: -0.8deg;
+  --lift: 10px;
+}
+
+.tiltRight {
+  width: min(24vw, 280px);
+  aspect-ratio: 0.94 / 1;
+  --tilt: 0.7deg;
+  --lift: -4px;
+}
+
+.tiltSoft {
+  width: min(26vw, 300px);
+  aspect-ratio: 1 / 1;
+  --tilt: -0.45deg;
+  --lift: 14px;
+}
+
+.tiltWide {
+  width: min(32vw, 360px);
+  aspect-ratio: 1.28 / 1;
+  --tilt: 0.9deg;
+  --lift: -6px;
+}
+
+.image {
+  object-fit: cover;
+  transform: translateZ(0);
+  transition: transform 0.5s ease;
+  backface-visibility: hidden;
+}
+
+.tile:hover .image {
+  transform: scale(1.04);
+}
+
+.footerRow {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 18px;
+}
+
+.link {
+  color: #5f4a22;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+  .railTrack {
+    gap: 14px;
+    animation-duration: 36s;
+  }
+
+  .tile {
+    width: min(62vw, 340px);
+  }
+}
+
+@media (max-width: 700px) {
+  .section {
+    padding: 72px 20px;
+  }
+
+  .section::after {
+    left: 20px;
+    right: 20px;
+  }
+
+  .header {
+    align-items: start;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .railTrack {
+    gap: 14px;
+    animation-duration: 32s;
+  }
+
+  .tiltLeft,
+  .tiltRight,
+  .tiltSoft,
+  .tiltWide {
+    width: min(76vw, 320px);
+    aspect-ratio: 1.05 / 1;
+    --tilt: 0deg;
+    --lift: 0px;
+  }
+
+  .footerRow {
+    justify-content: flex-start;
+  }
+}

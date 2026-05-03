@@ -1,6 +1,7 @@
 .page {
   max-width: 1200px;
   margin: 0 auto;
+  padding-top: 18px;
   padding-bottom: 72px;
 }
 
@@ -48,6 +49,34 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
+}
+
+.locationBlock {
+  display: grid;
+  gap: 8px;
+  padding: 14px 16px;
+  border: 1px solid #e7ddd0;
+  border-radius: 16px;
+  background: #fffaf4;
+}
+
+.locationLabel {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #8b8378;
+}
+
+.locationAddress {
+  display: grid;
+  gap: 2px;
+  margin: 0;
+  font-style: normal;
+  color: #3f372f;
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
 .actionsPanel {
@@ -309,7 +338,7 @@
 
 @media (max-width: 800px) {
   .page {
-    padding: 32px 18px 64px;
+    padding: 14px 18px 64px;
   }
 
   .shell {

@@ -98,9 +98,53 @@ npm run preview
 npm run deploy
 ```
 
+Shadow/front-end test deploys use `wrangler.shadow.jsonc`:
+
+```bash
+npm run preview:shadow
+npm run deploy:shadow
+```
+
+Important shadow deployment note:
+- `opennextjs-cloudflare build` runs `next build` before Wrangler applies `wrangler.shadow.jsonc` vars.
+- If `/` fails to prerender with `Supabase public configuration is missing`, rerun the shadow deploy with the public build vars supplied in the shell.
+- Use the shadow `SITE_URL`, not the production domain, when deploying the shadow Worker.
+
+Known-good shadow deploy command:
+
+```bash
+NEXT_PUBLIC_SUPABASE_URL=https://xebgrcnxyyfltidieoqc.supabase.co \
+NEXT_PUBLIC_SUPABASE_ANON_KEY='<anon key from wrangler.shadow.jsonc>' \
+NEXT_PUBLIC_ASSETS_BASE=https://assets.prestigekitchensandbedrooms.com \
+SITE_URL=https://prestige-construction-shadow.jhelyar04.workers.dev \
+npm run deploy:shadow
+```
+
+The successful shadow deploy on 2026-05-01 produced:
+
+```txt
+https://prestige-construction-shadow.jhelyar04.workers.dev
+Version ID: a91cbec8-7bb5-4ae0-adbe-ed7ee5431904
+```
+
+Do not change `MAILJET_FROM_EMAIL` to `info@prestige-kitchens.com`; Mailjet sender verification expects `info@prestigekitchensandbedrooms.com`.
+
+Shadow bug note from 2026-05-03:
+- Symptom: `/appliances`, `/sinks-taps-sinks`, and other category pages returned `404` on the deployed shadow Worker even though the category rows existed in Supabase.
+- Actual cause: the category lookup in `src/app/[category]/page.tsx` was using `.single()`. In the deployed Worker path that could fall through to `notFound()` even for real rows.
+- Fix: change the category lookup to `.maybeSingle()` and redeploy shadow.
+- Verification: after the fix, `/appliances` and `/sinks-taps-sinks` returned `200` on `https://prestige-construction-shadow.jhelyar04.workers.dev`.
+
+Auth note from the same investigation:
+- Symptom: browser console showed `401` on `auth/v1/token?grant_type=password` and `auth/v1/signup`.
+- What to check first: do not assume the anon key is broken. Test the shipped anon key directly against Supabase `auth/v1/settings`, `auth/v1/signup`, and `auth/v1/token`.
+- Result in this incident: direct Supabase auth calls returned `200`, so the public anon key and auth service were healthy. The category-page failure was separate from the auth issue.
+- If the browser still shows `401` while direct auth calls succeed, try a hard refresh or an incognito window before changing Wrangler/Supabase config.
+
 Files involved:
 - `open-next.config.ts` defines the OpenNext Cloudflare adapter config.
 - `wrangler.jsonc` points Wrangler at `.open-next/worker.js` and `.open-next/assets` and enables `nodejs_compat`.
+- `wrangler.shadow.jsonc` deploys the isolated shadow Worker at the workers.dev URL.
 - `src/lib/stripe/server.ts` contains the Worker-safe Stripe client configuration.
 
 Manual Cloudflare steps before first production deploy:
