@@ -54,6 +54,9 @@ imports
 
 # generated import/scraper reports
 /parse_failures.json
+/data.sql
+/schema-public.sql
+/logs-*.json
 /scripts/scraper/caple-matched-products.json
 /scripts/scraper/caple-unmatched-products.json
 /scripts/scraper/caple-unused-index-entries.json
