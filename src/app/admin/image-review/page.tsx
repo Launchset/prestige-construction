@@ -3,8 +3,18 @@ import { revalidatePath } from "next/cache";
 import { notFound } from "next/navigation";
 import { createServiceClient } from "@/lib/supabase/service";
 
+type ProductWithImages = {
+  id: string;
+  sku: string;
+  name: string;
+  category_id: string;
+  product_images: { id: string; sort_order: number | null }[] | null;
+};
+
+const SKIPPED_SORT_ORDER = -1;
+const CONFIRMED_SKIPPED_SORT_ORDER = -2;
+
 export default async function ImageReviewPage() {
-  // Keep the image-review tool in the repo for local use, but hide it from production deploys.
   if (process.env.NODE_ENV === "production") {
     notFound();
   }
@@ -16,20 +26,19 @@ export default async function ImageReviewPage() {
 
     const supabase = createServiceClient();
 
-    // reset only the images we are ordering
     const { error: resetError } = await supabase
       .from("product_images")
       .update({ sort_order: null })
-      .in("id", selectedIds);
+      .eq("product_id", productId);
 
     if (resetError) throw new Error(resetError.message);
 
-    // assign new order
     for (let i = 0; i < selectedIds.length; i++) {
       const { error } = await supabase
         .from("product_images")
         .update({ sort_order: i + 1 })
-        .eq("id", selectedIds[i]);
+        .eq("id", selectedIds[i])
+        .eq("product_id", productId);
 
       if (error) throw new Error(error.message);
     }
@@ -42,19 +51,11 @@ export default async function ImageReviewPage() {
 
     const supabase = createServiceClient();
 
-    // mark this product as skipped so the category counts as reviewed
-    const { data: skippedRows, error } = await supabase
+    const { error } = await supabase
       .from("product_images")
-      .update({ sort_order: -1 }) // special value = skipped
+      .update({ sort_order: CONFIRMED_SKIPPED_SORT_ORDER })
       .eq("product_id", productId)
-      .limit(1)
-      .select("id, product_id, sort_order");
-
-    console.info("[image-review] skipCategory", {
-      productId,
-      skippedRows,
-      skipError: error?.message ?? null,
-    });
+      .eq("sort_order", SKIPPED_SORT_ORDER);
 
     if (error) {
       throw new Error(error.message);
@@ -63,119 +64,41 @@ export default async function ImageReviewPage() {
     revalidatePath("/admin/image-review");
   }
 
-  // get all categories
-  const { data: categories, error: categoriesError } = await supabase
-    .from("categories")
-    .select("id, parent_id");
-
-  if (categoriesError || !categories) {
-    return <div style={{ padding: 24 }}>Failed to load categories.</div>;
-  }
-
-  // find leaf categories (categories that are not parents)
-  const parentIds = new Set(
-    categories.map((c) => c.parent_id).filter(Boolean)
-  );
-
-  const leafCategories = categories.filter((c) => !parentIds.has(c.id));
-  console.info(
-    "[image-review] leafCategories",
-    leafCategories.map((c) => ({
-      id: c.id,
-      parent: c.parent_id,
-    }))
-  );
-
-  if (leafCategories.length === 0) {
-    return <div style={{ padding: 24 }}>No leaf categories found.</div>;
-  }
-
-
-  // find categories that already have reviewed images
-  const { data: reviewedCategories } = await supabase
+  const { data: products, error: productsError } = await supabase
     .from("products")
     .select(`
-    category_id,
-    product_images!inner(sort_order)
-  `)
-    .not("product_images.sort_order", "is", null)
-    .in("category_id", leafCategories.map(c => c.id));
+      id,
+      sku,
+      name,
+      category_id,
+      product_images(id, sort_order)
+    `)
+    .order("sku", { ascending: true });
 
-  const reviewedCategoryIds = new Set(
-    reviewedCategories?.map(p => p.category_id)
-  );
-
-
-  // determine remaining leaf categories
-  const remainingLeafCategories = leafCategories.filter(
-    c => !reviewedCategoryIds.has(c.id)
-  );
-  console.info(
-    "[image-review] remainingLeafCategories",
-    remainingLeafCategories.map((c) => c.id)
-  );
-
-  const remainingProducts = remainingLeafCategories.length;
-
-  if (remainingLeafCategories.length === 0) {
-    return <div style={{ padding: 24 }}>All categories reviewed 🎉</div>;
-  }
-
-
-  // pick the next category to process
-  const currentCategory = remainingLeafCategories[0];
-  console.info("[image-review] currentCategory", currentCategory);
-
-
-  // fetch ONE product from the first non-empty remaining category
-  let product: { id: string; sku: string; name: string; category_id: string } | null = null;
-  let activeCategory: { id: string; parent_id: string | null } | null = null;
-  let lastProductError: string | null = null;
-
-  for (const category of remainingLeafCategories) {
-    console.info(
-      "[image-review] querying products with category_id =",
-      category.id
-    );
-
-    const { data, error: productError } = await supabase
-      .from("products")
-      .select("id, sku, name, category_id")
-      .eq("category_id", category.id)
-      .limit(1);
-
-    lastProductError = productError?.message ?? null;
-
-    if (data && data.length > 0) {
-      product = data[0];
-      activeCategory = category;
-      break;
-    }
-
-    if (!productError) {
-      console.info("[image-review] skipping empty category", category.id);
-    }
-  }
-
-  console.info("[image-review] product query result", {
-    product,
-    activeCategory,
-    productError: lastProductError,
-  });
-
-  if (!product) {
-    console.info("[image-review] review complete");
-
+  if (productsError || !products) {
     return (
       <div style={{ padding: 24 }}>
-        <h2>All products reviewed 🎉</h2>
-        <p>The media sorter has finished processing all categories.</p>
+        Failed to load products: {productsError?.message ?? "Unknown error"}
       </div>
     );
   }
 
+  const remainingProducts = (products as ProductWithImages[]).filter((product) =>
+    Array.isArray(product.product_images) &&
+    product.product_images.length > 0 &&
+    product.product_images.some((image) => image.sort_order === SKIPPED_SORT_ORDER),
+  );
+  const product = remainingProducts[0] ?? null;
 
-  // fetch images for that product
+  if (!product) {
+    return (
+      <div style={{ padding: 24 }}>
+        <h2>All product images reviewed</h2>
+        <p>The media sorter has finished processing every skipped product.</p>
+      </div>
+    );
+  }
+
   const { data: images, error: imagesError } = await supabase
     .from("product_images")
     .select("id, source_path, media_type, sort_order")
@@ -190,13 +113,12 @@ export default async function ImageReviewPage() {
     );
   }
 
-
-  // render review tool
   return (
     <ImageReviewClient
+      key={product.id}
       product={product}
       images={images ?? []}
-      remainingProducts={remainingProducts}
+      remainingProducts={remainingProducts.length}
       completeReview={completeReview}
       skipCategory={skipCategory}
     />

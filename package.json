@@ -11,6 +11,8 @@
     "start": "next start",
     "lint": "eslint",
     "extract:pdf-features": "node scripts/extractPdfFeatures.mjs",
+    "import:approved-pdf-features": "node scripts/importApprovedPdfFeatures.mjs",
+    "sync:pdf-features:main": "node scripts/syncPdfFeaturesToMain.mjs",
     "supabase": "supabase",
     "supabase:login": "supabase login",
     "supabase:logout": "supabase logout",

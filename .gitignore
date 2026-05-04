@@ -59,6 +59,9 @@ imports
 /scripts/scraper/caple-unused-index-entries.json
 /scripts/scraper/caple-unused-index-non-spare.json
 /scripts/scraper/pdf-feature-review.json
+/scripts/scraper/pdf-feature-review-batch-state.json
+/scripts/scraper/pdf-feature-review-done.json
+/scripts/scraper/branch-image-review-*.json
 /scripts/scraper/scrape-run-report.json
 
 # local skills / tool metadata

@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
-import { useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
+import { useMemo, useState, useTransition } from "react";
 import styles from "./styles.module.css";
 
 type SectionKey = "lifestyle" | "product" | "specs" | "drawings" | "other";
@@ -11,8 +11,6 @@ type Section = {
   label: string;
 };
 
-const BASE = process.env.NEXT_PUBLIC_ASSETS_BASE?.replace(/\/+$/, "") ?? "";
-
 const SECTIONS: Section[] = [
   { key: "lifestyle", label: "Lifestyle" },
   { key: "product", label: "Product" },
@@ -20,6 +18,8 @@ const SECTIONS: Section[] = [
   { key: "drawings", label: "Drawings" },
   { key: "other", label: "Other" },
 ];
+
+const ASSETS_BASE = process.env.NEXT_PUBLIC_ASSETS_BASE?.replace(/\/+$/, "") ?? "";
 
 type ImageItem = {
   id: string;
@@ -51,7 +51,7 @@ function toSectionKeyFromMediaType(mediaType: string | null): SectionKey {
 
 function getInitialSelectedIds(images: ImageItem[]) {
   return (images ?? [])
-    .filter((img) => img.sort_order !== null)
+    .filter((img) => typeof img.sort_order === "number" && img.sort_order > 0)
     .sort((a, b) => (a.sort_order ?? 0) - (b.sort_order ?? 0))
     .map((img) => img.id);
 }
@@ -63,7 +63,10 @@ export default function ImageReviewClient({
   completeReview,
   skipCategory,
 }: ImageReviewClientProps) {
+  const router = useRouter();
   const [selectedIds, setSelectedIds] = useState<string[]>(() => getInitialSelectedIds(images));
+  const [isPending, startTransition] = useTransition();
+  const [actionError, setActionError] = useState<string | null>(null);
 
   const selectedOrder = useMemo(
     () => new Map(selectedIds.map((id, index) => [id, index + 1])),
@@ -94,11 +97,44 @@ export default function ImageReviewClient({
     );
   }
 
-  function logCompleteReviewSubmit() {
-    console.info("[image-review] submit", {
-      productId: product.id,
-      selectedIds,
-      selectedCount: selectedIds.length,
+  function getWorkerImageSrc(sourcePath: string) {
+    if (!ASSETS_BASE) {
+      return null;
+    }
+
+    return `${ASSETS_BASE}/i/${sourcePath}?w=500&q=75`;
+  }
+
+  function getProxyImageSrc(sourcePath: string) {
+    return `/api/admin/image-review/asset?key=${encodeURIComponent(sourcePath)}`;
+  }
+
+  function saveAndContinue() {
+    if (selectedIds.length === 0) {
+      setActionError("Select at least one image before saving.");
+      return;
+    }
+
+    setActionError(null);
+    startTransition(async () => {
+      try {
+        await completeReview(product.id, selectedIds);
+        router.refresh();
+      } catch (error) {
+        setActionError(error instanceof Error ? error.message : "Failed to save image selection.");
+      }
+    });
+  }
+
+  function skipAndContinue() {
+    setActionError(null);
+    startTransition(async () => {
+      try {
+        await skipCategory(product.id);
+        router.refresh();
+      } catch (error) {
+        setActionError(error instanceof Error ? error.message : "Failed to skip product.");
+      }
     });
   }
 
@@ -119,7 +155,7 @@ export default function ImageReviewClient({
           <div className={styles.metaCard}>
             <p className={styles.metaLabel}>Progress</p>
             <p className={styles.metaValue}>
-              {remainingProducts} products remaining
+              {remainingProducts} skipped products remaining
             </p>
           </div>
         </div>
@@ -143,7 +179,9 @@ export default function ImageReviewClient({
                   const order = selectedOrder.get(image.id);
                   const isSelected = order !== undefined;
 
-                  const src = `${BASE}/i/${image.source_path}?w=400&q=75`;
+                  const workerSrc = getWorkerImageSrc(image.source_path);
+                  const proxySrc = getProxyImageSrc(image.source_path);
+                  const isPdf = image.source_path.toLowerCase().endsWith(".pdf");
 
                   return (
                     <button
@@ -155,14 +193,25 @@ export default function ImageReviewClient({
                       aria-pressed={isSelected}
                     >
                       <div className={styles.imageWrap}>
-                        <Image
-                          src={src}
-                          alt=""
-                          fill
-                          sizes="220px"
-                          style={{ objectFit: "cover" }}
-                          loading="lazy"
-                        />
+                        {isPdf ? (
+                          <div className={styles.pdfTile}>
+                            <span>PDF</span>
+                            <small>{image.source_path.split("/").pop()}</small>
+                          </div>
+                        ) : (
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img
+                            src={workerSrc ?? proxySrc}
+                            alt=""
+                            className={styles.assetImage}
+                            loading="lazy"
+                            onError={(event) => {
+                              if (event.currentTarget.src !== proxySrc) {
+                                event.currentTarget.src = proxySrc;
+                              }
+                            }}
+                          />
+                        )}
                       </div>
 
                       <div className={styles.cardFooter}>
@@ -192,20 +241,25 @@ export default function ImageReviewClient({
         })}
       </div>
 
-      <form
-        action={completeReview.bind(null, product.id, selectedIds)}
-        onSubmit={logCompleteReviewSubmit}
-      >
-        <button className={styles.saveButton}>
-          Save & Continue
-        </button>
-      </form>
+      {actionError && <p className={styles.actionError}>{actionError}</p>}
 
-      <form action={skipCategory.bind(null, product.id)}>
-        <button className={styles.skipButton}>
-          Skip Category
-        </button>
-      </form>
+      <button
+        type="button"
+        className={styles.saveButton}
+        disabled={isPending}
+        onClick={saveAndContinue}
+      >
+        {isPending ? "Saving..." : "Save & Continue"}
+      </button>
+
+      <button
+        type="button"
+        className={styles.skipButton}
+        disabled={isPending}
+        onClick={skipAndContinue}
+      >
+        {isPending ? "Working..." : "Skip Category"}
+      </button>
     </div>
   );
 }

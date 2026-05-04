@@ -10,8 +10,9 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const SCRAPE_REVIEW_PATH = path.join(__dirname, "scraper", "scrape-review.json");
 const OUTPUT_PATH = path.join(__dirname, "scraper", "pdf-feature-review.json");
+const DONE_PATH = path.join(__dirname, "scraper", "pdf-feature-review-done.json");
 
-config({ path: ".env.import" });
+config({ path: ".env.import", override: true });
 
 const SUPABASE_URL = process.env.SUPABASE_URL;
 const SUPABASE_SERVICE_ROLE = process.env.SUPABASE_SERVICE_ROLE;
@@ -21,10 +22,16 @@ const R2_SECRET_ACCESS_KEY = process.env.R2_SECRET_ACCESS_KEY;
 const R2_BUCKET = process.env.R2_BUCKET;
 const PDF_LIMIT = Number.parseInt(process.env.PDF_FEATURE_LIMIT ?? "0", 10);
 const WRITE_TO_SUPABASE = process.env.PDF_FEATURE_WRITE === "1";
+const OLLAMA_URL = (process.env.OLLAMA_URL ?? "http://127.0.0.1:11434").replace(/\/$/, "");
+const OLLAMA_MODEL = process.env.PDF_FEATURE_OLLAMA_MODEL ?? process.env.OLLAMA_MODEL ?? "";
 const SKU_FILTER = (process.env.PDF_FEATURE_SKU ?? "")
   .split(",")
   .map((value) => value.trim().toUpperCase())
   .filter(Boolean);
+
+function parseJsonFile(raw) {
+  return JSON.parse(raw.replace(/^\uFEFF/, ""));
+}
 
 if (
   !SUPABASE_URL ||
@@ -69,6 +76,10 @@ function cleanFeatureLine(line) {
       .replace(/^[•\-\u2022\u25AA\u25CF*\s]+/, "")
       .replace(/\s*[;:,.-]\s*$/, ""),
   );
+}
+
+function cleanExtractedText(value) {
+  return cleanFeatureLine(String(value ?? ""));
 }
 
 function isBadTitleCandidate(line) {
@@ -127,7 +138,197 @@ function dedupe(values) {
   return out;
 }
 
-function extractName(lines, fallbackName, sku, existingScrapedName) {
+const PRODUCT_EXTRACTION_SCHEMA = {
+  type: "object",
+  additionalProperties: false,
+  required: [
+    "sku",
+    "features",
+    "specifications",
+    "missing_fields",
+    "warnings",
+    "technical_drawing_only",
+    "confidence",
+    "should_auto_approve",
+    "reason",
+  ],
+  properties: {
+    sku: { type: ["string", "null"] },
+    features: { type: "array", items: { type: "string" } },
+    specifications: {
+      type: "object",
+      additionalProperties: false,
+      required: [
+        "finish",
+        "dimensions",
+        "capacity",
+        "energy_class",
+        "functions",
+        "performance",
+        "installation",
+      ],
+      properties: {
+        finish: { type: ["string", "null"] },
+        dimensions: { type: "array", items: { type: "string" } },
+        capacity: { type: "array", items: { type: "string" } },
+        energy_class: { type: ["string", "null"] },
+        functions: { type: "array", items: { type: "string" } },
+        performance: { type: "array", items: { type: "string" } },
+        installation: { type: "array", items: { type: "string" } },
+      },
+    },
+    missing_fields: { type: "array", items: { type: "string" } },
+    warnings: { type: "array", items: { type: "string" } },
+    technical_drawing_only: { type: "boolean" },
+    confidence: { type: "number", minimum: 0, maximum: 1 },
+    should_auto_approve: { type: "boolean" },
+    reason: { type: "string" },
+  },
+};
+
+function buildProductExtractionPrompt({ sku, productName, pdfText }) {
+  return `You are extracting structured product information from supplier PDF text.
+
+Return valid JSON only. Do not include markdown. Do not invent information. Use only the supplied PDF text.
+
+Task:
+Read the product PDF text and extract clean product data for an ecommerce product page.
+
+Rules:
+- Keep wording close to the PDF, but fix obvious line-break issues.
+- Do not include warranty text such as "FREE 5 YEAR GUARANTEE" as a feature.
+- Do not include pure dimensions unless they are useful product specs.
+- Do not include installation instructions as product features unless they describe a normal product capability.
+- If the PDF has sections like FEATURES, GENERAL FEATURES, TAP FEATURES, OVEN FEATURES, FRIDGE FEATURES, FREEZER FEATURES, FUNCTIONS, STORAGE, CAPACITY, PERFORMANCE, or FINISH AVAILABLE, use them.
+- If no useful product features are present, return an empty features array and explain why in warnings.
+- Do not report warranty, guarantee, product images, image URLs, or product page URLs as missing fields.
+
+Product context:
+SKU: ${sku ?? ""}
+Existing product name: ${productName ?? ""}
+
+PDF text:
+${pdfText}`;
+}
+
+function safeString(value) {
+  const cleaned = typeof value === "string" ? cleanExtractedText(value) : "";
+  return cleaned || null;
+}
+
+function safeStringArray(value) {
+  if (!Array.isArray(value)) {
+    return [];
+  }
+
+  return dedupe(
+    value
+      .map((item) => (typeof item === "string" ? cleanExtractedText(item) : ""))
+      .filter(Boolean),
+  );
+}
+
+function isWarrantyField(value) {
+  return /warranty|guarantee/i.test(value);
+}
+
+function isOutOfScopeField(value) {
+  return isWarrantyField(value) || /image|url|product[_\s-]?name/i.test(value);
+}
+
+function isOutOfScopeWarning(value) {
+  return isOutOfScopeField(value) || /storage|capacity/i.test(value);
+}
+
+function cleanMissingFields(value) {
+  return safeStringArray(value).filter((field) => !isOutOfScopeField(field));
+}
+
+function cleanWarnings(value) {
+  return safeStringArray(value).filter((warning) => !isOutOfScopeWarning(warning));
+}
+
+function cleanReason(value, features) {
+  const reason = safeString(value) ?? "";
+
+  if (features.length > 0 && /no useful product features|no useful features/i.test(reason)) {
+    return "Useful product features were extracted from the PDF.";
+  }
+
+  return reason;
+}
+
+function normalizeOllamaExtraction(raw, fallbackSku) {
+  const specs = raw?.specifications && typeof raw.specifications === "object"
+    ? raw.specifications
+    : {};
+  const confidence = Number(raw?.confidence);
+
+  const features = safeStringArray(raw?.features);
+  const warnings = cleanWarnings(raw?.warnings);
+  const technicalDrawingOnly = Boolean(raw?.technical_drawing_only) && features.length === 0;
+  const normalizedConfidence = Number.isFinite(confidence)
+    ? Math.min(1, Math.max(0, confidence))
+    : 0;
+
+  return {
+    sku: safeString(raw?.sku) ?? fallbackSku ?? null,
+    features,
+    specifications: {
+      finish: safeString(specs.finish),
+      dimensions: safeStringArray(specs.dimensions),
+      capacity: safeStringArray(specs.capacity),
+      energy_class: safeString(specs.energy_class),
+      functions: safeStringArray(specs.functions),
+      performance: safeStringArray(specs.performance),
+      installation: safeStringArray(specs.installation),
+    },
+    missing_fields: cleanMissingFields(raw?.missing_fields),
+    warnings,
+    technical_drawing_only: technicalDrawingOnly,
+    confidence: normalizedConfidence,
+    should_auto_approve: Boolean(raw?.should_auto_approve) &&
+      warnings.length === 0 &&
+      !technicalDrawingOnly &&
+      normalizedConfidence >= 0.85,
+    reason: cleanReason(raw?.reason, features),
+  };
+}
+
+async function extractWithOllama({ sku, productName, pdfText }) {
+  if (!OLLAMA_MODEL) {
+    return null;
+  }
+
+  const response = await fetch(`${OLLAMA_URL}/api/generate`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      model: OLLAMA_MODEL,
+      prompt: buildProductExtractionPrompt({ sku, productName, pdfText }),
+      stream: false,
+      format: PRODUCT_EXTRACTION_SCHEMA,
+      options: {
+        temperature: 0,
+      },
+    }),
+  });
+
+  if (!response.ok) {
+    throw new Error(`Ollama request failed (${response.status}): ${await response.text()}`);
+  }
+
+  const payload = await response.json();
+  const content = payload?.response;
+
+  if (typeof content !== "string") {
+    throw new Error("Ollama response did not include a JSON string in response");
+  }
+
+  return normalizeOllamaExtraction(JSON.parse(content), sku);
+}
+
+function extractName(lines, fallbackName, sku) {
   const skuUpper = (sku ?? "").trim().toUpperCase();
 
   for (const line of lines.slice(0, 40)) {
@@ -214,7 +415,7 @@ async function streamToBuffer(stream) {
 
 async function loadScrapeReviewSet() {
   const raw = await fs.readFile(SCRAPE_REVIEW_PATH, "utf8");
-  const parsed = JSON.parse(raw);
+  const parsed = parseJsonFile(raw);
 
   if (!Array.isArray(parsed)) {
     throw new Error("scrape-review.json must be an array");
@@ -231,7 +432,52 @@ async function loadScrapeReviewSet() {
   return { ids, skus, rows: parsed };
 }
 
-async function fetchReviewedProducts(scrapeReviewSet) {
+async function loadPdfReviewDecisionSet() {
+  async function loadRows(filePath) {
+    try {
+      const raw = await fs.readFile(filePath, "utf8");
+      const parsed = parseJsonFile(raw);
+
+      return Array.isArray(parsed) ? parsed : [];
+    } catch (error) {
+      if (error?.code === "ENOENT") {
+        return [];
+      }
+
+      throw error;
+    }
+  }
+
+  const activeRows = await loadRows(OUTPUT_PATH);
+  const doneRows = await loadRows(DONE_PATH);
+  const skipRows = [...activeRows, ...doneRows];
+  const ids = new Set();
+  const skus = new Set();
+
+  for (const row of skipRows) {
+    if (row?.product_id) ids.add(String(row.product_id));
+    if (row?.sku) skus.add(String(row.sku).trim().toUpperCase());
+  }
+
+  return { ids, skus, count: skipRows.length };
+}
+
+async function loadActivePdfReviewRows() {
+  try {
+    const raw = await fs.readFile(OUTPUT_PATH, "utf8");
+    const parsed = parseJsonFile(raw);
+
+    return Array.isArray(parsed) ? parsed : [];
+  } catch (error) {
+    if (error?.code === "ENOENT") {
+      return [];
+    }
+
+    throw error;
+  }
+}
+
+async function fetchReviewedProducts(scrapeReviewSet, pdfReviewDecisionSet) {
   const { data, error } = await supabase
     .from("products")
     .select(`
@@ -265,6 +511,11 @@ async function fetchReviewedProducts(scrapeReviewSet) {
   products = products.filter((product) =>
     allowedIds.has(String(product.id)) ||
     allowedSkus.has(String(product.sku ?? "").trim().toUpperCase()),
+  );
+
+  products = products.filter((product) =>
+    !pdfReviewDecisionSet.ids.has(String(product.id)) &&
+    !pdfReviewDecisionSet.skus.has(String(product.sku ?? "").trim().toUpperCase()),
   );
 
   if (SKU_FILTER.length > 0) {
@@ -362,9 +613,7 @@ async function updateProduct(productId, payload) {
   const { error } = await supabase
     .from("products")
     .update({
-      scraped_name: payload.scraped_name,
       scraped_features: payload.scraped_features,
-      scraped_status: payload.scraped_status,
       scraped_at: new Date().toISOString(),
     })
     .eq("id", productId);
@@ -387,9 +636,15 @@ async function processProduct(product, index, total) {
     console.log("  No spec sheet found, skipping.");
     return {
       status: "skipped_no_spec",
+      pdf_review_status: "rejected",
+      pdf_reviewed_at: new Date().toISOString(),
       product_id: product.id,
       sku: product.sku,
       product_name: product.name,
+      extracted_name: existingScrapedName ?? product.name,
+      extracted_features: existingScrapedFeatures,
+      extracted_features_count: existingScrapedFeatures.length,
+      pdf_extraction_method: "skipped_no_spec",
     };
   }
 
@@ -403,12 +658,58 @@ async function processProduct(product, index, total) {
     lines,
     product.name,
     product.sku,
-    existingScrapedName,
   );
   const scrapedName = looksSpacedOutCaps(pdfTitleCandidate) && existingScrapedName
     ? existingScrapedName
     : pdfTitleCandidate;
-  const scrapedFeatures = extractFeatures(lines);
+  let extraction = null;
+  let extractionMethod = "heuristic";
+  let extractionWarnings = [];
+
+  try {
+    extraction = await extractWithOllama({
+      sku: product.sku,
+      productName: product.name,
+      pdfText: text,
+    });
+
+    if (extraction) {
+      extractionMethod = "ollama";
+    }
+  } catch (error) {
+    extractionWarnings = [`Ollama extraction failed: ${error.message}`];
+    console.warn(`  ${extractionWarnings[0]}`);
+  }
+
+  const scrapedFeatures = extraction?.features ?? extractFeatures(lines);
+  const extractionResult = extraction ?? {
+    sku: product.sku ?? null,
+    features: scrapedFeatures,
+    specifications: {
+      finish: null,
+      dimensions: [],
+      capacity: [],
+      energy_class: null,
+      functions: [],
+      performance: [],
+      installation: [],
+    },
+    missing_fields: [],
+    warnings: scrapedFeatures.length > 0
+      ? []
+      : ["No FEATURES section or useful feature bullets were found by the heuristic extractor."],
+    technical_drawing_only: false,
+    confidence: scrapedFeatures.length > 0 ? 0.55 : 0.2,
+    should_auto_approve: false,
+    reason: scrapedFeatures.length > 0
+      ? "Heuristic extraction found feature text from the PDF."
+      : "Heuristic extraction did not find useful product feature text.",
+  };
+  extractionResult.warnings = dedupe([
+    ...extractionResult.warnings,
+    ...extractionWarnings,
+  ]);
+
   const output = {
     status: "ready_for_review",
     product_id: product.id,
@@ -424,10 +725,13 @@ async function processProduct(product, index, total) {
     extracted_name: scrapedName,
     extracted_features: scrapedFeatures,
     extracted_features_count: scrapedFeatures.length,
+    pdf_product_data: extractionResult,
+    pdf_extraction_method: extractionMethod,
   };
 
   console.log(`  Name: ${scrapedName}`);
   console.log(`  Features found: ${scrapedFeatures.length}`);
+  console.log(`  Extraction: ${extractionMethod}`);
   console.log(`  R2 key: ${resolvedKey}`);
 
   if (scrapedFeatures.length > 0) {
@@ -440,9 +744,7 @@ async function processProduct(product, index, total) {
   }
 
   await updateProduct(product.id, {
-    scraped_name: scrapedName,
     scraped_features: scrapedFeatures,
-    scraped_status: scrapedFeatures.length > 0 ? "success" : "partial_success",
   });
 
   return {
@@ -453,13 +755,16 @@ async function processProduct(product, index, total) {
 
 async function main() {
   const scrapeReviewSet = await loadScrapeReviewSet();
-  const products = await fetchReviewedProducts(scrapeReviewSet);
+  const activePdfReviewRows = await loadActivePdfReviewRows();
+  const pdfReviewDecisionSet = await loadPdfReviewDecisionSet();
+  const products = await fetchReviewedProducts(scrapeReviewSet, pdfReviewDecisionSet);
   const scrapeReviewByProductId = new Map(
     scrapeReviewSet.rows
       .filter((row) => row?.product_id)
       .map((row) => [String(row.product_id), row]),
   );
 
+  console.log(`Skipping ${pdfReviewDecisionSet.count} approved/rejected PDF review rows.`);
   console.log(
     `Found ${products.length} reviewed products that also exist in scrape-review.json.`,
   );
@@ -485,8 +790,13 @@ async function main() {
     }
   }
 
-  await fs.writeFile(OUTPUT_PATH, `${JSON.stringify(results, null, 2)}\n`, "utf8");
-  console.log(`\nWrote ${results.length} results to ${OUTPUT_PATH}.`);
+  const activeProductIds = new Set(activePdfReviewRows.map((row) => String(row.product_id)));
+  const newResults = results.filter((row) => !activeProductIds.has(String(row.product_id)));
+  const reviewRows = [...activePdfReviewRows, ...newResults];
+
+  await fs.writeFile(OUTPUT_PATH, `${JSON.stringify(reviewRows, null, 2)}\n`, "utf8");
+  console.log(`\nWrote ${reviewRows.length} active review rows to ${OUTPUT_PATH}.`);
+  console.log(`Added ${newResults.length} new PDF review rows.`);
   console.log(`Skipped ${skipped} products.`);
   console.log(
     WRITE_TO_SUPABASE

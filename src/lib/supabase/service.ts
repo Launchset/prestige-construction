@@ -1,4 +1,9 @@
 import { createClient as createSupabaseClient } from "@supabase/supabase-js";
+import { config } from "dotenv";
+
+if (process.env.NODE_ENV !== "production") {
+  config({ path: ".env.import", override: true });
+}
 
 function getServiceSupabaseConfig() {
   const url = process.env.SUPABASE_URL?.trim() || "";
