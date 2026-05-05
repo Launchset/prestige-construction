@@ -78,6 +78,119 @@ Notes:
 - If your remote project is missing `public.enquiries`, run `npm run supabase:db:push` after linking to apply it from this repo.
 - `/admin/image-review` is intentionally hidden in production and only available in local development.
 
+## Admin Review Pipeline
+
+The product data cleanup workflow is designed to run against the Supabase backend branch first, then sync approved changes to main only after review.
+
+### Branch and Env Rules
+
+- Use the `backend-test` git branch for local admin tooling work.
+- Use `.env.import` for branch database, R2, and local admin credentials.
+- `.env.import` should point at the backend branch Supabase URL, not main.
+- Do not commit `.env.import`, generated review JSON, R2 keys, or service role keys.
+- Do not run the local admin routes in production. The admin review pages are local-only and return `notFound()` in production.
+
+### PDF Feature Extraction
+
+Run the PDF feature extractor in small batches:
+
+```powershell
+$env:PDF_FEATURE_OLLAMA_MODEL='llama3.1:8b'
+$env:PDF_FEATURE_LIMIT='10'
+npm.cmd run extract:pdf-features
+```
+
+Useful options:
+
+- `PDF_FEATURE_LIMIT` controls how many products the script processes.
+- `PDF_FEATURE_WRITE=1` is required before the extractor writes to Supabase. Without it, it only prepares review data.
+- `PDF_FEATURE_OLLAMA_MODEL` selects the local Ollama model.
+
+The extractor writes review state to ignored files under `scripts/scraper/`, including:
+
+- `pdf-feature-review.json`
+- `pdf-feature-review-batch-state.json`
+- `pdf-feature-review-done.json`
+
+Those files are working data, not source code, and should normally stay uncommitted.
+
+### Feature Review UI
+
+Start local Next.js:
+
+```powershell
+npm.cmd run dev -- --hostname 0.0.0.0
+```
+
+Open:
+
+```txt
+http://127.0.0.1:3000/admin/pdf-feature-review
+```
+
+Over SSH, either open the remote machine IP, for example:
+
+```txt
+http://192.168.0.222:3000/admin/pdf-feature-review
+```
+
+or create a tunnel from your own machine:
+
+```bash
+ssh -L 3000:127.0.0.1:3000 sshuser@192.168.0.222
+```
+
+The feature UI is used to:
+
+- review LLM-extracted PDF features beside the PDF
+- remove unwanted feature rows
+- reject products for later review
+- use supplier-scraped features where they are better
+- approve products with no features when that is intentional
+- import approved feature rows into the backend branch
+- run the next extraction batch from the UI
+
+To import approved PDF feature review data from the command line:
+
+```powershell
+npm.cmd run import:approved-pdf-features
+```
+
+### Sync Approved Features to Main
+
+Only sync reviewed feature changes from the backend branch to main:
+
+```powershell
+npm.cmd run sync:pdf-features:main
+```
+
+This is intended for `scraped_features`/approved feature changes only. It should not duplicate products or blindly copy whole product rows.
+
+### Media Sorter
+
+Open:
+
+```txt
+http://127.0.0.1:3000/admin/image-review
+```
+
+The media sorter writes image ordering into `product_images.sort_order`:
+
+- positive numbers, such as `1`, `2`, `3`, mean selected images in display order
+- `null` means an image has not been selected
+- `-1` means the product was skipped and should be reviewed again in the skipped pass
+- `-2` means the product was checked again and intentionally left skipped/no usable images
+
+The current local sorter can process skipped products by finding products with a `-1` image marker. Saving a selection clears that product's old image ordering and writes positive sort orders. Pressing `Skip Category` during the skipped pass changes `-1` to `-2`, so the product drops out of the skipped queue without becoming public.
+
+Image loading uses the Cloudflare asset worker first:
+
+```txt
+NEXT_PUBLIC_ASSETS_BASE/i/<source_path>?w=500&q=75
+```
+
+If that fails locally, the admin image proxy route falls back to R2 using `.env.import`.
+
 ## Stripe Local Testing
 
 Use the local Stripe CLI binary when testing webhooks:
